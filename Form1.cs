@@ -2,7 +2,7 @@ namespace English_Exam_Timer
 {
     public partial class Form1 : Form
     {
-        //Version 0.2.0
+        //Version 0.3.0
         //Developed by: Filip Lacina
 
         public Form1()
@@ -24,12 +24,13 @@ namespace English_Exam_Timer
         //This timer shows current day and time
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Text = Convert.ToString("Nyní je: " + DateTime.Now);
+            labelTimeDate.Text = Convert.ToString("Nyní je: " + DateTime.Now);
         }
 
         private void startTimerButton_Click(object sender, EventArgs e)
         {
             currentPhase = 0;
+
 
         }
 
