@@ -36,7 +36,12 @@
             addToolStripMenuItem = new ToolStripMenuItem();
             modifyToolStripMenuItem = new ToolStripMenuItem();
             removeToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1 = new MenuStrip();
+            addToolStripMenuItem1 = new ToolStripMenuItem();
+            modifyToolStripMenuItem1 = new ToolStripMenuItem();
+            removeToolStripMenuItem1 = new ToolStripMenuItem();
             listboxContentMenuStrip.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // bSet
@@ -68,9 +73,9 @@
             listBox1.ContextMenuStrip = listboxContentMenuStrip;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 12);
+            listBox1.Location = new Point(12, 27);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(237, 229);
+            listBox1.Size = new Size(237, 214);
             listBox1.TabIndex = 3;
             // 
             // listboxContentMenuStrip
@@ -100,15 +105,47 @@
             removeToolStripMenuItem.Text = "Remove";
             removeToolStripMenuItem.Click += lbRemoveValue_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem1, modifyToolStripMenuItem1, removeToolStripMenuItem1 });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(264, 24);
+            menuStrip1.TabIndex = 5;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // addToolStripMenuItem1
+            // 
+            addToolStripMenuItem1.Name = "addToolStripMenuItem1";
+            addToolStripMenuItem1.Size = new Size(41, 20);
+            addToolStripMenuItem1.Text = "Add";
+            addToolStripMenuItem1.Click += lbAddValue_Click;
+            // 
+            // modifyToolStripMenuItem1
+            // 
+            modifyToolStripMenuItem1.Name = "modifyToolStripMenuItem1";
+            modifyToolStripMenuItem1.Size = new Size(57, 20);
+            modifyToolStripMenuItem1.Text = "Modify";
+            modifyToolStripMenuItem1.Click += lbModifyValue_Click;
+            // 
+            // removeToolStripMenuItem1
+            // 
+            removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
+            removeToolStripMenuItem1.Size = new Size(62, 20);
+            removeToolStripMenuItem1.Text = "Remove";
+            removeToolStripMenuItem1.Click += lbRemoveValue_Click;
+            // 
             // ModifyTimer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(264, 296);
+            Controls.Add(menuStrip1);
             Controls.Add(listBox1);
             Controls.Add(bCancel);
             Controls.Add(bSet);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ModifyTimer";
@@ -118,7 +155,10 @@
             Text = "ModifyTimer";
             Load += ModifyTimer_Load;
             listboxContentMenuStrip.ResumeLayout(false);
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -129,5 +169,9 @@
         private ToolStripMenuItem addToolStripMenuItem;
         private ToolStripMenuItem modifyToolStripMenuItem;
         private ToolStripMenuItem removeToolStripMenuItem;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem addToolStripMenuItem1;
+        private ToolStripMenuItem modifyToolStripMenuItem1;
+        private ToolStripMenuItem removeToolStripMenuItem1;
     }
 }

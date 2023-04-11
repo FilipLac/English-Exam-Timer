@@ -39,13 +39,14 @@
             lapTimer = new System.Windows.Forms.Timer(components);
             groupBox1 = new GroupBox();
             label1 = new Label();
+            label2 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // realTimeTimer
             // 
             realTimeTimer.Interval = 1000;
-            realTimeTimer.Tick += timer1_Tick;
+            realTimeTimer.Tick += realTimeTimer_Tick;
             // 
             // labelTimeDate
             // 
@@ -102,10 +103,12 @@
             // lapTimer
             // 
             lapTimer.Interval = 1000;
+            lapTimer.Tick += lapTimer_Tick;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.Window;
+            groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 56);
             groupBox1.Name = "groupBox1";
@@ -117,11 +120,21 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 132F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(15, 57);
+            label1.Location = new Point(157, 53);
             label1.Name = "label1";
-            label1.Size = new Size(517, 235);
+            label1.Size = new Size(384, 235);
             label1.TabIndex = 0;
-            label1.Text = "00:00";
+            label1.Text = "000";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(6, 166);
+            label2.Name = "label2";
+            label2.Size = new Size(194, 32);
+            label2.TabIndex = 1;
+            label2.Text = "Remaining time: ";
             // 
             // Form1
             // 
@@ -159,5 +172,6 @@
         private System.Windows.Forms.Timer lapTimer;
         private GroupBox groupBox1;
         private Label label1;
+        private Label label2;
     }
 }
