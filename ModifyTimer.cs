@@ -26,6 +26,10 @@ namespace English_Exam_Timer
         Boolean importDone = false;
         private int[] timesfromphases;
 
+        public int[] initialTimeArray
+        {
+            get { return PhaseTimes; }
+        }
 
         public int[] TimesFromPhases
         {
