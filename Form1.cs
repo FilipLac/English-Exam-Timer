@@ -1,11 +1,13 @@
 using Microsoft.VisualBasic.Logging;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace English_Exam_Timer
 {
     public partial class Form1 : Form
     {
-        //Version 0.5.1
+        //Version 0.7.0
         //Developed by: Filip Lacina
 
         //Inicializing private variables
@@ -15,33 +17,67 @@ namespace English_Exam_Timer
         private int lapCounts;
         private int showRemainingTime;
         private int[] Times;
+        Boolean inicializationDone = false;
         ModifyTimer modifyTimer = new ModifyTimer();
 
         public Form1()
         {
             InitializeComponent();
-            modifyTimer = new ModifyTimer();
-            try
-            {
-                lapCounts = modifyTimer.initialTimeArray.Length;
-                Times = new int[modifyTimer.initialTimeArray.Length];
-                for (int i = 0; i < modifyTimer.initialTimeArray.Length; i++)
-                {
-                    Times[i] = modifyTimer.initialTimeArray[i];
-                }
-            }
-            catch(NullReferenceException e)
-            {
-                //Log = "Importing values failed";
-            }
-            /*var message = string.Join(Environment.NewLine, Times);
-            MessageBox.Show(message);*/
         }
 
         //Form1 load action with timer start
         private void Form1_Load(object sender, EventArgs e)
         {
-            realTimeTimer.Start();
+            if (inicializationDone == false)
+            {
+                realTimeTimer.Start();
+                try
+                {
+                    lapCounts = modifyTimer.initialTimeArray.Length;
+                    Times = new int[modifyTimer.initialTimeArray.Length];
+                    for (int i = 0; i < modifyTimer.initialTimeArray.Length; i++)
+                    {
+                        Times[i] = modifyTimer.initialTimeArray[i];
+                    }
+                    inicializationDone = true;
+                }
+                catch (NullReferenceException exceptionThrow)
+                {
+                    MessageBox.Show("Import of default values failed! [Error: Iidt1]","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
+                }
+                /*var message = string.Join(Environment.NewLine, Times);
+                MessageBox.Show(message);*/
+            }
+        }
+
+        //Flash method
+        async void flash(string ColorMode)
+        {
+            if (ColorMode == "yellow")
+            {
+                for (int a = 0; a < 16; a++)
+                {
+                    this.BackColor = Color.Yellow;
+                    await Task.Delay(1000);
+                    this.BackColor = Color.WhiteSmoke;
+                    await Task.Delay(1000);
+                }
+            }
+            if (ColorMode == "red")
+            {
+                for (int a = 0; a < 16; a++)
+                {
+                    this.BackColor = Color.Red;
+                    await Task.Delay(100);
+                    this.BackColor = Color.WhiteSmoke;
+                    await Task.Delay(100);
+                }
+            }
+        }
+        private void BackgroundToRed_Change(object sender, EventArgs e)
+        {
+            flash("red");
         }
 
         //This timer shows current day and time
@@ -50,6 +86,7 @@ namespace English_Exam_Timer
             labelTimeDate.Text = Convert.ToString("Nyní je: " + DateTime.Now);
         }
 
+        //The real timer
         private void startTimerButton_Click(object sender, EventArgs e)
         {
             lapTimer.Start();
@@ -57,10 +94,10 @@ namespace English_Exam_Timer
         }
         private void lapTimer_Tick(object sender, EventArgs e)
         {
-            for (int l = 1; l<lapCounts;  l++)
+            for (int l = 1; l < lapCounts; l++)
             {
                 remainingtime = Times[l];
-                for (int s = 0;  s<= remainingtime; s++)
+                for (int s = 0; s <= remainingtime; s++)
                 {
                     label1.Text = Convert.ToString(showRemainingTime = remainingtime - s);
                 }
@@ -78,6 +115,7 @@ namespace English_Exam_Timer
             lapTimer.Dispose();
         }
 
+        //Second form (form2) with user modifications to time and phases
         private void bModifyTimer_Click(object sender, EventArgs e)
         {
             modifyTimer = new ModifyTimer();
@@ -89,8 +127,6 @@ namespace English_Exam_Timer
                 {
                     Times[i] = modifyTimer.TimesFromPhases[i];
                 }
-                /*var message = string.Join(Environment.NewLine, Times);
-                MessageBox.Show(message);*/
             }
             else
             {
