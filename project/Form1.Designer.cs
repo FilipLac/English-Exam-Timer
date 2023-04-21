@@ -38,8 +38,9 @@
             bModifyTimer = new Button();
             lapTimer = new System.Windows.Forms.Timer(components);
             label2 = new Label();
-            label1 = new Label();
-            button1 = new Button();
+            lRemainingTime = new Label();
+            label3 = new Label();
+            lLapTime = new Label();
             SuspendLayout();
             // 
             // realTimeTimer
@@ -116,26 +117,34 @@
             label2.TabIndex = 1;
             label2.Text = "Remaining time: ";
             // 
-            // label1
+            // lRemainingTime
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 132F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(175, 108);
-            label1.Name = "label1";
-            label1.Size = new Size(384, 235);
-            label1.TabIndex = 0;
-            label1.Text = "000";
+            lRemainingTime.AutoSize = true;
+            lRemainingTime.BackColor = Color.Transparent;
+            lRemainingTime.Font = new Font("Segoe UI", 132F, FontStyle.Regular, GraphicsUnit.Point);
+            lRemainingTime.Location = new Point(175, 108);
+            lRemainingTime.Name = "lRemainingTime";
+            lRemainingTime.Size = new Size(384, 235);
+            lRemainingTime.TabIndex = 0;
+            lRemainingTime.Text = "000";
             // 
-            // button1
+            // label3
             // 
-            button1.Location = new Point(65, 84);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += BackgroundToRed_Change;
+            label3.AutoSize = true;
+            label3.Location = new Point(24, 108);
+            label3.Name = "label3";
+            label3.Size = new Size(72, 15);
+            label3.TabIndex = 4;
+            label3.Text = "Current Lap:";
+            // 
+            // lLapTime
+            // 
+            lLapTime.AutoSize = true;
+            lLapTime.Location = new Point(102, 108);
+            lLapTime.Name = "lLapTime";
+            lLapTime.Size = new Size(47, 15);
+            lLapTime.TabIndex = 5;
+            lLapTime.Text = "laptime";
             // 
             // Form1
             // 
@@ -143,9 +152,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(571, 450);
-            Controls.Add(button1);
+            Controls.Add(lLapTime);
+            Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lRemainingTime);
             Controls.Add(bModifyTimer);
             Controls.Add(stopAndResetTimerButton);
             Controls.Add(pauseTimerButton);
@@ -172,8 +182,9 @@
         private Button stopAndResetTimerButton;
         private Button bModifyTimer;
         private System.Windows.Forms.Timer lapTimer;
-        private Label label1;
+        private Label lRemainingTime;
         private Label label2;
-        private Button button1;
+        private Label label3;
+        private Label lLapTime;
     }
 }

@@ -12,18 +12,23 @@ namespace English_Exam_Timer
 {
     public partial class ModifyTimer : Form
     {
-/*  1 = 0,5 min - 30s   2 = 2,5 min - 150s  3 = 1,5 min - 90s   4 = 1,5 min - 90s   5 = 1 min - 60s    6 = 5 min - 300s    7 = 3 min - 180s    8 = 5 min - 300s */
-        private Form1 form1;
+        /*  1 = 0,5 min - 30s   2 = 2,5 min - 150s  3 = 1,5 min - 90s   4 = 1,5 min - 90s   5 = 1 min - 60s    6 = 5 min - 300s    7 = 3 min - 180s    8 = 5 min - 300s */
         public ModifyTimer()
         {
             InitializeComponent();
+        }
+
+        private Form1 form1;
+        public ModifyTimer(Form1 ParentForm)
+        {
+            InitializeComponent();
+            form1 = ParentForm;
         }
 
         //Inicialization of array for import to listbox -- user can modify it later
         private int[] PhaseTimes = { 30, 150, 90, 90, 60, 300, 180, 300 };
         
         //Inicialization of variables
-        Boolean importDone = false;
         private int[] timesfromphases;
 
         public int[] initialTimeArray
@@ -34,7 +39,7 @@ namespace English_Exam_Timer
         public int[] TimesFromPhases
         {
             get { return timesfromphases; }
-            set { timesfromphases = value; }
+            private set { timesfromphases = value; }
         }
 
         private void bSet_Click(object sender, EventArgs e)
@@ -42,7 +47,7 @@ namespace English_Exam_Timer
             timesfromphases = new int[listBox1.Items.Count];
             for (int inx = 0; inx < listBox1.Items.Count; inx++)
             {
-                TimesFromPhases[inx] = Convert.ToInt32(listBox1.Items[inx]);
+                timesfromphases[inx] = Convert.ToInt32(listBox1.Items[inx]);
             }
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -110,13 +115,9 @@ namespace English_Exam_Timer
         //When this form loads, it will add all values to listbox for modification
         private void ModifyTimer_Load(object sender, EventArgs e)
         {
-            if (importDone == false)
+            foreach(int number in form1.Times)
             {
-                foreach (int number in PhaseTimes)
-                {
-                    listBox1.Items.Add(number);
-                }
-                importDone = true;
+                listBox1.Items.Add(number);
             }
         }
     }
