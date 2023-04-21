@@ -13,6 +13,14 @@
     <Description>English exam timer - school project by Filip Lacina</Description>
     <PackageIcon>icon.png</PackageIcon>
     <ApplicationIcon>MainIcon.ico</ApplicationIcon>
+    <StartupObject>English_Exam_Timer.Program</StartupObject>
+    <PackageId>EnglishExamTimer</PackageId>
+    <PackageProjectUrl>https://github.com/FilipLac/English-Exam-Timer</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>timer</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseFile>LICENCE.txt</PackageLicenseFile>
+    <AssemblyName>English-Exam-Timer</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +33,10 @@
 
   <ItemGroup>
     <None Update="icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="LICENCE.txt">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
