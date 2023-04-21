@@ -1,6 +1,6 @@
 ﻿namespace English_Exam_Timer
 {
-    partial class nudValueMA
+    partial class ModifyValue
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,7 @@
             numericUpDown1.Size = new Size(120, 23);
             numericUpDown1.TabIndex = 0;
             numericUpDown1.Value = new decimal(new int[] { 10, 0, 0, 0 });
-            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
+            numericUpDown1.ValueChanged += NumericUpDown1_ValueChanged;
             // 
             // label1
             // 
@@ -67,7 +67,7 @@
             bSet.TabIndex = 2;
             bSet.Text = "Set";
             bSet.UseVisualStyleBackColor = false;
-            bSet.Click += bSet_Click;
+            bSet.Click += ButtonSet_Click;
             // 
             // bCancel
             // 
@@ -79,7 +79,7 @@
             bCancel.TabIndex = 2;
             bCancel.Text = "Cancel";
             bCancel.UseVisualStyleBackColor = false;
-            bCancel.Click += bCancel_Click;
+            bCancel.Click += ButtonCancel_Click;
             // 
             // label2
             // 
@@ -91,7 +91,7 @@
             label2.Text = "Enter number that will be added at the end of previous form.";
             label2.Visible = false;
             // 
-            // nudValueMA
+            // ModifyValue
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -104,12 +104,12 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "nudValueMA";
+            Name = "ModifyValue";
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterParent;
-            Text = "nudValueMA";
-            Load += nudValueMA_Load;
+            Text = "Modify or Add Value";
+            Load += NudValueMA_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -54,7 +54,7 @@
             bSet.TabIndex = 2;
             bSet.Text = "Set";
             bSet.UseVisualStyleBackColor = false;
-            bSet.Click += bSet_Click;
+            bSet.Click += ButtonSet_Click;
             // 
             // bCancel
             // 
@@ -66,7 +66,7 @@
             bCancel.TabIndex = 2;
             bCancel.Text = "Cancel";
             bCancel.UseVisualStyleBackColor = false;
-            bCancel.Click += bCancel_Click;
+            bCancel.Click += ButtonCancel_Click;
             // 
             // listBox1
             // 
@@ -77,6 +77,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(237, 214);
             listBox1.TabIndex = 3;
+            listBox1.KeyDown += listBox1_KeyDown;
             // 
             // listboxContentMenuStrip
             // 
@@ -89,21 +90,21 @@
             addToolStripMenuItem.Name = "addToolStripMenuItem";
             addToolStripMenuItem.Size = new Size(117, 22);
             addToolStripMenuItem.Text = "Add";
-            addToolStripMenuItem.Click += lbAddValue_Click;
+            addToolStripMenuItem.Click += ListboxAddValue_Click;
             // 
             // modifyToolStripMenuItem
             // 
             modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
             modifyToolStripMenuItem.Size = new Size(117, 22);
             modifyToolStripMenuItem.Text = "Modify";
-            modifyToolStripMenuItem.Click += lbModifyValue_Click;
+            modifyToolStripMenuItem.Click += ListboxModifyValue_Click;
             // 
             // removeToolStripMenuItem
             // 
             removeToolStripMenuItem.Name = "removeToolStripMenuItem";
             removeToolStripMenuItem.Size = new Size(117, 22);
             removeToolStripMenuItem.Text = "Remove";
-            removeToolStripMenuItem.Click += lbRemoveValue_Click;
+            removeToolStripMenuItem.Click += LbRemoveValue_Click;
             // 
             // menuStrip1
             // 
@@ -119,21 +120,21 @@
             addToolStripMenuItem1.Name = "addToolStripMenuItem1";
             addToolStripMenuItem1.Size = new Size(41, 20);
             addToolStripMenuItem1.Text = "Add";
-            addToolStripMenuItem1.Click += lbAddValue_Click;
+            addToolStripMenuItem1.Click += ListboxAddValue_Click;
             // 
             // modifyToolStripMenuItem1
             // 
             modifyToolStripMenuItem1.Name = "modifyToolStripMenuItem1";
             modifyToolStripMenuItem1.Size = new Size(57, 20);
             modifyToolStripMenuItem1.Text = "Modify";
-            modifyToolStripMenuItem1.Click += lbModifyValue_Click;
+            modifyToolStripMenuItem1.Click += ListboxModifyValue_Click;
             // 
             // removeToolStripMenuItem1
             // 
             removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
             removeToolStripMenuItem1.Size = new Size(62, 20);
             removeToolStripMenuItem1.Text = "Remove";
-            removeToolStripMenuItem1.Click += lbRemoveValue_Click;
+            removeToolStripMenuItem1.Click += LbRemoveValue_Click;
             // 
             // ModifyTimer
             // 

@@ -7,21 +7,15 @@ namespace English_Exam_Timer
 {
     public partial class Form1 : Form
     {
-        //Version 0.9.0
+        //Version 1.0.0
         //Developed by: Filip Lacina
 
         //Inicializing private variables
-        ModifyTimer modifyTimer = new ModifyTimer();
-        private bool inicializationDone = false;
+        ModifyTimer modifyTimer = new();
+        private readonly int[] InitialTime = { 30, 150, 90, 90, 60, 300, 180, 300 };
 
         //Public variables for timer
         public int[] Times;
-        
-        public bool InicializationDone
-        {
-            get { return inicializationDone; }
-            private set { inicializationDone = value; }
-        }
 
         //Private variables for timer (these will be modified only by timer)
         private int l = 0;
@@ -35,25 +29,22 @@ namespace English_Exam_Timer
         //Form1 load action with timer start
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (inicializationDone == false)
+            realTimeTimer.Start();
+            try
             {
-                realTimeTimer.Start();
-                try
+                Times = new int[8];
+                for (int i = 0; i < 8; i++)
                 {
-                    Times = new int[8];
-                    for (int i = 0; i < 8; i++)
-                    {
-                        Times[i] = modifyTimer.initialTimeArray[i];
-                    }
+                    Times[i] = InitialTime[i];
                 }
-                catch (NullReferenceException exceptionThrow)
-                {
-                    MessageBox.Show("Import of default values failed! [Error: Iidt1 - "+exceptionThrow+"]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Close();
-                }
-                /*var message = string.Join(Environment.NewLine, Times);
-                MessageBox.Show(message);*/
             }
+            catch (NullReferenceException exceptionThrow)
+            {
+                MessageBox.Show("Import of default values failed! [Error: It1 - "+exceptionThrow+"]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
+            /*var message = string.Join(Environment.NewLine, Times);
+            MessageBox.Show(message);*/
         }
 
         private void Import()
@@ -66,7 +57,7 @@ namespace English_Exam_Timer
         }
 
         //Flash method
-        async void flash(string ColorMode)
+        async void Flash(string ColorMode)
         {
             if (ColorMode == "yellow")
                 this.BackColor = Color.Yellow;
@@ -89,57 +80,60 @@ namespace English_Exam_Timer
         }
 
         //This timer shows current day and time
-        private void realTimeTimer_Tick(object sender, EventArgs e)
+        private void RealTimeTimer_Tick(object sender, EventArgs e)
         {
             labelTimeDate.Text = Convert.ToString("Nyní je: " + DateTime.Now);
         }
 
         //The real timer
-        private void startTimerButton_Click(object sender, EventArgs e)
+        private void StartTimerButton_Click(object sender, EventArgs e)
         {
             remainingtime = Times[l];
             lLapTime.Text = Convert.ToString(l + 1);
             lapTimer.Start();
 
         }
-        private void lapTimer_Tick(object sender, EventArgs e)
+        private void LapTimer_Tick(object sender, EventArgs e)
         {
-            if (remainingtime < 0 || remainingtime == 0 && (l == modifyTimer.TimesFromPhases.Length) || (l == modifyTimer.initialTimeArray.Length))
-            {
-                lapTimer.Stop();
-                lapTimer.Dispose();
-                lLapTime.Text = "Timer Ended!";
-                MessageBox.Show("End", "Timer finished", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }    
             if (remainingtime > 0)
             {
-                remainingtime = remainingtime - 1;
+                remainingtime--;
             }
             else if (remainingtime == 0)
             {
                 l++;
-                remainingtime = Times[l];
-                lLapTime.Text = Convert.ToString(l + 1);
+                if (l == Times.Length)
+                {
+                    lapTimer.Stop();
+                    lapTimer.Dispose();
+                    MessageBox.Show("End", "Timer finished", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    remainingtime = Times[l];
+                    lLapTime.Text = Convert.ToString(l + 1);
+                }
             }
-
-            if (remainingtime < 10)
-                flash("red_blink");
+            if (remainingtime == 0 && l== Times.Length)
+                    this.BackColor = Color.WhiteSmoke;
+            else if (remainingtime < 10)
+                Flash("red_blink");
             else if (remainingtime <= 15)
-                flash("red");
+                Flash("red");
             //else if (remainingtime <= 25)
             //    flash("yellow_blink");
             else if (remainingtime <= 30)
-                flash("yellow");
+                Flash("yellow");
 
             lRemainingTime.Text = Convert.ToString(remainingtime);
         }
 
-        private void pauseTimerButton_Click(object sender, EventArgs e)
+        private void PauseTimerButton_Click(object sender, EventArgs e)
         {
             lapTimer.Stop();
         }
 
-        private void stopAndResetTimerButton_Click(object sender, EventArgs e)
+        private void StopAndResetTimerButton_Click(object sender, EventArgs e)
         {
             lapTimer.Stop();
             lapTimer.Dispose();
@@ -148,7 +142,7 @@ namespace English_Exam_Timer
         }
 
         //Second form (form2) with user modifications to time and phases
-        private void bModifyTimer_Click(object sender, EventArgs e)
+        private void ButtonModifyTimer_Click(object sender, EventArgs e)
         {
             modifyTimer = new ModifyTimer(this);
             DialogResult timerset = modifyTimer.ShowDialog();

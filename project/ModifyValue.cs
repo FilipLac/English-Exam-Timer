@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace English_Exam_Timer
 {
-    public partial class nudValueMA : Form
+    public partial class ModifyValue : Form
     {
-        public nudValueMA()
+        public ModifyValue()
         {
             InitializeComponent();
         }
 
-        public nudValueMA(int evoke)
+        public ModifyValue(int evoke)
         {
             InitializeComponent();
             if (evoke == 1)
@@ -32,7 +32,7 @@ namespace English_Exam_Timer
             }
             else
             {
-                MessageBox.Show("Error occured: Envma" + evoke);
+                MessageBox.Show("Error occured: MVe" + evoke);
                 Close();
             }
         }
@@ -48,7 +48,7 @@ namespace English_Exam_Timer
         }
 
         //Load form and set value (only if user pressed modify in previous form)
-        private void nudValueMA_Load(object sender, EventArgs e)
+        private void NudValueMA_Load(object sender, EventArgs e)
         {
             nudvalue = DecValue;
             if (DecValue != 0)
@@ -58,20 +58,20 @@ namespace English_Exam_Timer
         }
 
         //Changing value - user action
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             DecValue = numericUpDown1.Value;
         }
 
         //Buttons - user actions
-        private void bSet_Click(object sender, EventArgs e)
+        private void ButtonSet_Click(object sender, EventArgs e)
         {
             DecValue = numericUpDown1.Value;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
-        private void bCancel_Click(object sender, EventArgs e)
+        private void ButtonCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();

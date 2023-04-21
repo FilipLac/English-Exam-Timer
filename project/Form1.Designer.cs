@@ -46,7 +46,7 @@
             // realTimeTimer
             // 
             realTimeTimer.Interval = 1000;
-            realTimeTimer.Tick += realTimeTimer_Tick;
+            realTimeTimer.Tick += RealTimeTimer_Tick;
             // 
             // labelTimeDate
             // 
@@ -67,7 +67,7 @@
             startTimerButton.TabIndex = 1;
             startTimerButton.Text = "Start Timer";
             startTimerButton.UseVisualStyleBackColor = true;
-            startTimerButton.Click += startTimerButton_Click;
+            startTimerButton.Click += StartTimerButton_Click;
             // 
             // pauseTimerButton
             // 
@@ -77,7 +77,7 @@
             pauseTimerButton.TabIndex = 1;
             pauseTimerButton.Text = "Pause Timer";
             pauseTimerButton.UseVisualStyleBackColor = true;
-            pauseTimerButton.Click += pauseTimerButton_Click;
+            pauseTimerButton.Click += PauseTimerButton_Click;
             // 
             // stopAndResetTimerButton
             // 
@@ -87,7 +87,7 @@
             stopAndResetTimerButton.TabIndex = 1;
             stopAndResetTimerButton.Text = "Stop and Reset Timer";
             stopAndResetTimerButton.UseVisualStyleBackColor = true;
-            stopAndResetTimerButton.Click += stopAndResetTimerButton_Click;
+            stopAndResetTimerButton.Click += StopAndResetTimerButton_Click;
             // 
             // bModifyTimer
             // 
@@ -99,12 +99,12 @@
             bModifyTimer.TabIndex = 2;
             bModifyTimer.Text = "⚙️";
             bModifyTimer.UseVisualStyleBackColor = false;
-            bModifyTimer.Click += bModifyTimer_Click;
+            bModifyTimer.Click += ButtonModifyTimer_Click;
             // 
             // lapTimer
             // 
             lapTimer.Interval = 1000;
-            lapTimer.Tick += lapTimer_Tick;
+            lapTimer.Tick += LapTimer_Tick;
             // 
             // label2
             // 
