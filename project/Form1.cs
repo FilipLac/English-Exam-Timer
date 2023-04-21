@@ -7,7 +7,7 @@ namespace English_Exam_Timer
 {
     public partial class Form1 : Form
     {
-        //Version 1.0.0
+        //Version 1.0.1
         //Developed by: Filip Lacina
 
         //Inicializing private variables
@@ -40,7 +40,7 @@ namespace English_Exam_Timer
             }
             catch (NullReferenceException exceptionThrow)
             {
-                MessageBox.Show("Import of default values failed! [Error: It1 - "+exceptionThrow+"]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Import of default values failed! [Error: It1 - " + exceptionThrow + "]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
             /*var message = string.Join(Environment.NewLine, Times);
@@ -90,6 +90,8 @@ namespace English_Exam_Timer
         {
             remainingtime = Times[l];
             lLapTime.Text = Convert.ToString(l + 1);
+            ProgressBarTimer.Maximum = remainingtime;
+            ProgressBarTimer.Value = remainingtime;
             lapTimer.Start();
 
         }
@@ -98,6 +100,8 @@ namespace English_Exam_Timer
             if (remainingtime > 0)
             {
                 remainingtime--;
+                try { ProgressBarTimer.Value--; }
+                catch { }
             }
             else if (remainingtime == 0)
             {
@@ -111,11 +115,13 @@ namespace English_Exam_Timer
                 else
                 {
                     remainingtime = Times[l];
+                    ProgressBarTimer.Maximum = remainingtime;
+                    ProgressBarTimer.Value = remainingtime;
                     lLapTime.Text = Convert.ToString(l + 1);
                 }
             }
-            if (remainingtime == 0 && l== Times.Length)
-                    this.BackColor = Color.WhiteSmoke;
+            if (remainingtime == 0 && l == Times.Length)
+                this.BackColor = Color.WhiteSmoke;
             else if (remainingtime < 10)
                 Flash("red_blink");
             else if (remainingtime <= 15)
@@ -154,8 +160,6 @@ namespace English_Exam_Timer
             {
                 MessageBox.Show("Timer was not changed!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
-
     }
 }

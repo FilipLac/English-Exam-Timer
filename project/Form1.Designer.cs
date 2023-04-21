@@ -41,6 +41,7 @@
             lRemainingTime = new Label();
             label3 = new Label();
             lLapTime = new Label();
+            ProgressBarTimer = new ProgressBar();
             SuspendLayout();
             // 
             // realTimeTimer
@@ -52,50 +53,56 @@
             // 
             labelTimeDate.AutoSize = true;
             labelTimeDate.BackColor = Color.Transparent;
-            labelTimeDate.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTimeDate.Location = new Point(150, 19);
+            labelTimeDate.Font = new Font("Segoe UI", 28F, FontStyle.Regular, GraphicsUnit.Point);
+            labelTimeDate.Location = new Point(12, 19);
             labelTimeDate.Name = "labelTimeDate";
-            labelTimeDate.Size = new Size(214, 25);
+            labelTimeDate.Size = new Size(403, 51);
             labelTimeDate.TabIndex = 0;
             labelTimeDate.Text = "Current Date and Time";
             // 
             // startTimerButton
             // 
-            startTimerButton.Location = new Point(12, 399);
+            startTimerButton.BackColor = Color.FromArgb(192, 255, 192);
+            startTimerButton.Font = new Font("Segoe UI", 28F, FontStyle.Regular, GraphicsUnit.Point);
+            startTimerButton.Location = new Point(12, 416);
             startTimerButton.Name = "startTimerButton";
-            startTimerButton.Size = new Size(174, 39);
+            startTimerButton.Size = new Size(238, 109);
             startTimerButton.TabIndex = 1;
             startTimerButton.Text = "Start Timer";
-            startTimerButton.UseVisualStyleBackColor = true;
+            startTimerButton.UseVisualStyleBackColor = false;
             startTimerButton.Click += StartTimerButton_Click;
             // 
             // pauseTimerButton
             // 
-            pauseTimerButton.Location = new Point(192, 399);
+            pauseTimerButton.BackColor = Color.Linen;
+            pauseTimerButton.Font = new Font("Segoe UI", 28F, FontStyle.Regular, GraphicsUnit.Point);
+            pauseTimerButton.Location = new Point(256, 416);
             pauseTimerButton.Name = "pauseTimerButton";
-            pauseTimerButton.Size = new Size(155, 39);
+            pauseTimerButton.Size = new Size(237, 109);
             pauseTimerButton.TabIndex = 1;
             pauseTimerButton.Text = "Pause Timer";
-            pauseTimerButton.UseVisualStyleBackColor = true;
+            pauseTimerButton.UseVisualStyleBackColor = false;
             pauseTimerButton.Click += PauseTimerButton_Click;
             // 
             // stopAndResetTimerButton
             // 
-            stopAndResetTimerButton.Location = new Point(353, 399);
+            stopAndResetTimerButton.BackColor = Color.MistyRose;
+            stopAndResetTimerButton.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
+            stopAndResetTimerButton.Location = new Point(499, 416);
             stopAndResetTimerButton.Name = "stopAndResetTimerButton";
-            stopAndResetTimerButton.Size = new Size(155, 39);
+            stopAndResetTimerButton.Size = new Size(213, 109);
             stopAndResetTimerButton.TabIndex = 1;
             stopAndResetTimerButton.Text = "Stop and Reset Timer";
-            stopAndResetTimerButton.UseVisualStyleBackColor = true;
+            stopAndResetTimerButton.UseVisualStyleBackColor = false;
             stopAndResetTimerButton.Click += StopAndResetTimerButton_Click;
             // 
             // bModifyTimer
             // 
-            bModifyTimer.BackColor = Color.DarkGray;
-            bModifyTimer.FlatStyle = FlatStyle.Popup;
-            bModifyTimer.Location = new Point(514, 399);
+            bModifyTimer.BackColor = Color.Silver;
+            bModifyTimer.Font = new Font("Segoe UI", 42F, FontStyle.Regular, GraphicsUnit.Point);
+            bModifyTimer.Location = new Point(718, 416);
             bModifyTimer.Name = "bModifyTimer";
-            bModifyTimer.Size = new Size(45, 39);
+            bModifyTimer.Size = new Size(146, 109);
             bModifyTimer.TabIndex = 2;
             bModifyTimer.Text = "⚙️";
             bModifyTimer.UseVisualStyleBackColor = false;
@@ -110,10 +117,10 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(24, 221);
+            label2.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(120, 221);
             label2.Name = "label2";
-            label2.Size = new Size(194, 32);
+            label2.Size = new Size(341, 59);
             label2.TabIndex = 1;
             label2.Text = "Remaining time: ";
             // 
@@ -121,39 +128,51 @@
             // 
             lRemainingTime.AutoSize = true;
             lRemainingTime.BackColor = Color.Transparent;
-            lRemainingTime.Font = new Font("Segoe UI", 132F, FontStyle.Regular, GraphicsUnit.Point);
-            lRemainingTime.Location = new Point(175, 108);
+            lRemainingTime.Font = new Font("Segoe UI", 128F, FontStyle.Regular, GraphicsUnit.Point);
+            lRemainingTime.Location = new Point(419, 128);
             lRemainingTime.Name = "lRemainingTime";
-            lRemainingTime.Size = new Size(384, 235);
+            lRemainingTime.Size = new Size(371, 227);
             lRemainingTime.TabIndex = 0;
             lRemainingTime.Text = "000";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(24, 108);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 28F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(599, 19);
             label3.Name = "label3";
-            label3.Size = new Size(72, 15);
+            label3.Size = new Size(226, 51);
             label3.TabIndex = 4;
             label3.Text = "Current Lap:";
             // 
             // lLapTime
             // 
             lLapTime.AutoSize = true;
-            lLapTime.Location = new Point(102, 108);
+            lLapTime.BackColor = Color.Transparent;
+            lLapTime.Font = new Font("Segoe UI", 28F, FontStyle.Bold, GraphicsUnit.Point);
+            lLapTime.Location = new Point(820, 19);
             lLapTime.Name = "lLapTime";
-            lLapTime.Size = new Size(47, 15);
+            lLapTime.Size = new Size(77, 51);
             lLapTime.TabIndex = 5;
-            lLapTime.Text = "laptime";
+            lLapTime.Text = "lap";
+            // 
+            // ProgressBarTimer
+            // 
+            ProgressBarTimer.Location = new Point(120, 332);
+            ProgressBarTimer.Name = "ProgressBarTimer";
+            ProgressBarTimer.Size = new Size(629, 23);
+            ProgressBarTimer.TabIndex = 6;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(571, 450);
-            Controls.Add(lLapTime);
+            ClientSize = new Size(876, 537);
+            Controls.Add(ProgressBarTimer);
             Controls.Add(label3);
+            Controls.Add(lLapTime);
             Controls.Add(label2);
             Controls.Add(lRemainingTime);
             Controls.Add(bModifyTimer);
@@ -162,7 +181,6 @@
             Controls.Add(startTimerButton);
             Controls.Add(labelTimeDate);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            HelpButton = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Form1";
@@ -186,5 +204,6 @@
         private Label label2;
         private Label label3;
         private Label lLapTime;
+        private ProgressBar ProgressBarTimer;
     }
 }
