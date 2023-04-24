@@ -131,9 +131,9 @@
             // 
             lRemainingTime.AutoSize = true;
             lRemainingTime.BackColor = Color.Transparent;
-            lRemainingTime.FlatStyle = FlatStyle.System;
+            lRemainingTime.FlatStyle = FlatStyle.Flat;
             lRemainingTime.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            lRemainingTime.Location = new Point(256, 73);
+            lRemainingTime.Location = new Point(250, 72);
             lRemainingTime.Name = "lRemainingTime";
             lRemainingTime.Size = new Size(74, 46);
             lRemainingTime.TabIndex = 0;
@@ -172,9 +172,9 @@
             // 
             LabelMinAndSec.AutoSize = true;
             LabelMinAndSec.BackColor = Color.Transparent;
-            LabelMinAndSec.FlatStyle = FlatStyle.System;
+            LabelMinAndSec.FlatStyle = FlatStyle.Flat;
             LabelMinAndSec.Font = new Font("Segoe UI", 96F, FontStyle.Bold, GraphicsUnit.Point);
-            LabelMinAndSec.Location = new Point(447, 148);
+            LabelMinAndSec.Location = new Point(418, 155);
             LabelMinAndSec.Name = "LabelMinAndSec";
             LabelMinAndSec.Size = new Size(403, 170);
             LabelMinAndSec.TabIndex = 7;
@@ -185,11 +185,13 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 38F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(66, 204);
+            label1.Location = new Point(39, 212);
+            label1.Margin = new Padding(0, 0, 3, 0);
             label1.Name = "label1";
             label1.Size = new Size(407, 68);
             label1.TabIndex = 1;
             label1.Text = "Remaining time: ";
+            label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Form1
             // 
@@ -197,12 +199,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(876, 537);
+            Controls.Add(label1);
             Controls.Add(lRemainingTime);
             Controls.Add(LabelMinAndSec);
             Controls.Add(ProgressBarTimer);
             Controls.Add(label3);
             Controls.Add(lLapTime);
-            Controls.Add(label1);
             Controls.Add(label2);
             Controls.Add(bModifyTimer);
             Controls.Add(stopAndResetTimerButton);

@@ -20,6 +20,8 @@ namespace English_Exam_Timer
         //Private variables for timer (these will be modified only by timer)
         private int l = 0;
         private int remainingtime;
+        private bool Paused = false;
+        private bool Started = false;
 
 
         public Form1()
@@ -107,11 +109,25 @@ namespace English_Exam_Timer
         //The real timer
         private void StartTimerButton_Click(object sender, EventArgs e)
         {
-            remainingtime = Times[l];
-            lLapTime.Text = Convert.ToString(l + 1);
-            ProgressBarTimer.Maximum = remainingtime;
-            ProgressBarTimer.Value = remainingtime;
-            lapTimer.Start();
+            if (Paused == false && Started == false)
+            {
+                Started = true;
+                remainingtime = Times[l];
+                lLapTime.Text = Convert.ToString(l + 1);
+                ProgressBarTimer.Maximum = remainingtime;
+                ProgressBarTimer.Value = remainingtime;
+                lapTimer.Start();
+            }
+            else if (Paused == true && Started == false)
+            {
+                Paused = false;
+                Started = true;
+                lapTimer.Start();
+            }
+            else
+            {
+
+            }
 
         }
         private void LapTimer_Tick(object sender, EventArgs e)
@@ -151,18 +167,24 @@ namespace English_Exam_Timer
                 Flash("yellow");
 
             CalculateMinutesAndSeconds(remainingtime);
-            lRemainingTime.Text = Convert.ToString(remainingtime+"s");
+            lRemainingTime.Text = Convert.ToString(remainingtime + "s");
         }
 
         private void PauseTimerButton_Click(object sender, EventArgs e)
         {
             lapTimer.Stop();
+            Paused = true;
+            Started = false;
         }
 
         private void StopAndResetTimerButton_Click(object sender, EventArgs e)
         {
             lapTimer.Stop();
             lapTimer.Dispose();
+            Started = false;
+            Paused = false;
+            l = 0;
+            lLapTime.Text = Convert.ToString(l+1);
             lRemainingTime.Text = "000s";
             LabelMinAndSec.Text = "00:00";
             ProgressBarTimer.Value = 0;
