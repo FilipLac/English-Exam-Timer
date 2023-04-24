@@ -7,7 +7,7 @@ namespace English_Exam_Timer
 {
     public partial class Form1 : Form
     {
-        //Version 1.2.0
+        //Version 1.3.0
         //Developed by: Filip Lacina
 
         //Inicializing private variables
