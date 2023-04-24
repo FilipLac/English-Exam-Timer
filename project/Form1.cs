@@ -21,6 +21,7 @@ namespace English_Exam_Timer
         private int l = 0;
         private int remainingtime;
 
+
         public Form1()
         {
             InitializeComponent();
@@ -47,6 +48,7 @@ namespace English_Exam_Timer
             MessageBox.Show(message);*/
         }
 
+        //Import seconds and phases from second form (after user interaction)
         private void Import()
         {
             Times = new int[modifyTimer.TimesFromPhases.Length];
@@ -77,6 +79,23 @@ namespace English_Exam_Timer
             }
             if (ColorMode == "red")
                 this.BackColor = Color.Red;
+        }
+
+        //Calculating Minutes and seconds for second label
+        private void CalculateMinutesAndSeconds(int secs)
+        {
+            int totalSeconds = secs;
+            int minutes = totalSeconds / 60;
+            int seconds = totalSeconds % 60;
+            if (minutes > 9 && seconds > 9)
+                LabelMinAndSec.Text = minutes + " : " + seconds;
+            else if (minutes > 9)
+                LabelMinAndSec.Text = minutes + " : 0" + seconds;
+            else if (seconds > 9)
+                LabelMinAndSec.Text = "0" + minutes + " : " + seconds;
+            else
+                LabelMinAndSec.Text = "0" + minutes + " : 0" + seconds;
+
         }
 
         //This timer shows current day and time
@@ -131,7 +150,8 @@ namespace English_Exam_Timer
             else if (remainingtime <= 30)
                 Flash("yellow");
 
-            lRemainingTime.Text = Convert.ToString(remainingtime);
+            CalculateMinutesAndSeconds(remainingtime);
+            lRemainingTime.Text = Convert.ToString(remainingtime+"s");
         }
 
         private void PauseTimerButton_Click(object sender, EventArgs e)
@@ -143,7 +163,9 @@ namespace English_Exam_Timer
         {
             lapTimer.Stop();
             lapTimer.Dispose();
-            lRemainingTime.Text = "000";
+            lRemainingTime.Text = "000s";
+            LabelMinAndSec.Text = "00:00";
+            ProgressBarTimer.Value = 0;
             this.BackColor = Color.WhiteSmoke;
         }
 

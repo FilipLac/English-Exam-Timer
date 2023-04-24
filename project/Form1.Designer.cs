@@ -42,6 +42,8 @@
             label3 = new Label();
             lLapTime = new Label();
             ProgressBarTimer = new ProgressBar();
+            LabelMinAndSec = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // realTimeTimer
@@ -117,10 +119,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(120, 221);
+            label2.FlatStyle = FlatStyle.Popup;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(12, 70);
             label2.Name = "label2";
-            label2.Size = new Size(341, 59);
+            label2.Size = new Size(259, 45);
             label2.TabIndex = 1;
             label2.Text = "Remaining time: ";
             // 
@@ -128,10 +131,11 @@
             // 
             lRemainingTime.AutoSize = true;
             lRemainingTime.BackColor = Color.Transparent;
-            lRemainingTime.Font = new Font("Segoe UI", 128F, FontStyle.Regular, GraphicsUnit.Point);
-            lRemainingTime.Location = new Point(419, 128);
+            lRemainingTime.FlatStyle = FlatStyle.System;
+            lRemainingTime.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
+            lRemainingTime.Location = new Point(256, 73);
             lRemainingTime.Name = "lRemainingTime";
-            lRemainingTime.Size = new Size(371, 227);
+            lRemainingTime.Size = new Size(74, 46);
             lRemainingTime.TabIndex = 0;
             lRemainingTime.Text = "000";
             // 
@@ -164,17 +168,42 @@
             ProgressBarTimer.Size = new Size(629, 23);
             ProgressBarTimer.TabIndex = 6;
             // 
+            // LabelMinAndSec
+            // 
+            LabelMinAndSec.AutoSize = true;
+            LabelMinAndSec.BackColor = Color.Transparent;
+            LabelMinAndSec.FlatStyle = FlatStyle.System;
+            LabelMinAndSec.Font = new Font("Segoe UI", 96F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelMinAndSec.Location = new Point(447, 148);
+            LabelMinAndSec.Name = "LabelMinAndSec";
+            LabelMinAndSec.Size = new Size(403, 170);
+            LabelMinAndSec.TabIndex = 7;
+            LabelMinAndSec.Text = "00:00";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 38F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(66, 204);
+            label1.Name = "label1";
+            label1.Size = new Size(407, 68);
+            label1.TabIndex = 1;
+            label1.Text = "Remaining time: ";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(876, 537);
+            Controls.Add(lRemainingTime);
+            Controls.Add(LabelMinAndSec);
             Controls.Add(ProgressBarTimer);
             Controls.Add(label3);
             Controls.Add(lLapTime);
+            Controls.Add(label1);
             Controls.Add(label2);
-            Controls.Add(lRemainingTime);
             Controls.Add(bModifyTimer);
             Controls.Add(stopAndResetTimerButton);
             Controls.Add(pauseTimerButton);
@@ -205,5 +234,7 @@
         private Label label3;
         private Label lLapTime;
         private ProgressBar ProgressBarTimer;
+        private Label LabelMinAndSec;
+        private Label label1;
     }
 }
