@@ -1,0 +1,17 @@
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Release\net6.0-windows\English-Exam-Timer.exe
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Release\net6.0-windows\English-Exam-Timer.deps.json
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Release\net6.0-windows\English-Exam-Timer.runtimeconfig.json
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Release\net6.0-windows\English-Exam-Timer.dll
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English Exam Timer.csproj.AssemblyReference.cache
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English_Exam_Timer.Form1.resources
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English_Exam_Timer.ModifyTimer.resources
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English_Exam_Timer.ModifyValue.resources
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English Exam Timer.csproj.GenerateResource.cache
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English Exam Timer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English Exam Timer.AssemblyInfoInputs.cache
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English Exam Timer.AssemblyInfo.cs
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English Exam Timer.csproj.CoreCompileInputs.cache
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English-Exam-Timer.dll
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\refint\English-Exam-Timer.dll
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\English Exam Timer.genruntimeconfig.cache
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\obj\Release\net6.0-windows\ref\English-Exam-Timer.dll

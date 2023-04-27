@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "English-Exam-Timer/1.3.0": {
+        "runtime": {
+          "English-Exam-Timer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "English-Exam-Timer/1.3.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

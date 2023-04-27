@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>EnglishExamTimer</id>
+    <version>1.3.0</version>
+    <authors>Filip Lacina</authors>
+    <license type="file">LICENCE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/FilipLac/English-Exam-Timer</projectUrl>
+    <description>English exam timer - school project by Filip Lacina</description>
+    <tags>timer</tags>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net6.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+    <contentFiles>
+      <files include="any/net6.0-windows7.0/MainIcon.ico" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Release\net6.0-windows\English-Exam-Timer.runtimeconfig.json" target="lib\net6.0-windows7.0\English-Exam-Timer.runtimeconfig.json" />
+    <file src="C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Release\net6.0-windows\English-Exam-Timer.dll" target="lib\net6.0-windows7.0\English-Exam-Timer.dll" />
+    <file src="C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\MainIcon.ico" target="content\MainIcon.ico" />
+    <file src="C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\MainIcon.ico" target="contentFiles\any\net6.0-windows7.0\MainIcon.ico" />
+    <file src="C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\icon.png" target="\icon.png" />
+    <file src="C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\LICENCE.txt" target="\LICENCE.txt" />
+  </files>
+</package>

@@ -1,0 +1,6 @@
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Public-1.3.0\D3DCompiler_47_cor3.dll
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Public-1.3.0\PenImc_cor3.dll
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Public-1.3.0\PresentationNative_cor3.dll
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Public-1.3.0\vcruntime140_cor3.dll
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Public-1.3.0\wpfgfx_cor3.dll
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\project\bin\Public-1.3.0\English-Exam-Timer.exe
