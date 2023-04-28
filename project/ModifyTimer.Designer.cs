@@ -49,9 +49,9 @@
             bSet.BackColor = Color.FromArgb(192, 255, 192);
             bSet.FlatStyle = FlatStyle.Flat;
             bSet.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            bSet.Location = new Point(12, 422);
+            bSet.Location = new Point(12, 487);
             bSet.Name = "bSet";
-            bSet.Size = new Size(180, 68);
+            bSet.Size = new Size(220, 64);
             bSet.TabIndex = 2;
             bSet.Text = "Set";
             bSet.UseVisualStyleBackColor = false;
@@ -62,9 +62,9 @@
             bCancel.BackColor = Color.FromArgb(255, 192, 192);
             bCancel.FlatStyle = FlatStyle.Flat;
             bCancel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            bCancel.Location = new Point(198, 422);
+            bCancel.Location = new Point(238, 487);
             bCancel.Name = "bCancel";
-            bCancel.Size = new Size(181, 68);
+            bCancel.Size = new Size(216, 64);
             bCancel.TabIndex = 2;
             bCancel.Text = "Cancel";
             bCancel.UseVisualStyleBackColor = false;
@@ -78,7 +78,7 @@
             listBox1.ItemHeight = 45;
             listBox1.Location = new Point(12, 56);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(367, 364);
+            listBox1.Size = new Size(442, 409);
             listBox1.TabIndex = 3;
             listBox1.KeyDown += listBox1_KeyDown;
             // 
@@ -114,7 +114,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem1, modifyToolStripMenuItem1, removeToolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(391, 53);
+            menuStrip1.Size = new Size(466, 53);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -146,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(391, 502);
+            ClientSize = new Size(466, 563);
             Controls.Add(menuStrip1);
             Controls.Add(listBox1);
             Controls.Add(bCancel);

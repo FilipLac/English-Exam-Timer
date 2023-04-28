@@ -40,8 +40,8 @@
             // 
             numericUpDown1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             numericUpDown1.Increment = new decimal(new int[] { 10, 0, 0, 0 });
-            numericUpDown1.Location = new Point(238, 62);
-            numericUpDown1.Maximum = new decimal(new int[] { -1530494976, 232830, 0, 0 });
+            numericUpDown1.Location = new Point(299, 70);
+            numericUpDown1.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numericUpDown1.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(120, 50);
@@ -53,7 +53,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(128, 64);
+            label1.Location = new Point(189, 72);
             label1.Name = "label1";
             label1.Size = new Size(104, 45);
             label1.TabIndex = 1;
@@ -66,7 +66,7 @@
             bSet.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             bSet.Location = new Point(7, 145);
             bSet.Name = "bSet";
-            bSet.Size = new Size(225, 78);
+            bSet.Size = new Size(286, 78);
             bSet.TabIndex = 2;
             bSet.Text = "Set";
             bSet.UseVisualStyleBackColor = false;
@@ -77,9 +77,9 @@
             bCancel.BackColor = Color.FromArgb(255, 192, 192);
             bCancel.FlatStyle = FlatStyle.Flat;
             bCancel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            bCancel.Location = new Point(238, 145);
+            bCancel.Location = new Point(299, 145);
             bCancel.Name = "bCancel";
-            bCancel.Size = new Size(236, 78);
+            bCancel.Size = new Size(283, 78);
             bCancel.TabIndex = 2;
             bCancel.Text = "Cancel";
             bCancel.UseVisualStyleBackColor = false;
@@ -89,7 +89,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(53, 24);
+            label2.Location = new Point(105, 28);
             label2.Name = "label2";
             label2.Size = new Size(381, 19);
             label2.TabIndex = 3;
@@ -100,7 +100,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(486, 235);
+            ClientSize = new Size(594, 235);
             Controls.Add(label2);
             Controls.Add(bCancel);
             Controls.Add(bSet);
