@@ -96,7 +96,7 @@ namespace English_Exam_Timer
 
         private void listBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Delete)
+            if (e.KeyCode == Keys.Delete)
             {
                 RemoveValue();
             }

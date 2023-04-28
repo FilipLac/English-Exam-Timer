@@ -56,7 +56,7 @@
             labelTimeDate.AutoSize = true;
             labelTimeDate.BackColor = Color.Transparent;
             labelTimeDate.Font = new Font("Segoe UI", 28F, FontStyle.Regular, GraphicsUnit.Point);
-            labelTimeDate.Location = new Point(12, 19);
+            labelTimeDate.Location = new Point(24, 19);
             labelTimeDate.Name = "labelTimeDate";
             labelTimeDate.Size = new Size(403, 51);
             labelTimeDate.TabIndex = 0;
@@ -66,9 +66,9 @@
             // 
             startTimerButton.BackColor = Color.FromArgb(192, 255, 192);
             startTimerButton.Font = new Font("Segoe UI", 28F, FontStyle.Regular, GraphicsUnit.Point);
-            startTimerButton.Location = new Point(12, 416);
+            startTimerButton.Location = new Point(15, 451);
             startTimerButton.Name = "startTimerButton";
-            startTimerButton.Size = new Size(238, 109);
+            startTimerButton.Size = new Size(296, 134);
             startTimerButton.TabIndex = 1;
             startTimerButton.Text = "Start Timer";
             startTimerButton.UseVisualStyleBackColor = false;
@@ -78,9 +78,9 @@
             // 
             pauseTimerButton.BackColor = Color.Linen;
             pauseTimerButton.Font = new Font("Segoe UI", 28F, FontStyle.Regular, GraphicsUnit.Point);
-            pauseTimerButton.Location = new Point(256, 416);
+            pauseTimerButton.Location = new Point(317, 451);
             pauseTimerButton.Name = "pauseTimerButton";
-            pauseTimerButton.Size = new Size(237, 109);
+            pauseTimerButton.Size = new Size(304, 134);
             pauseTimerButton.TabIndex = 1;
             pauseTimerButton.Text = "Pause Timer";
             pauseTimerButton.UseVisualStyleBackColor = false;
@@ -90,9 +90,9 @@
             // 
             stopAndResetTimerButton.BackColor = Color.MistyRose;
             stopAndResetTimerButton.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
-            stopAndResetTimerButton.Location = new Point(499, 416);
+            stopAndResetTimerButton.Location = new Point(627, 451);
             stopAndResetTimerButton.Name = "stopAndResetTimerButton";
-            stopAndResetTimerButton.Size = new Size(213, 109);
+            stopAndResetTimerButton.Size = new Size(284, 133);
             stopAndResetTimerButton.TabIndex = 1;
             stopAndResetTimerButton.Text = "Stop and Reset Timer";
             stopAndResetTimerButton.UseVisualStyleBackColor = false;
@@ -102,9 +102,9 @@
             // 
             bModifyTimer.BackColor = Color.Silver;
             bModifyTimer.Font = new Font("Segoe UI", 42F, FontStyle.Regular, GraphicsUnit.Point);
-            bModifyTimer.Location = new Point(718, 416);
+            bModifyTimer.Location = new Point(917, 450);
             bModifyTimer.Name = "bModifyTimer";
-            bModifyTimer.Size = new Size(146, 109);
+            bModifyTimer.Size = new Size(184, 134);
             bModifyTimer.TabIndex = 2;
             bModifyTimer.Text = "⚙️";
             bModifyTimer.UseVisualStyleBackColor = false;
@@ -121,7 +121,7 @@
             label2.BackColor = Color.Transparent;
             label2.FlatStyle = FlatStyle.Popup;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 70);
+            label2.Location = new Point(24, 89);
             label2.Name = "label2";
             label2.Size = new Size(259, 45);
             label2.TabIndex = 1;
@@ -133,7 +133,7 @@
             lRemainingTime.BackColor = Color.Transparent;
             lRemainingTime.FlatStyle = FlatStyle.Flat;
             lRemainingTime.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            lRemainingTime.Location = new Point(250, 72);
+            lRemainingTime.Location = new Point(289, 89);
             lRemainingTime.Name = "lRemainingTime";
             lRemainingTime.Size = new Size(74, 46);
             lRemainingTime.TabIndex = 0;
@@ -144,7 +144,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 28F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(599, 19);
+            label3.Location = new Point(759, 19);
             label3.Name = "label3";
             label3.Size = new Size(226, 51);
             label3.TabIndex = 4;
@@ -155,7 +155,7 @@
             lLapTime.AutoSize = true;
             lLapTime.BackColor = Color.Transparent;
             lLapTime.Font = new Font("Segoe UI", 28F, FontStyle.Bold, GraphicsUnit.Point);
-            lLapTime.Location = new Point(820, 19);
+            lLapTime.Location = new Point(998, 19);
             lLapTime.Name = "lLapTime";
             lLapTime.Size = new Size(77, 51);
             lLapTime.TabIndex = 5;
@@ -163,9 +163,9 @@
             // 
             // ProgressBarTimer
             // 
-            ProgressBarTimer.Location = new Point(120, 332);
+            ProgressBarTimer.Location = new Point(120, 350);
             ProgressBarTimer.Name = "ProgressBarTimer";
-            ProgressBarTimer.Size = new Size(629, 23);
+            ProgressBarTimer.Size = new Size(854, 23);
             ProgressBarTimer.TabIndex = 6;
             // 
             // LabelMinAndSec
@@ -174,7 +174,7 @@
             LabelMinAndSec.BackColor = Color.Transparent;
             LabelMinAndSec.FlatStyle = FlatStyle.Flat;
             LabelMinAndSec.Font = new Font("Segoe UI", 96F, FontStyle.Bold, GraphicsUnit.Point);
-            LabelMinAndSec.Location = new Point(418, 155);
+            LabelMinAndSec.Location = new Point(582, 177);
             LabelMinAndSec.Name = "LabelMinAndSec";
             LabelMinAndSec.Size = new Size(403, 170);
             LabelMinAndSec.TabIndex = 7;
@@ -185,7 +185,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 38F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(39, 212);
+            label1.Location = new Point(120, 229);
             label1.Margin = new Padding(0, 0, 3, 0);
             label1.Name = "label1";
             label1.Size = new Size(407, 68);
@@ -198,7 +198,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(876, 537);
+            ClientSize = new Size(1113, 597);
             Controls.Add(label1);
             Controls.Add(lRemainingTime);
             Controls.Add(LabelMinAndSec);

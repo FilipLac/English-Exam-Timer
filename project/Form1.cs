@@ -184,7 +184,7 @@ namespace English_Exam_Timer
             Started = false;
             Paused = false;
             l = 0;
-            lLapTime.Text = Convert.ToString(l+1);
+            lLapTime.Text = Convert.ToString(l + 1);
             lRemainingTime.Text = "000s";
             LabelMinAndSec.Text = "00:00";
             ProgressBarTimer.Value = 0;

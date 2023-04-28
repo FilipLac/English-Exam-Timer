@@ -48,9 +48,10 @@
             // 
             bSet.BackColor = Color.FromArgb(192, 255, 192);
             bSet.FlatStyle = FlatStyle.Flat;
-            bSet.Location = new Point(12, 247);
+            bSet.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            bSet.Location = new Point(12, 422);
             bSet.Name = "bSet";
-            bSet.Size = new Size(112, 37);
+            bSet.Size = new Size(180, 68);
             bSet.TabIndex = 2;
             bSet.Text = "Set";
             bSet.UseVisualStyleBackColor = false;
@@ -60,9 +61,10 @@
             // 
             bCancel.BackColor = Color.FromArgb(255, 192, 192);
             bCancel.FlatStyle = FlatStyle.Flat;
-            bCancel.Location = new Point(130, 247);
+            bCancel.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            bCancel.Location = new Point(198, 422);
             bCancel.Name = "bCancel";
-            bCancel.Size = new Size(119, 37);
+            bCancel.Size = new Size(181, 68);
             bCancel.TabIndex = 2;
             bCancel.Text = "Cancel";
             bCancel.UseVisualStyleBackColor = false;
@@ -71,11 +73,12 @@
             // listBox1
             // 
             listBox1.ContextMenuStrip = listboxContentMenuStrip;
+            listBox1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 27);
+            listBox1.ItemHeight = 45;
+            listBox1.Location = new Point(12, 56);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(237, 214);
+            listBox1.Size = new Size(367, 364);
             listBox1.TabIndex = 3;
             listBox1.KeyDown += listBox1_KeyDown;
             // 
@@ -111,28 +114,31 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem1, modifyToolStripMenuItem1, removeToolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(264, 24);
+            menuStrip1.Size = new Size(391, 53);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
             // addToolStripMenuItem1
             // 
+            addToolStripMenuItem1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            addToolStripMenuItem1.Size = new Size(41, 20);
+            addToolStripMenuItem1.Size = new Size(91, 49);
             addToolStripMenuItem1.Text = "Add";
             addToolStripMenuItem1.Click += ListboxAddValue_Click;
             // 
             // modifyToolStripMenuItem1
             // 
+            modifyToolStripMenuItem1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             modifyToolStripMenuItem1.Name = "modifyToolStripMenuItem1";
-            modifyToolStripMenuItem1.Size = new Size(57, 20);
+            modifyToolStripMenuItem1.Size = new Size(132, 49);
             modifyToolStripMenuItem1.Text = "Modify";
             modifyToolStripMenuItem1.Click += ListboxModifyValue_Click;
             // 
             // removeToolStripMenuItem1
             // 
+            removeToolStripMenuItem1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            removeToolStripMenuItem1.Size = new Size(62, 20);
+            removeToolStripMenuItem1.Size = new Size(146, 49);
             removeToolStripMenuItem1.Text = "Remove";
             removeToolStripMenuItem1.Click += LbRemoveValue_Click;
             // 
@@ -140,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(264, 296);
+            ClientSize = new Size(391, 502);
             Controls.Add(menuStrip1);
             Controls.Add(listBox1);
             Controls.Add(bCancel);
