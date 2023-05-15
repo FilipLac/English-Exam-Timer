@@ -7,7 +7,7 @@ namespace English_Exam_Timer
 {
     public partial class Form1 : Form
     {
-        //Version 1.3.2
+        //Version 1.4.0
         //Developed by: Filip Lacina
 
         //Inicializing private variables
@@ -22,6 +22,7 @@ namespace English_Exam_Timer
         private int remainingtime;
         private bool Paused = false;
         private bool Started = false;
+        private bool WantLoop = true;
 
 
         public Form1()
@@ -58,6 +59,43 @@ namespace English_Exam_Timer
             {
                 Times[i] = modifyTimer.TimesFromPhases[i];
             }
+        }
+
+        private void StartTimer()
+        {
+            if (Paused == false && Started == false)
+            {
+                Started = true;
+                remainingtime = Times[l];
+                lLapTime.Text = Convert.ToString(l + 1);
+                ProgressBarTimer.Maximum = remainingtime;
+                ProgressBarTimer.Value = remainingtime;
+                lapTimer.Start();
+            }
+            else if (Paused == true && Started == false)
+            {
+                Paused = false;
+                Started = true;
+                lapTimer.Start();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void ResetTimer()
+        {
+            lapTimer.Stop();
+            lapTimer.Dispose();
+            Started = false;
+            Paused = false;
+            l = 0;
+            lLapTime.Text = Convert.ToString(l + 1);
+            lRemainingTime.Text = "000s";
+            LabelMinAndSec.Text = "00:00";
+            ProgressBarTimer.Value = 0;
+            this.BackColor = Color.WhiteSmoke;
         }
 
         //Flash method
@@ -109,26 +147,7 @@ namespace English_Exam_Timer
         //The real timer
         private void StartTimerButton_Click(object sender, EventArgs e)
         {
-            if (Paused == false && Started == false)
-            {
-                Started = true;
-                remainingtime = Times[l];
-                lLapTime.Text = Convert.ToString(l + 1);
-                ProgressBarTimer.Maximum = remainingtime;
-                ProgressBarTimer.Value = remainingtime;
-                lapTimer.Start();
-            }
-            else if (Paused == true && Started == false)
-            {
-                Paused = false;
-                Started = true;
-                lapTimer.Start();
-            }
-            else
-            {
-
-            }
-
+            StartTimer();
         }
         private void LapTimer_Tick(object sender, EventArgs e)
         {
@@ -143,9 +162,20 @@ namespace English_Exam_Timer
                 l++;
                 if (l == Times.Length)
                 {
-                    lapTimer.Stop();
-                    lapTimer.Dispose();
-                    MessageBox.Show("End", "Timer finished", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    if (WantLoop == false)
+                    {
+                        lapTimer.Stop();
+                        lapTimer.Dispose();
+                        MessageBox.Show("End", "Timer finished", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        ResetTimer();
+                    }
+                    else
+                    {
+                        lapTimer.Stop();
+                        lapTimer.Dispose();
+                        ResetTimer();
+                        StartTimer();
+                    }
                 }
                 else
                 {
@@ -179,16 +209,7 @@ namespace English_Exam_Timer
 
         private void StopAndResetTimerButton_Click(object sender, EventArgs e)
         {
-            lapTimer.Stop();
-            lapTimer.Dispose();
-            Started = false;
-            Paused = false;
-            l = 0;
-            lLapTime.Text = Convert.ToString(l + 1);
-            lRemainingTime.Text = "000s";
-            LabelMinAndSec.Text = "00:00";
-            ProgressBarTimer.Value = 0;
-            this.BackColor = Color.WhiteSmoke;
+            ResetTimer();
         }
 
         //Second form (form2) with user modifications to time and phases
@@ -203,6 +224,18 @@ namespace English_Exam_Timer
             else
             {
                 MessageBox.Show("Timer was not changed!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ChbWantLoop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChbWantLoop.Checked == true)
+            {
+                WantLoop = true;
+            }
+            else
+            {
+                WantLoop = false;
             }
         }
     }

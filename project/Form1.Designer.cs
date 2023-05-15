@@ -44,6 +44,7 @@
             ProgressBarTimer = new ProgressBar();
             LabelMinAndSec = new Label();
             label1 = new Label();
+            ChbWantLoop = new CheckBox();
             SuspendLayout();
             // 
             // realTimeTimer
@@ -193,12 +194,27 @@
             label1.Text = "Remaining time: ";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // ChbWantLoop
+            // 
+            ChbWantLoop.AutoSize = true;
+            ChbWantLoop.Checked = true;
+            ChbWantLoop.CheckState = CheckState.Checked;
+            ChbWantLoop.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
+            ChbWantLoop.Location = new Point(933, 379);
+            ChbWantLoop.Name = "ChbWantLoop";
+            ChbWantLoop.Size = new Size(154, 69);
+            ChbWantLoop.TabIndex = 8;
+            ChbWantLoop.Text = "Loop";
+            ChbWantLoop.UseVisualStyleBackColor = true;
+            ChbWantLoop.CheckedChanged += ChbWantLoop_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1113, 597);
+            Controls.Add(ChbWantLoop);
             Controls.Add(label1);
             Controls.Add(lRemainingTime);
             Controls.Add(LabelMinAndSec);
@@ -238,5 +254,6 @@
         private ProgressBar ProgressBarTimer;
         private Label LabelMinAndSec;
         private Label label1;
+        private CheckBox ChbWantLoop;
     }
 }
