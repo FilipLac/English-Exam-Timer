@@ -7,8 +7,8 @@ namespace English_Exam_Timer
 {
     public partial class Form1 : Form
     {
-        //Version 1.4.0
-        //Developed by: Filip Lacina
+        private string Version = "1.4.1.";
+        private string Developedby = "Filip Lacina";
 
         //Inicializing private variables
         ModifyTimer modifyTimer = new();
@@ -33,6 +33,7 @@ namespace English_Exam_Timer
         //Form1 load action with timer start
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Text = $"Graduation Exam Timer by: {Developedby}(v{Version})";
             realTimeTimer.Start();
             try
             {

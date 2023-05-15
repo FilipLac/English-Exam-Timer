@@ -200,7 +200,7 @@
             ChbWantLoop.Checked = true;
             ChbWantLoop.CheckState = CheckState.Checked;
             ChbWantLoop.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            ChbWantLoop.Location = new Point(933, 379);
+            ChbWantLoop.Location = new Point(934, 379);
             ChbWantLoop.Name = "ChbWantLoop";
             ChbWantLoop.Size = new Size(154, 69);
             ChbWantLoop.TabIndex = 8;
@@ -232,7 +232,7 @@
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Graduation Exam Timer";
+            Text = "Graduation Exam Timer by: Filip Lacina(v1.4.0.)";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
