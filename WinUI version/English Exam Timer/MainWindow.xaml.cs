@@ -2,16 +2,17 @@ using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using Microsoft.UI.Xaml;
-using System.Windows;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI;
+using Microsoft.UI.Dispatching;
+using Microsoft.UI.Windowing;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -21,11 +22,13 @@ using Windows.Foundation.Collections;
 
 namespace English_Exam_Timer
 {
-    public class TimerViewModel : INotifyPropertyChanged
+    public partial class TimerViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public static Window MainWindow { get; set; } = new Window();
+        private static readonly DispatcherQueue dispatcherQueue = DispatcherQueue.GetForCurrentThread();
 
-        private readonly int[] InitialTime = { 30, 150, 90, 90, 60, 300, 180, 300 };
+        private readonly int[] InitialTime = [30, 150, 90, 90, 60, 300, 180, 300];
         private int l = 0;
         private int remainingTime;
         private bool paused = false;
@@ -37,7 +40,7 @@ namespace English_Exam_Timer
         public string LapNumber { get; private set; } = "1";
         public string RemainingSeconds { get; private set; } = "000s";
 
-        private DispatcherTimer lapTimer;
+        private readonly DispatcherTimer lapTimer;
 
         public TimerViewModel()
         {
@@ -75,22 +78,23 @@ namespace English_Exam_Timer
             UpdateUI();
         }
 
-        private async void Flash(string colorMode)
+        private static async Task Flash(string colorMode)
         {
-            Application.Current.Dispatcher.Invoke(() =>
+            dispatcherQueue.TryEnqueue(() =>
             {
-                var window = Application.Current.MainWindow;
-                if (colorMode == "yellow") window.Background = System.Windows.Media.Brushes.Yellow;
-                if (colorMode == "red") window.Background = System.Windows.Media.Brushes.Red;
+                if (colorMode == "yellow") MainWindow.Content = new Grid { Background = new SolidColorBrush(Microsoft.UI.Colors.Yellow) };
+                if (colorMode == "red") MainWindow.Content = new Grid { Background = new SolidColorBrush(Microsoft.UI.Colors.Red) };
             });
+
             await Task.Delay(500);
-            Application.Current.Dispatcher.Invoke(() =>
+
+            dispatcherQueue.TryEnqueue(() =>
             {
-                Application.Current.MainWindow.Background = System.Windows.Media.Brushes.WhiteSmoke;
+                MainWindow.Content = new Grid { Background = new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke) };
             });
         }
 
-        private void LapTimer_Tick(object sender, EventArgs e)
+        private async void LapTimer_Tick(object? sender, object? e)
         {
             if (remainingTime > 0)
             {
@@ -104,7 +108,7 @@ namespace English_Exam_Timer
                     if (!wantLoop)
                     {
                         lapTimer.Stop();
-                        MessageBox.Show("End", "Timer finished", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        await ShowMessageDialog("End", "Timer finished");
                         ResetTimer();
                     }
                     else
@@ -119,10 +123,23 @@ namespace English_Exam_Timer
                 }
             }
 
-            if (remainingTime < 10) Flash("red");
-            else if (remainingTime <= 30) Flash("yellow");
+            if (remainingTime < 10) await Flash("red");
+            else if (remainingTime <= 30) await Flash("yellow");
 
             UpdateUI();
+        }
+
+        private static async Task ShowMessageDialog(string title, string content)
+        {
+            var dialog = new ContentDialog
+            {
+                Title = title,
+                Content = content,
+                CloseButtonText = "OK",
+                XamlRoot = MainWindow.Content.XamlRoot
+            };
+
+            await dialog.ShowAsync();
         }
 
         private void UpdateUI()
@@ -130,9 +147,9 @@ namespace English_Exam_Timer
             LapNumber = (l + 1).ToString();
             RemainingSeconds = $"{remainingTime}s";
             DisplayTime = $"{remainingTime / 60:D2}:{remainingTime % 60:D2}";
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("LapNumber"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RemainingSeconds"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DisplayTime"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LapNumber)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RemainingSeconds)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayTime)));
         }
     }
 }

@@ -7,3 +7,6 @@ C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Ti
 C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\MainWindow.xaml
 C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App.xbf
 C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\MainWindow.xbf
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\XamlTypeInfo.g.cs
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\XamlSaveStateFile.xml
+C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\English Exam Timer.GeneratedMSBuildEditorConfig.editorconfig
