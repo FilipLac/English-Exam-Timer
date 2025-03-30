@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="EnglishExamTimer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="G.E. Timer (v1.4.0)" Height="600" Width="1100"
+        Background="WhiteSmoke" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <!-- Datum a čas -->
+        <Label x:Name="labelTimeDate" 
+               FontSize="28" 
+               HorizontalAlignment="Left" 
+               Margin="24,19,0,0"
+               Content="Current Date and Time"/>
+
+        <!-- Remaining Time Label -->
+        <Label Content="Remaining time:" 
+               FontSize="24" 
+               HorizontalAlignment="Left" 
+               Margin="24,89,0,0"/>
+        <Label x:Name="lRemainingTime" 
+               FontSize="25" 
+               HorizontalAlignment="Left" 
+               Margin="289,89,0,0"
+               Content="000"/>
+
+        <!-- ProgressBar -->
+        <ProgressBar x:Name="ProgressBarTimer" 
+                     Height="23" 
+                     Width="854" 
+                     HorizontalAlignment="Left" 
+                     Margin="120,350,0,0"/>
+
+        <!-- Minuty a sekundy -->
+        <Label x:Name="LabelMinAndSec" 
+               FontSize="96" FontWeight="Bold"
+               HorizontalAlignment="Left" 
+               Margin="582,177,0,0"
+               Content="00:00"/>
+
+        <!-- Lap Time -->
+        <Label Content="Current Lap:" 
+               FontSize="28" 
+               HorizontalAlignment="Left" 
+               Margin="759,19,0,0"/>
+        <Label x:Name="lLapTime" 
+               FontSize="28" FontWeight="Bold"
+               HorizontalAlignment="Left" 
+               Margin="998,19,0,0"
+               Content="lap"/>
+
+        <!-- Buttons -->
+        <Button x:Name="startTimerButton" 
+                Content="Start Timer" 
+                FontSize="28" 
+                Background="LightGreen"
+                Width="296" Height="134"
+                HorizontalAlignment="Left"
+                Margin="15,451,0,0"
+                Click="StartTimerButton_Click"/>
+
+        <Button x:Name="pauseTimerButton" 
+                Content="Pause Timer" 
+                FontSize="28" 
+                Background="Linen"
+                Width="304" Height="134"
+                HorizontalAlignment="Left"
+                Margin="317,451,0,0"
+                Click="PauseTimerButton_Click"/>
+
+        <Button x:Name="stopAndResetTimerButton" 
+                Content="Stop and Reset Timer" 
+                FontSize="22" 
+                Background="MistyRose"
+                Width="284" Height="133"
+                HorizontalAlignment="Left"
+                Margin="627,451,0,0"
+                Click="StopAndResetTimerButton_Click"/>
+
+        <Button x:Name="bModifyTimer" 
+                Content="⚙️" 
+                FontSize="42" 
+                Background="Silver"
+                Width="184" Height="134"
+                HorizontalAlignment="Left"
+                Margin="917,450,0,0"
+                Click="ButtonModifyTimer_Click"/>
+
+        <!-- Checkbox -->
+        <CheckBox x:Name="ChbWantLoop" 
+                  Content="Loop"
+                  FontSize="36" 
+                  IsChecked="True"
+                  HorizontalAlignment="Left"
+                  Margin="934,379,0,0"
+                  Checked="ChbWantLoop_CheckedChanged"/>
+    </Grid>
+</Window>

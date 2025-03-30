@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "English Exam Timer (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "English Exam Timer (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
