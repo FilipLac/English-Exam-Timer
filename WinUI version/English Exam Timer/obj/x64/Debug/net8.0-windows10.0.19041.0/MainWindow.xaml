@@ -57,6 +57,7 @@
 
         <!-- Buttons -->
         <Button x:ConnectionId='9' x:Name="StartTimer" 
+                Content="Start"
                 FontSize="28" 
                 Background="LightGreen"
                 Width="296" Height="134"
@@ -65,6 +66,7 @@
                                               />
 
         <Button x:ConnectionId='10' x:Name="PauseTimer" 
+                Content="Pause"
                 FontSize="28" 
                 Background="Linen"
                 Width="304" Height="134"
@@ -73,16 +75,18 @@
                                               />
 
         <Button x:ConnectionId='11' x:Name="StopandResetTimer" 
+                Content="Stop/Reset Timer"
                 FontSize="22" 
-                Background="MistyRose"
+                Background="OrangeRed"
                 Width="284" Height="133"
                 HorizontalAlignment="Left"
                 Margin="627,451,0,0"
                                                      />
 
         <Button x:ConnectionId='12' x:Name="ModifyTimer" 
+                Content="⚙"
                 FontSize="42" 
-                Background="Silver"
+                Background="Gray"
                 Width="184" Height="134"
                 HorizontalAlignment="Left"
                 Margin="917,450,0,0"

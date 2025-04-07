@@ -57,6 +57,7 @@
 
         <!-- Buttons -->
         <Button x:Name="StartTimer" 
+                Content="Start"
                 FontSize="28" 
                 Background="LightGreen"
                 Width="296" Height="134"
@@ -65,6 +66,7 @@
                 Click="StartTimerButton_Click"/>
 
         <Button x:Name="PauseTimer" 
+                Content="Pause"
                 FontSize="28" 
                 Background="Linen"
                 Width="304" Height="134"
@@ -73,27 +75,35 @@
                 Click="PauseTimerButton_Click"/>
 
         <Button x:Name="StopandResetTimer" 
+                Content="Stop/Reset Timer"
                 FontSize="22" 
-                Background="MistyRose"
+                Background="OrangeRed"
                 Width="284" Height="133"
                 HorizontalAlignment="Left"
                 Margin="627,451,0,0"
                 Click="StopAndResetTimerButton_Click"/>
 
         <Button x:Name="ModifyTimer" 
+                Content="\uE713"
                 FontSize="42" 
-                Background="Silver"
+                Background="Gray"
                 Width="184" Height="134"
                 HorizontalAlignment="Left"
                 Margin="917,450,0,0"
                 Click="ButtonModifyTimer_Click"/>
 
-        <!-- Checkbox -->
+        <!-- Checkbox
         <CheckBox x:Name="Loop"
                   FontSize="36" 
                   IsChecked="True"
                   HorizontalAlignment="Left"
                   Margin="934,379,0,0"
-                  Checked="ChbWantLoop_CheckedChanged"/>
+                  Checked="ChbWantLoop_CheckedChanged"/> -->
+        <ToggleSwitch AutomationProperties.Name="simple ToggleSwitch"
+                  x:Name="Loop"
+                  FontSize="24" 
+                  IsOn="True"
+                  HorizontalAlignment="Left"
+                  Margin="934,379,0,0"/>
     </Grid>
 </Window>
