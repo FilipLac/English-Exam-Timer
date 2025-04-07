@@ -71,7 +71,7 @@ namespace English_Exam_Timer
 
         private void ChbWantLoop_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            ViewModel.SetLoop(Loop.IsChecked ?? false);
+            ViewModel.SetLoop(LoopTS.IsOn == true);
         }
 
         private void ViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
@@ -87,18 +87,13 @@ namespace English_Exam_Timer
 
         private void UpdateUI()
         {
-            nulanuladvojteckanulanula.Text = ViewModel.DisplayTime;
+            TimerMain.Text = ViewModel.DisplayTime;
             lap.Text = ViewModel.LapNumber;
             lRemainingTime.Text = ViewModel.RemainingSeconds;
         }
     }
     public partial class TimerViewModel : INotifyPropertyChanged
     {
-        public void ToggleLoop(bool isOn)
-        {
-            wantLoop = isOn;
-        }
-
         public event PropertyChangedEventHandler? PropertyChanged;
         public static Window MainWindow { get; set; } = new Window();
         private static readonly DispatcherQueue dispatcherQueue = DispatcherQueue.GetForCurrentThread();

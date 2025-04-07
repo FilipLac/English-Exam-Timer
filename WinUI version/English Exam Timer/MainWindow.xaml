@@ -39,7 +39,7 @@
                      Margin="120,350,0,0"/>
 
         <!-- Minuty a sekundy -->
-        <TextBlock x:Name="nulanuladvojteckanulanula" 
+        <TextBlock x:Name="TimerMain" 
                FontSize="96" FontWeight="Bold"
                HorizontalAlignment="Left" 
                Margin="582,177,0,0"/>
@@ -84,7 +84,7 @@
                 Click="StopAndResetTimerButton_Click"/>
 
         <Button x:Name="ModifyTimer" 
-                Content="\uE713"
+                Content="⚙"
                 FontSize="42" 
                 Background="Gray"
                 Width="184" Height="134"
@@ -99,11 +99,12 @@
                   HorizontalAlignment="Left"
                   Margin="934,379,0,0"
                   Checked="ChbWantLoop_CheckedChanged"/> -->
-        <ToggleSwitch AutomationProperties.Name="simple ToggleSwitch"
-                  x:Name="Loop"
+        <ToggleSwitch 
+                  x:Name="LoopTS"
                   FontSize="24" 
                   IsOn="True"
                   HorizontalAlignment="Left"
                   Margin="934,379,0,0"/>
+            <!-- AutomationProperties.Name="LoopTS"-->
     </Grid>
 </Window>

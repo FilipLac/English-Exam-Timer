@@ -39,7 +39,7 @@
                      Margin="120,350,0,0"/>
 
         <!-- Minuty a sekundy -->
-        <TextBlock x:ConnectionId='6' x:Name="nulanuladvojteckanulanula" 
+        <TextBlock x:ConnectionId='6' x:Name="TimerMain" 
                FontSize="96" FontWeight="Bold"
                HorizontalAlignment="Left" 
                Margin="582,177,0,0"/>
@@ -92,13 +92,20 @@
                 Margin="917,450,0,0"
                                                />
 
-        <!-- Checkbox -->
-        <CheckBox x:ConnectionId='13' x:Name="Loop"
+        <!-- Checkbox
+        <CheckBox x:Name="Loop"
                   FontSize="36" 
                   IsChecked="True"
                   HorizontalAlignment="Left"
                   Margin="934,379,0,0"
-                                                      />
+                  Checked="ChbWantLoop_CheckedChanged"/> -->
+        <ToggleSwitch x:ConnectionId='13' 
+                  x:Name="LoopTS"
+                  FontSize="24" 
+                  IsOn="True"
+                  HorizontalAlignment="Left"
+                  Margin="934,379,0,0"/>
+            <!-- AutomationProperties.Name="LoopTS"-->
     </Grid>
 </Window>
 
