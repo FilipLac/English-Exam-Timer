@@ -16,9 +16,9 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Navigation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
+// To learn more about WinUI, the WinUI project structure, and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace English_Exam_Timer
 {
@@ -47,7 +47,6 @@ namespace English_Exam_Timer
 
         private void PauseTimerButton_Click(object sender, RoutedEventArgs e)
         {
-            // Pauza funguje tak, že se timer prostì zastaví
             ViewModel.PauseTimer();
         }
 
@@ -59,7 +58,7 @@ namespace English_Exam_Timer
         private void ButtonModifyTimer_Click(object sender, RoutedEventArgs e)
         {
             // Tady mùžeš otevøít nové okno nebo dialog pro nastavení èasù
-            ContentDialog dialog = new ContentDialog
+            ContentDialog dialog = new()
             {
                 Title = "Modify Timer",
                 Content = "This feature is not yet implemented.",
@@ -69,10 +68,10 @@ namespace English_Exam_Timer
             _ = dialog.ShowAsync();
         }
 
-        private void ChbWantLoop_CheckedChanged(object sender, RoutedEventArgs e)
-        {
-            ViewModel.SetLoop(LoopTS.IsOn == true);
-        }
+        //private void ChbWantLoop_CheckedChanged(object sender, RoutedEventArgs e)
+        //{
+        //    ViewModel.SetLoop(LoopTS.IsOn == true);
+        //}
 
         private void ViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
@@ -94,16 +93,16 @@ namespace English_Exam_Timer
     }
     public partial class TimerViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
         public static Window MainWindow { get; set; } = new Window();
+        public event PropertyChangedEventHandler? PropertyChanged;
         private static readonly DispatcherQueue dispatcherQueue = DispatcherQueue.GetForCurrentThread();
 
-        private readonly int[] InitialTime = [30, 150, 90, 90, 60, 300, 180, 300];
         private int l = 0;
         private int remainingTime;
         private bool paused = false;
         private bool started = false;
         private bool wantLoop = true;
+        private readonly int[] InitialTime = [35, 150, 90, 90, 60, 300, 180, 300];
 
         public int[] Times { get; private set; }
         public string DisplayTime { get; private set; } = "00:00";

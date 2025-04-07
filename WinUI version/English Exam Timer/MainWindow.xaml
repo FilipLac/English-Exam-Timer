@@ -13,16 +13,17 @@
     <Grid Background="WhiteSmoke">
         <!-- Datum a čas -->
         <TextBlock x:Name="CurrentDateandTime" 
+               Text="Current Date and Time"
                FontSize="28" 
                HorizontalAlignment="Left" 
                Margin="24,19,0,0"/>
 
         <!-- Remaining Time TextBlock -->
         <TextBlock x:Name="Remainingtime" 
+               Text="Remaining Time: "
                FontSize="24" 
                HorizontalAlignment="Left" 
                Margin="24,89,0,0"/>
-        <!--dvojtecka u RemainingTime-->
 
         <TextBlock x:Name="lRemainingTime"
            FontSize="25"
@@ -40,12 +41,14 @@
 
         <!-- Minuty a sekundy -->
         <TextBlock x:Name="TimerMain" 
+               Text="00:00"
                FontSize="96" FontWeight="Bold"
                HorizontalAlignment="Left" 
                Margin="582,177,0,0"/>
 
         <!-- Lap Time -->
         <TextBlock x:Name="CurrentLap" 
+               Text="Current Lap: "
                FontSize="28" 
                HorizontalAlignment="Left" 
                Margin="759,19,0,0"/>
@@ -53,7 +56,6 @@
                FontSize="28" FontWeight="Bold"
                HorizontalAlignment="Left" 
                Margin="998,19,0,0"/>
-        <!--dvojtecka u current lap-->
 
         <!-- Buttons -->
         <Button x:Name="StartTimer" 
