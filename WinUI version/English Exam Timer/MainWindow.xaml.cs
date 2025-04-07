@@ -22,8 +22,83 @@ using Windows.Foundation.Collections;
 
 namespace English_Exam_Timer
 {
+    public sealed partial class MainWindow : Window
+    {
+        public TimerViewModel ViewModel { get; } = new TimerViewModel();
+
+        public MainWindow()
+        {
+            this.InitializeComponent();
+
+            // Pøiøazení hlavního okna pro zmìnu pozadí
+            TimerViewModel.MainWindow = this;
+
+            // Pøihlášení k události zmìny vlastností ViewModelu
+            ViewModel.PropertyChanged += ViewModel_PropertyChanged;
+
+            // Poèáteèní naplnìní UI
+            UpdateUI();
+        }
+
+        private void StartTimerButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.StartTimer();
+        }
+
+        private void PauseTimerButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Pauza funguje tak, že se timer prostì zastaví
+            ViewModel.PauseTimer();
+        }
+
+        private void StopAndResetTimerButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.ResetTimer();
+        }
+
+        private void ButtonModifyTimer_Click(object sender, RoutedEventArgs e)
+        {
+            // Tady mùžeš otevøít nové okno nebo dialog pro nastavení èasù
+            ContentDialog dialog = new ContentDialog
+            {
+                Title = "Modify Timer",
+                Content = "This feature is not yet implemented.",
+                CloseButtonText = "OK",
+                XamlRoot = this.Content.XamlRoot
+            };
+            _ = dialog.ShowAsync();
+        }
+
+        private void ChbWantLoop_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SetLoop(Loop.IsChecked ?? false);
+        }
+
+        private void ViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            // Zmìny v UI podle ViewModelu
+            if (e.PropertyName == nameof(ViewModel.DisplayTime) ||
+                e.PropertyName == nameof(ViewModel.LapNumber) ||
+                e.PropertyName == nameof(ViewModel.RemainingSeconds))
+            {
+                UpdateUI();
+            }
+        }
+
+        private void UpdateUI()
+        {
+            nulanuladvojteckanulanula.Text = ViewModel.DisplayTime;
+            lap.Text = ViewModel.LapNumber;
+            lRemainingTime.Text = ViewModel.RemainingSeconds;
+        }
+    }
     public partial class TimerViewModel : INotifyPropertyChanged
     {
+        public void ToggleLoop(bool isOn)
+        {
+            wantLoop = isOn;
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
         public static Window MainWindow { get; set; } = new Window();
         private static readonly DispatcherQueue dispatcherQueue = DispatcherQueue.GetForCurrentThread();
@@ -128,6 +203,21 @@ namespace English_Exam_Timer
 
             UpdateUI();
         }
+        public void PauseTimer()
+        {
+            if (started)
+            {
+                paused = true;
+                started = false;
+                lapTimer.Stop();
+            }
+        }
+
+        public void SetLoop(bool loop)
+        {
+            wantLoop = loop;
+        }
+
 
         private static async Task ShowMessageDialog(string title, string content)
         {
