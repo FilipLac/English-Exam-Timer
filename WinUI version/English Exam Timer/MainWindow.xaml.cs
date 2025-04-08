@@ -196,11 +196,11 @@ namespace English_Exam_Timer
                 {
                     SetBackgroundAction?.Invoke(new SolidColorBrush(Microsoft.UI.Colors.Red));
                 }
-                else if (secondsLeft <= 10)
+                else if (secondsLeft < 10)
                 {
                     await FlashBlink(Microsoft.UI.Colors.Red, TimeSpan.FromMilliseconds(300), secondsLeft, token);
                 }
-                else if (secondsLeft <= 30)
+                else if (secondsLeft <= 30 && secondsLeft >=10)
                 {
                     await FlashBlink(Microsoft.UI.Colors.Yellow, TimeSpan.FromMilliseconds(500), secondsLeft, token);
                 }
@@ -260,22 +260,22 @@ namespace English_Exam_Timer
                         lapTimer.Stop();
                         await ShowMessageDialog("End", "Timer finished");
                         ResetTimer();
+                        return;
                     }
                     else
                     {
                         ResetTimer();
                         StartTimer();
+                        return;
                     }
                 }
                 else
                 {
                     remainingTime = Times[l];
+                    await StartFlashing(remainingTime);
                 }
             }
-
-            if (remainingTime <= 30)
-                await StartFlashing(remainingTime);
-            
+            await StartFlashing(remainingTime);
             UpdateUI();
         }
         public void PauseTimer()
