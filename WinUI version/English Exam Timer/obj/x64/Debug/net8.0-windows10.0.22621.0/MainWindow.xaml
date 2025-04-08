@@ -10,9 +10,9 @@
     <!--Height="600" Width="1100"-->
     <!--WindowStartupLocation="CenterScreen"-->
 
-    <Grid Background="WhiteSmoke">
+    <Grid x:ConnectionId='2' x:Name="RootGrid" Background="WhiteSmoke">
         <!-- Datum a čas -->
-        <TextBlock x:ConnectionId='2' x:Name="CurrentDateandTime" 
+        <TextBlock x:ConnectionId='3' x:Name="CurrentDateandTime" 
                Text="Current Date and Time"
                
                FontSize="28" 
@@ -20,13 +20,13 @@
                Margin="24,19,0,0"/>
 
         <!-- Remaining Time TextBlock -->
-        <TextBlock x:ConnectionId='3' x:Name="Remainingtime" 
+        <TextBlock x:ConnectionId='4' x:Name="Remainingtime" 
                Text="Remaining Time: "
                FontSize="24" 
                HorizontalAlignment="Left" 
                Margin="24,89,0,0"/>
 
-        <TextBlock x:ConnectionId='4' x:Name="lRemainingTime"
+        <TextBlock x:ConnectionId='5' x:Name="lRemainingTime"
            FontSize="25"
            HorizontalAlignment="Left"
            Margin="289,89,0,0"
@@ -34,32 +34,32 @@
 
 
         <!-- ProgressBar -->
-        <ProgressBar x:ConnectionId='5' x:Name="ProgressBarTimer" 
+        <ProgressBar x:ConnectionId='6' x:Name="ProgressBarTimer" 
                      Height="23" 
                      Width="854" 
                      HorizontalAlignment="Left" 
                      Margin="120,350,0,0"/>
 
         <!-- Minuty a sekundy -->
-        <TextBlock x:ConnectionId='6' x:Name="TimerMain" 
+        <TextBlock x:ConnectionId='7' x:Name="TimerMain" 
                Text="00:00"
                FontSize="96" FontWeight="Bold"
                HorizontalAlignment="Left" 
                Margin="582,177,0,0"/>
 
         <!-- Lap Time -->
-        <TextBlock x:ConnectionId='7' x:Name="CurrentLap" 
+        <TextBlock x:ConnectionId='8' x:Name="CurrentLap" 
                Text="Current Lap: "
                FontSize="28" 
                HorizontalAlignment="Left" 
                Margin="759,19,0,0"/>
-        <TextBlock x:ConnectionId='8' x:Name="lap" 
+        <TextBlock x:ConnectionId='9' x:Name="lap" 
                FontSize="28" FontWeight="Bold"
                HorizontalAlignment="Left" 
                Margin="998,19,0,0"/>
 
         <!-- Buttons -->
-        <Button x:ConnectionId='9' x:Name="StartTimer" 
+        <Button x:ConnectionId='10' x:Name="StartTimer" 
                 Content="Start"
                 FontSize="28" 
                 Background="LightGreen"
@@ -68,7 +68,7 @@
                 Margin="15,451,0,0"
                                               />
 
-        <Button x:ConnectionId='10' x:Name="PauseTimer" 
+        <Button x:ConnectionId='11' x:Name="PauseTimer" 
                 Content="Pause"
                 FontSize="28" 
                 Background="Linen"
@@ -77,7 +77,7 @@
                 Margin="317,451,0,0"
                                               />
 
-        <Button x:ConnectionId='11' x:Name="StopandResetTimer" 
+        <Button x:ConnectionId='12' x:Name="StopandResetTimer" 
                 Content="Stop/Reset Timer"
                 FontSize="22" 
                 Background="OrangeRed"
@@ -86,7 +86,7 @@
                 Margin="627,451,0,0"
                                                      />
 
-        <Button x:ConnectionId='12' x:Name="ModifyTimer" 
+        <Button x:ConnectionId='13' x:Name="ModifyTimer" 
                 Content="⚙"
                 FontSize="42" 
                 Background="Gray"
@@ -102,7 +102,7 @@
                   HorizontalAlignment="Left"
                   Margin="934,379,0,0"
                   Checked="ChbWantLoop_CheckedChanged"/> -->
-        <ToggleSwitch x:ConnectionId='13' 
+        <ToggleSwitch x:ConnectionId='14' 
                   x:Name="LoopTS"
                   FontSize="24" 
                   IsOn="True"

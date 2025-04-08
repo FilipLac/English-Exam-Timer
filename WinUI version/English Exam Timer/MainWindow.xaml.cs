@@ -17,6 +17,7 @@ using Microsoft.UI.Xaml.Navigation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
+using System.Threading;
 
 // To learn more about WinUI, the WinUI project structure, and more about our project templates, see: http://aka.ms/winui-project-info.
 
@@ -38,6 +39,15 @@ namespace English_Exam_Timer
 
             // Poèáteèní naplnìní UI
             UpdateUI();
+
+            ViewModel.SetBackgroundAction = (brush) =>
+            {
+                DispatcherQueue.TryEnqueue(() =>
+                {
+                    RootGrid.Background = brush;
+                });
+            };
+
         }
 
         private void StartTimerButton_Click(object sender, RoutedEventArgs e)
@@ -107,13 +117,15 @@ namespace English_Exam_Timer
         public static Window MainWindow { get; set; } = new Window();
         public event PropertyChangedEventHandler? PropertyChanged;
         private static readonly DispatcherQueue dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+        public Action<Brush>? SetBackgroundAction { get; set; }
+
 
         private int l = 0;
         private int remainingTime;
         private bool paused = false;
         private bool started = false;
         private bool wantLoop = true;
-        private readonly int[] InitialTime = [35, 150, 90, 90, 60, 300, 180, 300];
+        private readonly int[] InitialTime = [30, 150, 90, 90, 60, 300, 180, 300];
 
         public int Lap1Seconds { get; private set; } = 120;
         public int Lap2Seconds { get; private set; } = 180;
@@ -171,21 +183,66 @@ namespace English_Exam_Timer
             UpdateUI();
         }
 
-        private static async Task Flash(string colorMode)
+        private CancellationTokenSource flashCts;
+        private async Task StartFlashing(int secondsLeft)
         {
-            dispatcherQueue.TryEnqueue(() =>
-            {
-                if (colorMode == "yellow") MainWindow.Content = new Grid { Background = new SolidColorBrush(Microsoft.UI.Colors.Yellow) };
-                if (colorMode == "red") MainWindow.Content = new Grid { Background = new SolidColorBrush(Microsoft.UI.Colors.Red) };
-            });
+            flashCts?.Cancel();
+            flashCts = new CancellationTokenSource();
+            var token = flashCts.Token;
 
-            await Task.Delay(500);
-
-            dispatcherQueue.TryEnqueue(() =>
+            try
             {
-                MainWindow.Content = new Grid { Background = new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke) };
-            });
+                if (secondsLeft <= 5)
+                {
+                    SetBackgroundAction?.Invoke(new SolidColorBrush(Microsoft.UI.Colors.Red));
+                }
+                else if (secondsLeft <= 10)
+                {
+                    await FlashBlink(Microsoft.UI.Colors.Red, TimeSpan.FromMilliseconds(300), secondsLeft, token);
+                }
+                else if (secondsLeft <= 30)
+                {
+                    await FlashBlink(Microsoft.UI.Colors.Yellow, TimeSpan.FromMilliseconds(500), secondsLeft, token);
+                }
+                else
+                {
+                        SetBackgroundAction?.Invoke(new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke));
+                }
+            }
+            catch (TaskCanceledException)
+            {
+                // Ignoruj pøerušení
+            }
         }
+        private async Task FlashBlink(Color color, TimeSpan interval, int secondsLeft, CancellationToken token)
+        {
+            var brush = new SolidColorBrush(color);
+            var offBrush = new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke);
+            for (int i = 0; i < secondsLeft && !token.IsCancellationRequested; i++)
+            {
+                SetBackgroundAction?.Invoke(brush);
+                await Task.Delay(interval, token);
+                SetBackgroundAction?.Invoke(offBrush);
+                await Task.Delay(interval, token);
+            }
+        }
+
+
+        //private async Task Flash(string colorMode)
+        //{
+        //    dispatcherQueue.TryEnqueue(() =>
+        //    {
+        //        if (colorMode == "yellow") RootGrid.Background = new SolidColorBrush(Microsoft.UI.Colors.Yellow);
+        //        if (colorMode == "red") RootGrid.Background = new SolidColorBrush(Microsoft.UI.Colors.Red);
+        //    });
+
+        //    await Task.Delay(500);
+
+        //    dispatcherQueue.TryEnqueue(() =>
+        //    {
+        //        RootGrid.Background = new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke);
+        //    });
+        //}
 
         private async void LapTimer_Tick(object? sender, object? e)
         {
@@ -216,9 +273,9 @@ namespace English_Exam_Timer
                 }
             }
 
-            if (remainingTime < 10) await Flash("red");
-            else if (remainingTime <= 30) await Flash("yellow");
-
+            if (remainingTime <= 30)
+                await StartFlashing(remainingTime);
+            
             UpdateUI();
         }
         public void PauseTimer()
