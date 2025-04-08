@@ -180,6 +180,7 @@ namespace English_Exam_Timer
             paused = false;
             l = 0;
             remainingTime = 0;
+            SetBackgroundAction?.Invoke(new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke));
             UpdateUI();
         }
 
@@ -267,6 +268,7 @@ namespace English_Exam_Timer
                         ResetTimer();
                         StartTimer();
                         return;
+
                     }
                 }
                 else
@@ -286,6 +288,7 @@ namespace English_Exam_Timer
                 started = false;
                 lapTimer.Stop();
             }
+            SetBackgroundAction?.Invoke(new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke));
         }
 
         public void SetLoop(bool loop)
