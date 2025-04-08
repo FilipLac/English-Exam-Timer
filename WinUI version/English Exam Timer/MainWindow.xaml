@@ -108,6 +108,6 @@
                   IsOn="True"
                   HorizontalAlignment="Left"
                   Margin="934,379,0,0"/>
-            <!-- AutomationProperties.Name="LoopTS"-->
+        <!-- AutomationProperties.Name="LoopTS"-->
     </Grid>
 </Window>

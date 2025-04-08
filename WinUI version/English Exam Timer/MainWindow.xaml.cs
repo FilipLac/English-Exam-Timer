@@ -55,17 +55,28 @@ namespace English_Exam_Timer
             ViewModel.ResetTimer();
         }
 
-        private void ButtonModifyTimer_Click(object sender, RoutedEventArgs e)
+        private async void ButtonModifyTimer_Click(object sender, RoutedEventArgs e)
         {
-            // Tady mùžeš otevøít nové okno nebo dialog pro nastavení èasù
-            ContentDialog dialog = new()
+            //ContentDialog dialog = new()
+            //{
+            //    Title = "Unimplemented dialog",
+            //    Content = "This feature is not yet implemented.",
+            //    CloseButtonText = "OK",
+            //    XamlRoot = this.Content.XamlRoot
+            //};
+            //_ = dialog.ShowAsync();
+            var dialog = new ModifyTimerDialog(ViewModel)
             {
-                Title = "Modify Timer",
-                Content = "This feature is not yet implemented.",
-                CloseButtonText = "OK",
                 XamlRoot = this.Content.XamlRoot
             };
-            _ = dialog.ShowAsync();
+
+            var result = await dialog.ShowAsync();
+
+            if (result == ContentDialogResult.Primary)
+            {
+                ViewModel.UpdateLapTimes(dialog.Lap1, dialog.Lap2, dialog.Lap3, dialog.Lap4);
+                // Pøípadný reset pro timer po uložení ViewModel.ResetTimer();
+            }
         }
 
         //private void ChbWantLoop_CheckedChanged(object sender, RoutedEventArgs e)
@@ -103,6 +114,19 @@ namespace English_Exam_Timer
         private bool started = false;
         private bool wantLoop = true;
         private readonly int[] InitialTime = [35, 150, 90, 90, 60, 300, 180, 300];
+
+        public int Lap1Seconds { get; private set; } = 120;
+        public int Lap2Seconds { get; private set; } = 180;
+        public int Lap3Seconds { get; private set; } = 150;
+        public int Lap4Seconds { get; private set; } = 240;
+
+        public void UpdateLapTimes(int lap1, int lap2, int lap3, int lap4)
+        {
+            Lap1Seconds = lap1;
+            Lap2Seconds = lap2;
+            Lap3Seconds = lap3;
+            Lap4Seconds = lap4;
+        }
 
         public int[] Times { get; private set; }
         public string DisplayTime { get; private set; } = "00:00";

@@ -1,0 +1,24 @@
+<ContentDialog
+    x:Class="English_Exam_Timer.ModifyTimerDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:English_Exam_Timer"
+    Title="Upravit èasy lapù"
+    PrimaryButtonText="Uložit"
+    CloseButtonText="Zavøít"
+    DefaultButton="Primary">
+
+    <StackPanel Spacing="12" Margin="0,10,0,0">
+        <TextBlock Text="Lap 1 (sekundy):" />
+        <TextBox x:Name="Lap1Box" InputScope="Number" />
+
+        <TextBlock Text="Lap 2 (sekundy):" />
+        <TextBox x:Name="Lap2Box" InputScope="Number" />
+
+        <TextBlock Text="Lap 3 (sekundy):" />
+        <TextBox x:Name="Lap3Box" InputScope="Number" />
+
+        <TextBlock Text="Lap 4 (sekundy):" />
+        <TextBox x:Name="Lap4Box" InputScope="Number" />
+    </StackPanel>
+</ContentDialog>

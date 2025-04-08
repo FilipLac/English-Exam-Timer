@@ -14,6 +14,7 @@
         <!-- Datum a čas -->
         <TextBlock x:ConnectionId='2' x:Name="CurrentDateandTime" 
                Text="Current Date and Time"
+               
                FontSize="28" 
                HorizontalAlignment="Left" 
                Margin="24,19,0,0"/>
@@ -107,7 +108,7 @@
                   IsOn="True"
                   HorizontalAlignment="Left"
                   Margin="934,379,0,0"/>
-            <!-- AutomationProperties.Name="LoopTS"-->
+        <!-- AutomationProperties.Name="LoopTS"-->
     </Grid>
 </Window>
 
