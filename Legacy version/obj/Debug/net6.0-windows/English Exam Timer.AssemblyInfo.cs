@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("English exam timer - school project by Filip Lacina")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.3.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.3.0+54b42244bc879fd8315c46d0239f7d0d715118f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.3.0+a80dbea9b5ea04e63a106bd309cf3841578fd062")]
 [assembly: System.Reflection.AssemblyProductAttribute("Exam Timer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("English-Exam-Timer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.3.0.0")]

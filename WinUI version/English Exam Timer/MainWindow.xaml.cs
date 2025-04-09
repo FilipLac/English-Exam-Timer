@@ -1,6 +1,8 @@
 using System;
 using System.ComponentModel;
+using System.Threading;
 using System.Threading.Tasks;
+using Windows.UI;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
@@ -16,8 +18,6 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Navigation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI;
-using System.Threading;
 
 // To learn more about WinUI, the WinUI project structure, and more about our project templates, see: http://aka.ms/winui-project-info.
 
@@ -89,10 +89,14 @@ namespace English_Exam_Timer
             }
         }
 
-        //private void ChbWantLoop_CheckedChanged(object sender, RoutedEventArgs e)
-        //{
-        //    ViewModel.SetLoop(LoopTS.IsOn == true);
-        //}
+        private void ChbWantLoop_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SetLoop(LoopTS.IsOn == true);
+        }
+        private void LoopTS_IsOn(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SetLoop(LoopTS.IsOn == true);
+        }
 
         private void ViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
@@ -227,23 +231,6 @@ namespace English_Exam_Timer
                 await Task.Delay(interval, token);
             }
         }
-
-
-        //private async Task Flash(string colorMode)
-        //{
-        //    dispatcherQueue.TryEnqueue(() =>
-        //    {
-        //        if (colorMode == "yellow") RootGrid.Background = new SolidColorBrush(Microsoft.UI.Colors.Yellow);
-        //        if (colorMode == "red") RootGrid.Background = new SolidColorBrush(Microsoft.UI.Colors.Red);
-        //    });
-
-        //    await Task.Delay(500);
-
-        //    dispatcherQueue.TryEnqueue(() =>
-        //    {
-        //        RootGrid.Background = new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke);
-        //    });
-        //}
 
         private async void LapTimer_Tick(object? sender, object? e)
         {
