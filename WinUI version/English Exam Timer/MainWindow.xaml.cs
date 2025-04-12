@@ -89,10 +89,6 @@ namespace English_Exam_Timer
             }
         }
 
-        private void ChbWantLoop_CheckedChanged(object sender, RoutedEventArgs e)
-        {
-            ViewModel.SetLoop(LoopTS.IsOn == true);
-        }
         private void LoopTS_IsOn(object sender, RoutedEventArgs e)
         {
             ViewModel.SetLoop(LoopTS.IsOn == true);

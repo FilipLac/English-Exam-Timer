@@ -95,21 +95,13 @@
                 Margin="917,450,0,0"
                                                />
 
-        <!-- Checkbox
-        <CheckBox x:Name="Loop"
-                  FontSize="36" 
-                  IsChecked="True"
-                  HorizontalAlignment="Left"
-                  Margin="934,379,0,0"
-                  Checked="ChbWantLoop_CheckedChanged"/> -->
         <ToggleSwitch x:ConnectionId='14' 
                   x:Name="LoopTS"
                   FontSize="24" 
+                                       
                   IsOn="True"
-                  AutomationProperties.Name="LoopTS_IsOn"  
                   HorizontalAlignment="Left"
                   Margin="934,379,0,0"/>
-        <!-- AutomationProperties.Name="LoopTS"-->
     </Grid>
 </Window>
 
