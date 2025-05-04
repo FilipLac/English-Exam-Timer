@@ -31,7 +31,7 @@
     <AppXManifest Include="C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-05-04T17:20:42.013</Modified>
+      <Modified>2025-05-04T18:00:16.107</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -45,11 +45,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.dll">
       <PackagePath>English Exam Timer.dll</PackagePath>
-      <Modified>2025-05-04T17:20:41.625</Modified>
+      <Modified>2025-05-04T18:00:15.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\apphost.exe">
       <PackagePath>English Exam Timer.exe</PackagePath>
-      <Modified>2025-05-04T17:20:41.802</Modified>
+      <Modified>2025-05-04T18:00:15.909</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Filip\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.22621.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

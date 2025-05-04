@@ -2,24 +2,25 @@ using System;
 using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
-using Windows.UI;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI;
-using Microsoft.UI.Windowing;
+using Microsoft.UI.Xaml.Media;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Navigation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using System.Text.Json;
+using Windows.UI;
 using Windows.Storage;
+//Offline
+    using Microsoft.UI;
+    using Microsoft.UI.Windowing;
+    using Microsoft.UI.Xaml.Controls.Primitives;
+    using Microsoft.UI.Xaml.Data;
+    using Microsoft.UI.Xaml.Input;
+    using Microsoft.UI.Xaml.Navigation;
+    using Windows.Foundation;
+    using Windows.Foundation.Collections;
 
 // To learn more about WinUI, the WinUI project structure, and more about our project templates, see: http://aka.ms/winui-project-info.
 
@@ -31,31 +32,19 @@ namespace English_Exam_Timer
 
         public MainWindow()
         {
-            //this.InitializeComponent();
+            this.InitializeComponent();
 
             //// Pøiøazení hlavního okna pro zmìnu pozadí
-            //TimerViewModel.MainWindow = this;
+            TimerViewModel.MainWindow = this;
 
             //// Pøihlášení k události zmìny vlastností ViewModelu
-            //ViewModel.PropertyChanged += ViewModel_PropertyChanged;
+            ViewModel.PropertyChanged += ViewModel_PropertyChanged;
 
             //// Poèáteèní naplnìní UI
-            //UpdateUI();
-
-            //ViewModel.SetBackgroundAction = (brush) =>
-            //{
-            //    DispatcherQueue.TryEnqueue(() =>
-            //    {
-            //        RootGrid.Background = brush;
-            //    });
-            //};
-            this.InitializeComponent();
-            TimerViewModel.MainWindow = this;
-            _ = ViewModel.LoadPhasesAsync(); // <--- pøidat
-            ViewModel.PropertyChanged += ViewModel_PropertyChanged;
             UpdateUI();
-            ViewModel.SetBackgroundAction = brush => DispatcherQueue.TryEnqueue(() => RootGrid.Background = brush);
 
+            _ = ViewModel.LoadPhasesAsync();
+            ViewModel.SetBackgroundAction = brush => DispatcherQueue.TryEnqueue(() => RootGrid.Background = brush);
         }
 
         private void StartTimerButton_Click(object sender, RoutedEventArgs e)
@@ -75,21 +64,58 @@ namespace English_Exam_Timer
 
         private async void ButtonModifyTimer_Click(object sender, RoutedEventArgs e)
         {
-            //ContentDialog dialog = new()
-            //{
-            //    Title = "Unimplemented dialog",
-            //    Content = "This feature is not yet implemented.",
-            //    CloseButtonText = "OK",
-            //    XamlRoot = this.Content.XamlRoot
-            //};
-            //_ = dialog.ShowAsync();
             var dialog = new ModifyTimerDialog(ViewModel)
             {
                 XamlRoot = this.Content.XamlRoot
             };
 
-            var result = await dialog.ShowAsync();
+            // Pøidání fáze
+            dialog.AddPhaseRequested += async (s, _) =>
+            {
+                // Zavøe hlavní dialog
+                dialog.Hide();
+
+                // Otevøe dialog pro zadání nové fáze
+                var inputDialog = new PhaseInputDialog { XamlRoot = this.Content.XamlRoot };
+                var result = await inputDialog.ShowAsync();
+
+                if (result == ContentDialogResult.Primary && inputDialog.Phase != null)
+                {
+                    dialog.Phases.Add(inputDialog.Phase);
+                }
+
+                // Znovu otevøe hlavní dialog
+                await dialog.ShowAsync();
+            };
+
+            // Editace fáze
+            dialog.EditPhaseRequested += async (s, phase) =>
+            {
+                if (phase is PhaseTime selectedPhase)
+                {
+                    // Zavøe hlavní dialog
+                    dialog.Hide();
+
+                    // Otevøe dialog pro editaci vybrané fáze
+                    var inputDialog = new PhaseInputDialog(selectedPhase) { XamlRoot = this.Content.XamlRoot };
+                    var result = await inputDialog.ShowAsync();
+
+                    if (result == ContentDialogResult.Primary && inputDialog.Phase != null)
+                    {
+                        int index = dialog.Phases.IndexOf(selectedPhase);
+                        if (index >= 0)
+                            dialog.Phases[index] = inputDialog.Phase;
+                    }
+
+                    // Znovu otevøe hlavní dialog
+                    await dialog.ShowAsync();
+                }
+            };
+
+            // otevøe hlavní dialog
+            await dialog.ShowAsync();
         }
+
 
         private void LoopTS_IsOn(object sender, RoutedEventArgs e)
         {
@@ -133,23 +159,23 @@ namespace English_Exam_Timer
         private bool wantLoop = true;
         private readonly int[] InitialTime = [30, 150, 90, 90, 60, 300, 180, 300];
 
-        public int Lap1Seconds { get; private set; } = 120;
-        public int Lap2Seconds { get; private set; } = 180;
-        public int Lap3Seconds { get; private set; } = 150;
-        public int Lap4Seconds { get; private set; } = 240;
+        //public int Lap1Seconds { get; private set; } = 120;
+        //public int Lap2Seconds { get; private set; } = 180;
+        //public int Lap3Seconds { get; private set; } = 150;
+        //public int Lap4Seconds { get; private set; } = 240;
 
-        public void UpdateLapTimes(int lap1, int lap2, int lap3, int lap4)
-        {
-            Lap1Seconds = lap1;
-            Lap2Seconds = lap2;
-            Lap3Seconds = lap3;
-            Lap4Seconds = lap4;
+        //public void UpdateLapTimes(int lap1, int lap2, int lap3, int lap4)
+        //{
+        //    Lap1Seconds = lap1;
+        //    Lap2Seconds = lap2;
+        //    Lap3Seconds = lap3;
+        //    Lap4Seconds = lap4;
 
-            Times[0] = lap1;
-            Times[1] = lap2;
-            Times[2] = lap3;
-            Times[3] = lap4;
-        }
+        //    Times[0] = lap1;
+        //    Times[1] = lap2;
+        //    Times[2] = lap3;
+        //    Times[3] = lap4;
+        //}
 
 
         public int[] Times { get; private set; }

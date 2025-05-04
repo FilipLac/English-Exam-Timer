@@ -3,7 +3,6 @@ using Microsoft.UI.Xaml.Controls;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.DataTransfer;
 using Microsoft.UI.Xaml.Input;
@@ -12,11 +11,11 @@ namespace English_Exam_Timer
 {
     public sealed partial class ModifyTimerDialog : ContentDialog
     {
-        private readonly SemaphoreSlim dialogSemaphore = new SemaphoreSlim(1, 1);
-
         public ObservableCollection<PhaseTime> Phases { get; set; } = new();
 
         private TimerViewModel _viewModel;
+        public event EventHandler<PhaseTime>? EditPhaseRequested;
+        public event EventHandler? AddPhaseRequested;
 
         public ModifyTimerDialog(TimerViewModel viewModel)
         {
@@ -31,44 +30,16 @@ namespace English_Exam_Timer
             PhasesListView.ItemsSource = Phases;
         }
 
-        private async void AddButton_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            var inputDialog = new PhaseInputDialog
-            {
-                XamlRoot = this.XamlRoot
-            };
-            var result = await inputDialog.ShowAsync();
-            if (result == ContentDialogResult.Primary && inputDialog.Phase != null)
-            {
-                Phases.Add(inputDialog.Phase);
-            }
+            AddPhaseRequested?.Invoke(this, EventArgs.Empty);
         }
 
-        private async void PhasesListView_ItemClick(object sender, ItemClickEventArgs e)
+        private void PhasesListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!await dialogSemaphore.WaitAsync(0)) return;
-
-            try
+            if (e.ClickedItem is PhaseTime selected)
             {
-                if (e.ClickedItem is PhaseTime selected)
-                {
-                    var inputDialog = new PhaseInputDialog(selected)
-                    {
-                        XamlRoot = this.XamlRoot
-                    };
-
-                    var result = await inputDialog.ShowAsync();
-
-                    if (result == ContentDialogResult.Primary && inputDialog.Phase != null)
-                    {
-                        int index = Phases.IndexOf(selected);
-                        Phases[index] = inputDialog.Phase;
-                    }
-                }
-            }
-            finally
-            {
-                dialogSemaphore.Release();
+                EditPhaseRequested?.Invoke(this, selected);
             }
         }
 
