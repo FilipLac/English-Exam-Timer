@@ -14,6 +14,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="ModifyTimerDialog.xaml" />
+    <None Remove="PhaseInputDialog.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="ModifyTimerDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="PhaseInputDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <None Update="Resources\LICENCE.txt">

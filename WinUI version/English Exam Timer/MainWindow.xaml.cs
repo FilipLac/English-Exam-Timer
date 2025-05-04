@@ -18,6 +18,8 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Navigation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using System.Text.Json;
+using Windows.Storage;
 
 // To learn more about WinUI, the WinUI project structure, and more about our project templates, see: http://aka.ms/winui-project-info.
 
@@ -29,24 +31,30 @@ namespace English_Exam_Timer
 
         public MainWindow()
         {
+            //this.InitializeComponent();
+
+            //// Pøiøazení hlavního okna pro zmìnu pozadí
+            //TimerViewModel.MainWindow = this;
+
+            //// Pøihlášení k události zmìny vlastností ViewModelu
+            //ViewModel.PropertyChanged += ViewModel_PropertyChanged;
+
+            //// Poèáteèní naplnìní UI
+            //UpdateUI();
+
+            //ViewModel.SetBackgroundAction = (brush) =>
+            //{
+            //    DispatcherQueue.TryEnqueue(() =>
+            //    {
+            //        RootGrid.Background = brush;
+            //    });
+            //};
             this.InitializeComponent();
-
-            // Pøiøazení hlavního okna pro zmìnu pozadí
             TimerViewModel.MainWindow = this;
-
-            // Pøihlášení k události zmìny vlastností ViewModelu
+            _ = ViewModel.LoadPhasesAsync(); // <--- pøidat
             ViewModel.PropertyChanged += ViewModel_PropertyChanged;
-
-            // Poèáteèní naplnìní UI
             UpdateUI();
-
-            ViewModel.SetBackgroundAction = (brush) =>
-            {
-                DispatcherQueue.TryEnqueue(() =>
-                {
-                    RootGrid.Background = brush;
-                });
-            };
+            ViewModel.SetBackgroundAction = brush => DispatcherQueue.TryEnqueue(() => RootGrid.Background = brush);
 
         }
 
@@ -81,12 +89,6 @@ namespace English_Exam_Timer
             };
 
             var result = await dialog.ShowAsync();
-
-            if (result == ContentDialogResult.Primary)
-            {
-                ViewModel.UpdateLapTimes(dialog.Lap1, dialog.Lap2, dialog.Lap3, dialog.Lap4);
-                // Pøípadný reset pro timer po uložení ViewModel.ResetTimer();
-            }
         }
 
         private void LoopTS_IsOn(object sender, RoutedEventArgs e)
@@ -114,6 +116,10 @@ namespace English_Exam_Timer
     }
     public partial class TimerViewModel : INotifyPropertyChanged
     {
+        public List<PhaseTime> Phases { get; private set; } = new();
+        private const string FileName = "phases.json";
+
+
         public static Window MainWindow { get; set; } = new Window();
         public event PropertyChangedEventHandler? PropertyChanged;
         private static readonly DispatcherQueue dispatcherQueue = DispatcherQueue.GetForCurrentThread();
@@ -138,7 +144,13 @@ namespace English_Exam_Timer
             Lap2Seconds = lap2;
             Lap3Seconds = lap3;
             Lap4Seconds = lap4;
+
+            Times[0] = lap1;
+            Times[1] = lap2;
+            Times[2] = lap3;
+            Times[3] = lap4;
         }
+
 
         public int[] Times { get; private set; }
         public string DisplayTime { get; private set; } = "00:00";
@@ -257,7 +269,6 @@ namespace English_Exam_Timer
                 else
                 {
                     remainingTime = Times[l];
-                    await StartFlashing(remainingTime);
                 }
             }
             await StartFlashing(remainingTime);
@@ -302,5 +313,49 @@ namespace English_Exam_Timer
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RemainingSeconds)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayTime)));
         }
+
+        public async Task LoadPhasesAsync()
+        {
+            try
+            {
+                var file = await ApplicationData.Current.LocalFolder.GetFileAsync(FileName);
+                string json = await FileIO.ReadTextAsync(file);
+                Phases = JsonSerializer.Deserialize<List<PhaseTime>>(json) ?? GetDefaultPhases();
+            }
+            catch
+            {
+                Phases = GetDefaultPhases();
+            }
+
+            ApplyPhasesToTimes();
+        }
+
+        private List<PhaseTime> GetDefaultPhases()
+        {
+            return new List<PhaseTime>
+            {
+                new("Instrukce", 30),
+                new("Ètení", 150),
+                new("Otázky 1", 90),
+                new("Otázky 2", 90),
+                new("Psaní plán", 60),
+                new("Psaní 1", 300),
+                new("Psaní 2", 180),
+                new("Kontrola", 300),
+            };
+        }
+
+        public void ApplyPhasesToTimes()
+        {
+            Times = Phases.Select(p => p.DurationSeconds).ToArray();
+        }
+
+        public async Task SavePhasesAsync()
+        {
+            string json = JsonSerializer.Serialize(Phases);
+            var file = await ApplicationData.Current.LocalFolder.CreateFileAsync(FileName, CreationCollisionOption.ReplaceExisting);
+            await FileIO.WriteTextAsync(file, json);
+        }
+
     }
 }

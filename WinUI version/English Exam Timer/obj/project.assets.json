@@ -1442,23 +1442,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\filip\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Filip\\.nuget\\packages\\": {},
+    "D:\\Programs\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\filip\\Documents\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer\\English Exam Timer.csproj",
+      "projectUniqueName": "C:\\Users\\Filip\\Documents\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer\\English Exam Timer.csproj",
       "projectName": "English Exam Timer",
-      "projectPath": "C:\\Users\\filip\\Documents\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer\\English Exam Timer.csproj",
-      "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\filip\\Documents\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer\\obj\\",
+      "projectPath": "C:\\Users\\Filip\\Documents\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer\\English Exam Timer.csproj",
+      "packagesPath": "C:\\Users\\Filip\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Filip\\Documents\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Programs\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1515,27 +1515,27 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-arm64",
-            "version": "[8.0.14, 8.0.14]"
+            "version": "[8.0.15, 8.0.15]"
           },
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[8.0.14, 8.0.14]"
+            "version": "[8.0.15, 8.0.15]"
           },
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-            "version": "[8.0.14, 8.0.14]"
+            "version": "[8.0.15, 8.0.15]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-arm64",
-            "version": "[8.0.14, 8.0.14]"
+            "version": "[8.0.15, 8.0.15]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[8.0.14, 8.0.14]"
+            "version": "[8.0.15, 8.0.15]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x86",
-            "version": "[8.0.14, 8.0.14]"
+            "version": "[8.0.15, 8.0.15]"
           },
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
@@ -1543,15 +1543,15 @@
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-arm64",
-            "version": "[8.0.14, 8.0.14]"
+            "version": "[8.0.15, 8.0.15]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[8.0.14, 8.0.14]"
+            "version": "[8.0.15, 8.0.15]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
-            "version": "[8.0.14, 8.0.14]"
+            "version": "[8.0.15, 8.0.15]"
           }
         ],
         "frameworkReferences": {
@@ -1562,7 +1562,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

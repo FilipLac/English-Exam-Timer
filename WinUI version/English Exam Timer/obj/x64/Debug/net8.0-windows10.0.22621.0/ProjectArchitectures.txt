@@ -1,1 +1,1 @@
-C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\English Exam Timer.csproj;x64
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\English Exam Timer.csproj;x64

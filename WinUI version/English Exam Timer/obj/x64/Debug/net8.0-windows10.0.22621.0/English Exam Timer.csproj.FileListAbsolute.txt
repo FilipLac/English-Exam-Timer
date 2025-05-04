@@ -85,3 +85,8 @@ C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Ti
 C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.xaml
 C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.xbf
 C:\Users\filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.xbf
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.g.i.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.g.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.xaml
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.xbf
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.xbf

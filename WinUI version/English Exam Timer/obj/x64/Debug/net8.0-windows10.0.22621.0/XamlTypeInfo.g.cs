@@ -226,7 +226,7 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[17];
+            _typeNameTable = new string[22];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -241,11 +241,16 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
             _typeNameTable[11] = "English_Exam_Timer.ModifyTimerDialog";
             _typeNameTable[12] = "Microsoft.UI.Xaml.Controls.ContentDialog";
             _typeNameTable[13] = "Microsoft.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[14] = "Int32";
-            _typeNameTable[15] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[16] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[14] = "System.Collections.ObjectModel.ObservableCollection`1<English_Exam_Timer.PhaseTime>";
+            _typeNameTable[15] = "System.Collections.ObjectModel.Collection`1<English_Exam_Timer.PhaseTime>";
+            _typeNameTable[16] = "English_Exam_Timer.PhaseTime";
+            _typeNameTable[17] = "String";
+            _typeNameTable[18] = "Int32";
+            _typeNameTable[19] = "English_Exam_Timer.PhaseInputDialog";
+            _typeNameTable[20] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[21] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[17];
+            _typeTable = new global::System.Type[22];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -260,9 +265,14 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
             _typeTable[11] = typeof(global::English_Exam_Timer.ModifyTimerDialog);
             _typeTable[12] = typeof(global::Microsoft.UI.Xaml.Controls.ContentDialog);
             _typeTable[13] = typeof(global::Microsoft.UI.Xaml.Controls.ContentControl);
-            _typeTable[14] = typeof(global::System.Int32);
-            _typeTable[15] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[16] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[14] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::English_Exam_Timer.PhaseTime>);
+            _typeTable[15] = typeof(global::System.Collections.ObjectModel.Collection<global::English_Exam_Timer.PhaseTime>);
+            _typeTable[16] = typeof(global::English_Exam_Timer.PhaseTime);
+            _typeTable[17] = typeof(global::System.String);
+            _typeTable[18] = typeof(global::System.Int32);
+            _typeTable[19] = typeof(global::English_Exam_Timer.PhaseInputDialog);
+            _typeTable[20] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[21] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -301,15 +311,22 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
         private object Activate_4_ProgressBar() { return new global::Microsoft.UI.Xaml.Controls.ProgressBar(); }
         private object Activate_8_MainWindow() { return new global::English_Exam_Timer.MainWindow(); }
         private object Activate_10_TimerViewModel() { return new global::English_Exam_Timer.TimerViewModel(); }
-        private object Activate_15_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_14_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::English_Exam_Timer.PhaseTime>(); }
+        private object Activate_15_Collection() { return new global::System.Collections.ObjectModel.Collection<global::English_Exam_Timer.PhaseTime>(); }
+        private object Activate_19_PhaseInputDialog() { return new global::English_Exam_Timer.PhaseInputDialog(); }
+        private object Activate_20_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_ProgressBar() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressBar).TypeHandle);
         private void StaticInitializer_6_ProgressBarTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressBarTemplateSettings).TypeHandle);
         private void StaticInitializer_8_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::English_Exam_Timer.MainWindow).TypeHandle);
         private void StaticInitializer_10_TimerViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::English_Exam_Timer.TimerViewModel).TypeHandle);
         private void StaticInitializer_11_ModifyTimerDialog() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::English_Exam_Timer.ModifyTimerDialog).TypeHandle);
-        private void StaticInitializer_15_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_16_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_14_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::English_Exam_Timer.PhaseTime>).TypeHandle);
+        private void StaticInitializer_15_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::English_Exam_Timer.PhaseTime>).TypeHandle);
+        private void StaticInitializer_16_PhaseTime() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::English_Exam_Timer.PhaseTime).TypeHandle);
+        private void StaticInitializer_19_PhaseInputDialog() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::English_Exam_Timer.PhaseInputDialog).TypeHandle);
+        private void StaticInitializer_20_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_21_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -317,7 +334,19 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_16_IList(object instance, object item)
+        private void VectorAdd_14_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::English_Exam_Timer.PhaseTime>)instance;
+            var newItem = (global::English_Exam_Timer.PhaseTime)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_15_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::English_Exam_Timer.PhaseTime>)instance;
+            var newItem = (global::English_Exam_Timer.PhaseTime)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_21_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -405,10 +434,7 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
             case 11:   //  English_Exam_Timer.ModifyTimerDialog
                 userType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentDialog"));
                 userType.StaticInitializer = StaticInitializer_11_ModifyTimerDialog;
-                userType.AddMemberName("Lap1");
-                userType.AddMemberName("Lap2");
-                userType.AddMemberName("Lap3");
-                userType.AddMemberName("Lap4");
+                userType.AddMemberName("Phases");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -421,14 +447,52 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
                 xamlType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 14:   //  Int32
+            case 14:   //  System.Collections.ObjectModel.ObservableCollection`1<English_Exam_Timer.PhaseTime>
+                userType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<English_Exam_Timer.PhaseTime>"));
+                userType.StaticInitializer = StaticInitializer_14_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_14_ObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 15:   //  System.Collections.ObjectModel.Collection`1<English_Exam_Timer.PhaseTime>
+                userType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_15_Collection;
+                userType.StaticInitializer = StaticInitializer_15_Collection;
+                userType.CollectionAdd = VectorAdd_15_Collection;
+                xamlType = userType;
+                break;
+
+            case 16:   //  English_Exam_Timer.PhaseTime
+                userType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.StaticInitializer = StaticInitializer_16_PhaseTime;
+                userType.AddMemberName("Name");
+                userType.AddMemberName("DurationSeconds");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 17:   //  String
                 xamlType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 15:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 18:   //  Int32
+                xamlType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 19:   //  English_Exam_Timer.PhaseInputDialog
+                userType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentDialog"));
+                userType.Activator = Activate_19_PhaseInputDialog;
+                userType.StaticInitializer = StaticInitializer_19_PhaseInputDialog;
+                userType.AddMemberName("Phase");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 20:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_15_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_15_TreeViewNode;
+                userType.Activator = Activate_20_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_20_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -440,10 +504,10 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 16:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 21:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_16_IList;
-                userType.CollectionAdd = VectorAdd_16_IList;
+                userType.StaticInitializer = StaticInitializer_21_IList;
+                userType.CollectionAdd = VectorAdd_21_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -556,25 +620,40 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
             var that = (global::English_Exam_Timer.MainWindow)instance;
             return that.ViewModel;
         }
-        private object get_6_ModifyTimerDialog_Lap1(object instance)
+        private object get_6_ModifyTimerDialog_Phases(object instance)
         {
             var that = (global::English_Exam_Timer.ModifyTimerDialog)instance;
-            return that.Lap1;
+            return that.Phases;
         }
-        private object get_7_ModifyTimerDialog_Lap2(object instance)
+        private void set_6_ModifyTimerDialog_Phases(object instance, object Value)
         {
             var that = (global::English_Exam_Timer.ModifyTimerDialog)instance;
-            return that.Lap2;
+            that.Phases = (global::System.Collections.ObjectModel.ObservableCollection<global::English_Exam_Timer.PhaseTime>)Value;
         }
-        private object get_8_ModifyTimerDialog_Lap3(object instance)
+        private object get_7_PhaseTime_Name(object instance)
         {
-            var that = (global::English_Exam_Timer.ModifyTimerDialog)instance;
-            return that.Lap3;
+            var that = (global::English_Exam_Timer.PhaseTime)instance;
+            return that.Name;
         }
-        private object get_9_ModifyTimerDialog_Lap4(object instance)
+        private void set_7_PhaseTime_Name(object instance, object Value)
         {
-            var that = (global::English_Exam_Timer.ModifyTimerDialog)instance;
-            return that.Lap4;
+            var that = (global::English_Exam_Timer.PhaseTime)instance;
+            that.Name = (global::System.String)Value;
+        }
+        private object get_8_PhaseTime_DurationSeconds(object instance)
+        {
+            var that = (global::English_Exam_Timer.PhaseTime)instance;
+            return that.DurationSeconds;
+        }
+        private void set_8_PhaseTime_DurationSeconds(object instance, object Value)
+        {
+            var that = (global::English_Exam_Timer.PhaseTime)instance;
+            that.DurationSeconds = (global::System.Int32)Value;
+        }
+        private object get_9_PhaseInputDialog_Phase(object instance)
+        {
+            var that = (global::English_Exam_Timer.PhaseInputDialog)instance;
+            return that.Phase;
         }
         private object get_10_TreeViewNode_Children(object instance)
         {
@@ -674,28 +753,28 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
                 xamlMember.Getter = get_5_MainWindow_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "English_Exam_Timer.ModifyTimerDialog.Lap1":
+            case "English_Exam_Timer.ModifyTimerDialog.Phases":
                 userType = (global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType)GetXamlTypeByName("English_Exam_Timer.ModifyTimerDialog");
-                xamlMember = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlMember(this, "Lap1", "Int32");
-                xamlMember.Getter = get_6_ModifyTimerDialog_Lap1;
-                xamlMember.SetIsReadOnly();
+                xamlMember = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlMember(this, "Phases", "System.Collections.ObjectModel.ObservableCollection`1<English_Exam_Timer.PhaseTime>");
+                xamlMember.Getter = get_6_ModifyTimerDialog_Phases;
+                xamlMember.Setter = set_6_ModifyTimerDialog_Phases;
                 break;
-            case "English_Exam_Timer.ModifyTimerDialog.Lap2":
-                userType = (global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType)GetXamlTypeByName("English_Exam_Timer.ModifyTimerDialog");
-                xamlMember = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlMember(this, "Lap2", "Int32");
-                xamlMember.Getter = get_7_ModifyTimerDialog_Lap2;
-                xamlMember.SetIsReadOnly();
+            case "English_Exam_Timer.PhaseTime.Name":
+                userType = (global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType)GetXamlTypeByName("English_Exam_Timer.PhaseTime");
+                xamlMember = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlMember(this, "Name", "String");
+                xamlMember.Getter = get_7_PhaseTime_Name;
+                xamlMember.Setter = set_7_PhaseTime_Name;
                 break;
-            case "English_Exam_Timer.ModifyTimerDialog.Lap3":
-                userType = (global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType)GetXamlTypeByName("English_Exam_Timer.ModifyTimerDialog");
-                xamlMember = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlMember(this, "Lap3", "Int32");
-                xamlMember.Getter = get_8_ModifyTimerDialog_Lap3;
-                xamlMember.SetIsReadOnly();
+            case "English_Exam_Timer.PhaseTime.DurationSeconds":
+                userType = (global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType)GetXamlTypeByName("English_Exam_Timer.PhaseTime");
+                xamlMember = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlMember(this, "DurationSeconds", "Int32");
+                xamlMember.Getter = get_8_PhaseTime_DurationSeconds;
+                xamlMember.Setter = set_8_PhaseTime_DurationSeconds;
                 break;
-            case "English_Exam_Timer.ModifyTimerDialog.Lap4":
-                userType = (global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType)GetXamlTypeByName("English_Exam_Timer.ModifyTimerDialog");
-                xamlMember = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlMember(this, "Lap4", "Int32");
-                xamlMember.Getter = get_9_ModifyTimerDialog_Lap4;
+            case "English_Exam_Timer.PhaseInputDialog.Phase":
+                userType = (global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType)GetXamlTypeByName("English_Exam_Timer.PhaseInputDialog");
+                xamlMember = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlMember(this, "Phase", "English_Exam_Timer.PhaseTime");
+                xamlMember.Getter = get_9_PhaseInputDialog_Phase;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
