@@ -9,7 +9,7 @@
       "English Exam Timer/1.0.0": {
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.1742",
-          "Microsoft.WindowsAppSDK": "1.7.250310001",
+          "Microsoft.WindowsAppSDK": "1.7.250401001",
           "Microsoft.Web.WebView2.Core.Projection": "1.0.2903.40",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.22621.57"
         },
@@ -49,7 +49,7 @@
         }
       },
       "Microsoft.Windows.SDK.BuildTools/10.0.26100.1742": {},
-      "Microsoft.WindowsAppSDK/1.7.250310001": {
+      "Microsoft.WindowsAppSDK/1.7.250401001": {
         "dependencies": {
           "Microsoft.Web.WebView2": "1.0.2903.40",
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.1742"
@@ -57,7 +57,7 @@
         "runtime": {
           "lib/net6.0-windows10.0.22621.0/Microsoft.InteractiveExperiences.Projection.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.26107.1007"
+            "fileVersion": "10.0.26107.1009"
           },
           "lib/net6.0-windows10.0.22621.0/Microsoft.Security.Authentication.OAuth.Projection.dll": {
             "assemblyVersion": "1.7.0.0",
@@ -214,12 +214,12 @@
       "path": "microsoft.windows.sdk.buildtools/10.0.26100.1742",
       "hashPath": "microsoft.windows.sdk.buildtools.10.0.26100.1742.nupkg.sha512"
     },
-    "Microsoft.WindowsAppSDK/1.7.250310001": {
+    "Microsoft.WindowsAppSDK/1.7.250401001": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qSdSuQAOYIyFWEojsGA6EOE2TpdP4n3CBqXXgA+GFTI/kwMVunc85EiXjn1227+HizhIi7J/6Aj0gYUt41DcSw==",
-      "path": "microsoft.windowsappsdk/1.7.250310001",
-      "hashPath": "microsoft.windowsappsdk.1.7.250310001.nupkg.sha512"
+      "sha512": "sha512-kPsJ2LZoo3Xs/6FtIWMZRGnQ2ZMx9zDa0ZpqRGz1qwZr0gwwlXZJTmngaA1Ym2AHmIa05NtX2jEE2He8CzfhTg==",
+      "path": "microsoft.windowsappsdk/1.7.250401001",
+      "hashPath": "microsoft.windowsappsdk.1.7.250401001.nupkg.sha512"
     },
     "Microsoft.Web.WebView2.Core.Projection/1.0.2903.40": {
       "type": "reference",

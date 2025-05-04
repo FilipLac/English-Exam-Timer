@@ -29,7 +29,7 @@
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.7.250310001": {
+      "Microsoft.WindowsAppSDK/1.7.250401001": {
         "type": "package",
         "dependencies": {
           "Microsoft.Web.WebView2": "1.0.2903.40",
@@ -196,7 +196,7 @@
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.7.250310001": {
+      "Microsoft.WindowsAppSDK/1.7.250401001": {
         "type": "package",
         "dependencies": {
           "Microsoft.Web.WebView2": "1.0.2903.40",
@@ -333,7 +333,7 @@
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.7.250310001": {
+      "Microsoft.WindowsAppSDK/1.7.250401001": {
         "type": "package",
         "dependencies": {
           "Microsoft.Web.WebView2": "1.0.2903.40",
@@ -470,7 +470,7 @@
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.7.250310001": {
+      "Microsoft.WindowsAppSDK/1.7.250401001": {
         "type": "package",
         "dependencies": {
           "Microsoft.Web.WebView2": "1.0.2903.40",
@@ -886,10 +886,10 @@
         "schemas/10.0.26100.0/winrt/UapManifestSchema_v8.xsd"
       ]
     },
-    "Microsoft.WindowsAppSDK/1.7.250310001": {
-      "sha512": "qSdSuQAOYIyFWEojsGA6EOE2TpdP4n3CBqXXgA+GFTI/kwMVunc85EiXjn1227+HizhIi7J/6Aj0gYUt41DcSw==",
+    "Microsoft.WindowsAppSDK/1.7.250401001": {
+      "sha512": "kPsJ2LZoo3Xs/6FtIWMZRGnQ2ZMx9zDa0ZpqRGz1qwZr0gwwlXZJTmngaA1Ym2AHmIa05NtX2jEE2He8CzfhTg==",
       "type": "package",
-      "path": "microsoft.windowsappsdk/1.7.250310001",
+      "path": "microsoft.windowsappsdk/1.7.250401001",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -1362,7 +1362,7 @@
         "manifests/Microsoft.InteractiveExperiences.manifest",
         "manifests/Microsoft.WindowsAppSdk.Foundation.manifest",
         "manifests/manifests/Microsoft.WindowsAppSdk.WinUI.manifest",
-        "microsoft.windowsappsdk.1.7.250310001.nupkg.sha512",
+        "microsoft.windowsappsdk.1.7.250401001.nupkg.sha512",
         "microsoft.windowsappsdk.nuspec",
         "runtimes/win-arm64/native/Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll",
         "runtimes/win-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll",
@@ -1438,7 +1438,7 @@
   "projectFileDependencyGroups": {
     "net8.0-windows10.0.22621": [
       "Microsoft.Windows.SDK.BuildTools >= 10.0.26100.1742",
-      "Microsoft.WindowsAppSDK >= 1.7.250310001"
+      "Microsoft.WindowsAppSDK >= 1.7.250401001"
     ]
   },
   "packageFolders": {
@@ -1498,7 +1498,7 @@
           },
           "Microsoft.WindowsAppSDK": {
             "target": "Package",
-            "version": "[1.7.250310001, )"
+            "version": "[1.7.250401001, )"
           }
         },
         "imports": [
