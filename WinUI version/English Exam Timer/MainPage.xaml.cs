@@ -138,9 +138,46 @@ namespace English_Exam_Timer
 
         private void UpdateUI()
         {
-            TimerMain.Text = ViewModel.DisplayTime;
-            lap.Text = ViewModel.LapNumber;
-            lRemainingTime.Text = ViewModel.RemainingSeconds;
+            //lap.Text = ViewModel.LapNumber;
+            //lRemainingTime.Text = ViewModel.RemainingSeconds;
+            TimerText.Text = ViewModel.DisplayTime;
+
+            int total = ViewModel.Times.Length > ViewModel.CurrentPhaseIndex
+                ? ViewModel.Times[ViewModel.CurrentPhaseIndex]
+                : 1;
+
+            UpdateRadialGauge(ViewModel.RemainingSecondsInt, total);
+        }
+        private void UpdateRadialGauge(double value, double max)
+        {
+            double angle = 360 * (value / max);
+            double radians = (angle - 90) * Math.PI / 180;
+            double radius = 100;
+
+            double x = 100 + radius * Math.Cos(radians);
+            double y = 100 + radius * Math.Sin(radians);
+
+            bool isLargeArc = angle > 180;
+
+            var arcSegment = new ArcSegment
+            {
+                Point = new Windows.Foundation.Point(x, y),
+                Size = new Windows.Foundation.Size(radius, radius),
+                SweepDirection = SweepDirection.Clockwise,
+                IsLargeArc = isLargeArc
+            };
+
+            var figure = new PathFigure
+            {
+                StartPoint = new Windows.Foundation.Point(100, 0),
+                IsClosed = false
+            };
+            figure.Segments.Add(arcSegment);
+
+            var geometry = new PathGeometry();
+            geometry.Figures.Add(figure);
+
+            GaugeArc.Data = geometry;
         }
     }
     public partial class TimerViewModel : INotifyPropertyChanged
@@ -148,6 +185,8 @@ namespace English_Exam_Timer
         public List<PhaseTime> Phases { get; private set; } = new();
         private const string FileName = "phases.json";
 
+        public int RemainingSecondsInt => remainingTime;
+        public int CurrentPhaseIndex => l;
 
         public static Window MainWindow { get; set; } = new Window();
         public event PropertyChangedEventHandler? PropertyChanged;

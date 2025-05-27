@@ -5,22 +5,74 @@
     xmlns:local="using:English_Exam_Timer"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:ConnectionId='2' x:Name="RootGrid">
+    <Page.Resources>
+        <!-- Gauge barevný přechod -->
+        <LinearGradientBrush x:Key="GaugeBrush" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="Green" Offset="0.0"/>
+            <GradientStop Color="Yellow" Offset="0.5"/>
+            <GradientStop Color="Red" Offset="1.0"/>
+        </LinearGradientBrush>
+
+        <!-- Styl tlačítek -->
+        <Style TargetType="Button">
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background" Value="#0078D7"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <!-- Styl pro ToggleSwitch -->
+        <Style TargetType="ToggleSwitch">
+            <Setter Property="Margin" Value="10,0"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <!-- Styl pro ContentDialog -->
+        <Style TargetType="ContentDialog">
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="MinWidth" Value="300"/>
+            <Setter Property="MaxWidth" Value="500"/>
+        </Style>
+
+        <!-- Přechodová animace fáze -->
+        <Storyboard x:Key="PhaseTransitionStoryboard">
+            <DoubleAnimation Storyboard.TargetName="GaugeArc"
+                             Storyboard.TargetProperty="Opacity"
+                             From="0" To="1" Duration="0:0:0.4" />
+            <DoubleAnimation Storyboard.TargetName="TimerText"
+                             Storyboard.TargetProperty="Opacity"
+                             From="0" To="1" Duration="0:0:0.4" />
+        </Storyboard>
+    </Page.Resources>
+
+    <Grid x:ConnectionId='2' x:Name="RootGrid" Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <!-- hlavní obsah -->
             <RowDefinition Height="Auto" />
-            <!-- spodní tlačítka -->
         </Grid.RowDefinitions>
 
-        <!-- Hlavní obsah: časovač -->
-        <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
-            <TextBlock x:ConnectionId='8' x:Name="TimerMain" Text="00:00" FontSize="48" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBlock x:ConnectionId='9' x:Name="lap" Text="Lap 1" FontSize="20" HorizontalAlignment="Center"/>
-            <TextBlock x:ConnectionId='10' x:Name="lRemainingTime" Text="000s" FontSize="16" HorizontalAlignment="Center"/>
-        </StackPanel>
+        <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Viewbox Stretch="Uniform">
+                <Canvas x:ConnectionId='8' x:Name="RadialGaugeCanvas" Width="200" Height="200">
+                    <Ellipse Width="200" Height="200" Stroke="Gray" StrokeThickness="10"/>
+                    <Path x:ConnectionId='9' x:Name="GaugeArc" StrokeThickness="12" Fill="Transparent"
+                          StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+                          Stroke="{StaticResource GaugeBrush}" Opacity="0"/>
+                    <TextBlock x:ConnectionId='10' x:Name="TimerText" Text="00:00" FontSize="24" FontWeight="Bold"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Canvas.Left="70" Canvas.Top="85" Opacity="0"/>
+                </Canvas>
+            </Viewbox>
+        </Grid>
 
-        <!-- Spodní panel s tlačítky -->
+        <!-- SPODNÍ OVLÁDACÍ PANEL -->
         <Border Grid.Row="1" Background="{ThemeResource SystemControlBackgroundBaseLowBrush}" Padding="10">
             <Viewbox Stretch="Uniform" HorizontalAlignment="Stretch">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
