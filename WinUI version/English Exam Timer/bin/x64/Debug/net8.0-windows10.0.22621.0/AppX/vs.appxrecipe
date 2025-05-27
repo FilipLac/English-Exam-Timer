@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-05-27T21:42:27.808</Modified>
+      <Modified>2025-05-27T22:04:10.217</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-05-27T21:42:27.782</Modified>
+      <Modified>2025-05-27T22:04:10.154</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.runtimeconfig.json">
       <PackagePath>English Exam Timer.runtimeconfig.json</PackagePath>
@@ -45,11 +45,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.dll">
       <PackagePath>English Exam Timer.dll</PackagePath>
-      <Modified>2025-05-27T21:42:27.730</Modified>
+      <Modified>2025-05-27T22:04:09.970</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\apphost.exe">
       <PackagePath>English Exam Timer.exe</PackagePath>
-      <Modified>2025-05-27T21:42:27.736</Modified>
+      <Modified>2025-05-27T22:04:10.006</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Filip\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.22621.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

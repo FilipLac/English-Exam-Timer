@@ -53,37 +53,40 @@
     </Page.Resources>
 
     <Grid x:ConnectionId='2' x:Name="RootGrid" Padding="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+        <!-- Flash Background Layer -->
+        <Grid x:ConnectionId='3' x:Name="FlashLayer" Background="Transparent"/>
 
-        <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Viewbox Stretch="Uniform">
-                <Canvas x:ConnectionId='8' x:Name="RadialGaugeCanvas" Width="200" Height="200">
-                    <Ellipse Width="200" Height="200" Stroke="Gray" StrokeThickness="10"/>
-                    <Path x:ConnectionId='9' x:Name="GaugeArc" StrokeThickness="12" Fill="Transparent"
-                          StrokeStartLineCap="Round" StrokeEndLineCap="Round"
-                          Stroke="{StaticResource GaugeBrush}" Opacity="0"/>
-                    <TextBlock x:ConnectionId='10' x:Name="TimerText" Text="00:00" FontSize="24" FontWeight="Bold"
-                               HorizontalAlignment="Center" VerticalAlignment="Center"
-                               Canvas.Left="70" Canvas.Top="85" Opacity="0"/>
-                </Canvas>
-            </Viewbox>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox Stretch="Uniform">
+                    <Canvas x:ConnectionId='9' x:Name="RadialGaugeCanvas" Width="200" Height="200">
+                        <Ellipse Width="200" Height="200" Stroke="Gray" StrokeThickness="10"/>
+                        <Path x:ConnectionId='10' x:Name="GaugeArc" Stroke="Green" StrokeThickness="10" Fill="Transparent"/>
+                        <TextBlock x:ConnectionId='11' x:Name="TimerText" Text="00:00" FontSize="24" FontWeight="Bold"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   Canvas.Left="70" Canvas.Top="85"/>
+                    </Canvas>
+                </Viewbox>
+            </Grid>
+
+            <!-- SPODNÍ OVLÁDACÍ PANEL -->
+            <Border Grid.Row="1" Background="{ThemeResource SystemControlBackgroundBaseLowBrush}" Padding="10">
+                <Viewbox Stretch="Uniform" HorizontalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                        <Button x:ConnectionId='4' x:Name="StartTimerButton" Content="Start"                                />
+                        <Button x:ConnectionId='5' x:Name="PauseTimerButton" Content="Pause"                                />
+                        <Button x:ConnectionId='6' x:Name="StopAndResetTimerButton" Content="Stop &amp; Reset"                                       />
+                        <Button x:ConnectionId='7' x:Name="ButtonModifyTimer" Content="Upravit fáze"                                 />
+                        <ToggleSwitch x:ConnectionId='8' x:Name="LoopTS" Header="Smyčka"                       />
+                    </StackPanel>
+                </Viewbox>
+            </Border>
         </Grid>
-
-        <!-- SPODNÍ OVLÁDACÍ PANEL -->
-        <Border Grid.Row="1" Background="{ThemeResource SystemControlBackgroundBaseLowBrush}" Padding="10">
-            <Viewbox Stretch="Uniform" HorizontalAlignment="Stretch">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-                    <Button x:ConnectionId='3' x:Name="StartTimerButton" Content="Start"                                />
-                    <Button x:ConnectionId='4' x:Name="PauseTimerButton" Content="Pause"                                />
-                    <Button x:ConnectionId='5' x:Name="StopAndResetTimerButton" Content="Stop &amp; Reset"                                       />
-                    <Button x:ConnectionId='6' x:Name="ButtonModifyTimer" Content="Upravit fáze"                                 />
-                    <ToggleSwitch x:ConnectionId='7' x:Name="LoopTS" Header="Smyčka"                       />
-                </StackPanel>
-            </Viewbox>
-        </Border>
     </Grid>
 </Page>
 

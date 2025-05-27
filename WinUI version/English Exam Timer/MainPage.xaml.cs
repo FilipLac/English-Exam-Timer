@@ -1,28 +1,27 @@
-using System;
-using System.ComponentModel;
-using System.Threading;
-using System.Threading.Tasks;
+using Microsoft.UI;
 using Microsoft.UI.Dispatching;
+    using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Media;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text.Json;
-using Windows.UI;
-using Windows.Storage;
-//Offline
-using Microsoft.UI;
-    using Microsoft.UI.Windowing;
     using Microsoft.UI.Xaml.Controls.Primitives;
     using Microsoft.UI.Xaml.Data;
     using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Animation;
     using Microsoft.UI.Xaml.Navigation;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
     using Windows.Foundation;
     using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.UI;
 
-// To learn more about WinUI, the WinUI project structure, and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace English_Exam_Timer
 {
@@ -47,7 +46,21 @@ namespace English_Exam_Timer
             UpdateUI();
 
             _ = ViewModel.LoadPhasesAsync();
-            ViewModel.SetBackgroundAction = brush => DispatcherQueue.TryEnqueue(() => RootGrid.Background = brush);
+            ViewModel.SetBackgroundAction = brush => DispatcherQueue.TryEnqueue(() =>
+            {
+                var animation = new ColorAnimation
+                {
+                    To = ((SolidColorBrush)brush).Color,
+                    Duration = new Duration(TimeSpan.FromMilliseconds(300)),
+                    EnableDependentAnimation = true
+                };
+
+                var storyboard = new Storyboard();
+                Storyboard.SetTarget(animation, FlashLayer);
+                Storyboard.SetTargetProperty(animation, "(Panel.Background).(SolidColorBrush.Color)");
+                storyboard.Children.Add(animation);
+                storyboard.Begin();
+            });
         }
 
         private void StartTimerButton_Click(object sender, RoutedEventArgs e)
@@ -138,19 +151,25 @@ namespace English_Exam_Timer
 
         private void UpdateUI()
         {
+            UpdateTextDisplay();
+            UpdateGauge();
+            PlayPhaseTransitionAnimation();
+        }
+
+        private void UpdateTextDisplay()
+        {
             //lap.Text = ViewModel.LapNumber;
             //lRemainingTime.Text = ViewModel.RemainingSeconds;
             TimerText.Text = ViewModel.DisplayTime;
-
+        }
+        private void UpdateGauge()
+        {
             int total = ViewModel.Times.Length > ViewModel.CurrentPhaseIndex
                 ? ViewModel.Times[ViewModel.CurrentPhaseIndex]
                 : 1;
 
-            UpdateRadialGauge(ViewModel.RemainingSecondsInt, total);
-        }
-        private void UpdateRadialGauge(double value, double max)
-        {
-            double angle = 360 * (value / max);
+            double value = ViewModel.RemainingSecondsInt;
+            double angle = 360 * (value / total);
             double radians = (angle - 90) * Math.PI / 180;
             double radius = 100;
 
@@ -161,15 +180,15 @@ namespace English_Exam_Timer
 
             var arcSegment = new ArcSegment
             {
-                Point = new Windows.Foundation.Point(x, y),
-                Size = new Windows.Foundation.Size(radius, radius),
+                Point = new Point(x, y),
+                Size = new Size(radius, radius),
                 SweepDirection = SweepDirection.Clockwise,
                 IsLargeArc = isLargeArc
             };
 
             var figure = new PathFigure
             {
-                StartPoint = new Windows.Foundation.Point(100, 0),
+                StartPoint = new Point(100, 0),
                 IsClosed = false
             };
             figure.Segments.Add(arcSegment);
@@ -178,6 +197,14 @@ namespace English_Exam_Timer
             geometry.Figures.Add(figure);
 
             GaugeArc.Data = geometry;
+        }
+
+        private void PlayPhaseTransitionAnimation()
+        {
+            if (this.Resources.TryGetValue("PhaseTransitionStoryboard", out var storyboardObj) && storyboardObj is Storyboard storyboard)
+            {
+                storyboard.Begin();
+            }
         }
     }
     public partial class TimerViewModel : INotifyPropertyChanged

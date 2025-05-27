@@ -31,39 +31,61 @@
             <Setter Property="Margin" Value="10,0"/>
             <Setter Property="FontSize" Value="16"/>
         </Style>
+
+        <!-- Styl pro ContentDialog -->
+        <Style TargetType="ContentDialog">
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="MinWidth" Value="300"/>
+            <Setter Property="MaxWidth" Value="500"/>
+        </Style>
+
+        <!-- Přechodová animace fáze -->
+        <Storyboard x:Key="PhaseTransitionStoryboard">
+            <DoubleAnimation Storyboard.TargetName="GaugeArc"
+                             Storyboard.TargetProperty="Opacity"
+                             From="0" To="1" Duration="0:0:0.4" />
+            <DoubleAnimation Storyboard.TargetName="TimerText"
+                             Storyboard.TargetProperty="Opacity"
+                             From="0" To="1" Duration="0:0:0.4" />
+        </Storyboard>
     </Page.Resources>
 
     <Grid x:Name="RootGrid" Padding="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+        <!-- Flash Background Layer -->
+        <Grid x:Name="FlashLayer" Background="Transparent"/>
 
-        <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Viewbox Stretch="Uniform">
-                <Canvas x:Name="RadialGaugeCanvas" Width="200" Height="200">
-                    <Ellipse Width="200" Height="200" Stroke="Gray" StrokeThickness="10"/>
-                    <Path x:Name="GaugeArc" StrokeThickness="12" Fill="Transparent"
-                          StrokeStartLineCap="Round" StrokeEndLineCap="Round"
-                          Stroke="{StaticResource GaugeBrush}"/>
-                    <TextBlock x:Name="TimerText" Text="00:00" FontSize="24" FontWeight="Bold"
-                               HorizontalAlignment="Center" VerticalAlignment="Center"
-                               Canvas.Left="70" Canvas.Top="85"/>
-                </Canvas>
-            </Viewbox>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox Stretch="Uniform">
+                    <Canvas x:Name="RadialGaugeCanvas" Width="200" Height="200">
+                        <Ellipse Width="200" Height="200" Stroke="Gray" StrokeThickness="10"/>
+                        <Path x:Name="GaugeArc" Stroke="Green" StrokeThickness="10" Fill="Transparent"/>
+                        <TextBlock x:Name="TimerText" Text="00:00" FontSize="24" FontWeight="Bold"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   Canvas.Left="70" Canvas.Top="85"/>
+                    </Canvas>
+                </Viewbox>
+            </Grid>
+
+            <!-- SPODNÍ OVLÁDACÍ PANEL -->
+            <Border Grid.Row="1" Background="{ThemeResource SystemControlBackgroundBaseLowBrush}" Padding="10">
+                <Viewbox Stretch="Uniform" HorizontalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                        <Button x:Name="StartTimerButton" Content="Start" Click="StartTimerButton_Click" />
+                        <Button x:Name="PauseTimerButton" Content="Pause" Click="PauseTimerButton_Click" />
+                        <Button x:Name="StopAndResetTimerButton" Content="Stop &amp; Reset" Click="StopAndResetTimerButton_Click" />
+                        <Button x:Name="ButtonModifyTimer" Content="Upravit fáze" Click="ButtonModifyTimer_Click" />
+                        <ToggleSwitch x:Name="LoopTS" Header="Smyčka" Toggled="LoopTS_IsOn" />
+                    </StackPanel>
+                </Viewbox>
+            </Border>
         </Grid>
-
-        <!-- SPODNÍ OVLÁDACÍ PANEL -->
-        <Border Grid.Row="1" Background="{ThemeResource SystemControlBackgroundBaseLowBrush}" Padding="10">
-            <Viewbox Stretch="Uniform" HorizontalAlignment="Stretch">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-                    <Button x:Name="StartTimerButton" Content="Start" Click="StartTimerButton_Click" />
-                    <Button x:Name="PauseTimerButton" Content="Pause" Click="PauseTimerButton_Click" />
-                    <Button x:Name="StopAndResetTimerButton" Content="Stop &amp; Reset" Click="StopAndResetTimerButton_Click" />
-                    <Button x:Name="ButtonModifyTimer" Content="Upravit fáze" Click="ButtonModifyTimer_Click" />
-                    <ToggleSwitch x:Name="LoopTS" Header="Smyčka" Toggled="LoopTS_IsOn" />
-                </StackPanel>
-            </Viewbox>
-        </Border>
     </Grid>
 </Page>
