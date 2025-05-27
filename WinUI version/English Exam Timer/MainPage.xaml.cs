@@ -1,14 +1,8 @@
-using Microsoft.UI;
 using Microsoft.UI.Dispatching;
-    using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-    using Microsoft.UI.Xaml.Controls.Primitives;
-    using Microsoft.UI.Xaml.Data;
-    using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Media.Animation;
-    using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +11,16 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-    using Windows.Foundation;
-    using Windows.Foundation.Collections;
+using Windows.Foundation;
 using Windows.Storage;
 using Windows.UI;
+    using Microsoft.UI;
+    using Microsoft.UI.Xaml.Controls.Primitives;
+    using Microsoft.UI.Xaml.Navigation;
+    using Microsoft.UI.Xaml.Data;
+    using Microsoft.UI.Xaml.Input;
+    using Microsoft.UI.Windowing;
+    using Windows.Foundation.Collections;
 
 
 namespace English_Exam_Timer
@@ -33,57 +33,47 @@ namespace English_Exam_Timer
         {
             this.InitializeComponent();
 
-            //// Pøiøazení hlavního okna pro zmìnu pozadí
-            //TimerViewModel.MainWindow = this;
-
-            // hlavní vizuální obsah okna
-            //this.Content = new MainPage();
-
-            //// Pøihlášení k události zmìny vlastností ViewModelu
             ViewModel.PropertyChanged += ViewModel_PropertyChanged;
-
-            //// Poèáteèní naplnìní UI
             UpdateUI();
 
             _ = ViewModel.LoadPhasesAsync();
-            ViewModel.SetBackgroundAction = brush => DispatcherQueue.TryEnqueue(() =>
+            ViewModel.SetBackgroundAction = brush =>
             {
-                var animation = new ColorAnimation
+                DispatcherQueue.TryEnqueue(() =>
                 {
-                    To = ((SolidColorBrush)brush).Color,
-                    Duration = new Duration(TimeSpan.FromMilliseconds(300)),
-                    EnableDependentAnimation = true
-                };
-
-                var storyboard = new Storyboard();
-                Storyboard.SetTarget(animation, FlashLayer);
-                Storyboard.SetTargetProperty(animation, "(Panel.Background).(SolidColorBrush.Color)");
-                storyboard.Children.Add(animation);
-                storyboard.Begin();
-            });
+                    FlashLayer.Background = brush;
+                    var color = (brush as SolidColorBrush)?.Color ?? Colors.White;
+                    var foreground = GetContrastingForeground(color);
+                    TimerText.Foreground = new SolidColorBrush(foreground);
+                    LoopTS.Foreground = new SolidColorBrush(foreground);
+                    LoopTSHeader.Foreground = new SolidColorBrush(foreground);
+                    if (LoopTS.Header is string headerText)
+                        LoopTS.Header = new TextBlock { Text = headerText, Foreground = new SolidColorBrush(foreground) };
+                    AdjustPanelBackground(color);
+                });
+            };
         }
-
-        private void StartTimerButton_Click(object sender, RoutedEventArgs e)
+        private void AdjustPanelBackground(Color backgroundColor)
         {
-            ViewModel.StartTimer();
+            byte adjust(byte c) => (byte)Math.Max(0, c - 30);
+            Color darker = Color.FromArgb(255, adjust(backgroundColor.R), adjust(backgroundColor.G), adjust(backgroundColor.B));
+            BottomPanel.Background = new SolidColorBrush(darker);
         }
 
-        private void PauseTimerButton_Click(object sender, RoutedEventArgs e)
+        private Color GetContrastingForeground(Color bg)
         {
-            ViewModel.PauseTimer();
+            double luminance = (0.299 * bg.R + 0.587 * bg.G + 0.114 * bg.B) / 255;
+            return luminance > 0.5 ? Colors.Black : Colors.White;
         }
 
-        private void StopAndResetTimerButton_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel.ResetTimer();
-        }
+        private void StartTimerButton_Click(object sender, RoutedEventArgs e) => ViewModel.StartTimer();
+        private void PauseTimerButton_Click(object sender, RoutedEventArgs e) => ViewModel.PauseTimer();
+        private void StopAndResetTimerButton_Click(object sender, RoutedEventArgs e) => ViewModel.ResetTimer();
+        private void LoopTS_IsOn(object sender, RoutedEventArgs e) => ViewModel.SetLoop(LoopTS.IsOn == true);
 
         private async void ButtonModifyTimer_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new ModifyTimerDialog(ViewModel)
-            {
-                XamlRoot = this.XamlRoot
-            };
+            var dialog = new ModifyTimerDialog(ViewModel) { XamlRoot = this.XamlRoot };
 
             // Pøidání fáze
             dialog.AddPhaseRequested += async (s, _) =>
@@ -130,12 +120,6 @@ namespace English_Exam_Timer
 
             // otevøe hlavní dialog
             await dialog.ShowAsync();
-        }
-
-
-        private void LoopTS_IsOn(object sender, RoutedEventArgs e)
-        {
-            ViewModel.SetLoop(LoopTS.IsOn == true);
         }
 
         private void ViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
@@ -207,9 +191,9 @@ namespace English_Exam_Timer
             }
         }
     }
-    public partial class TimerViewModel : INotifyPropertyChanged
-    {
-        public List<PhaseTime> Phases { get; private set; } = new();
+        public partial class TimerViewModel : INotifyPropertyChanged
+        {
+        public List<PhaseTime> Phases { get; private set; } = [];
         private const string FileName = "phases.json";
 
         public int RemainingSecondsInt => remainingTime;
@@ -503,10 +487,10 @@ namespace English_Exam_Timer
             ApplyPhasesToTimes();
         }
 
-        private List<PhaseTime> GetDefaultPhases()
+        private static List<PhaseTime> GetDefaultPhases()
         {
-            return new List<PhaseTime>
-            {
+            return
+            [
                 new("Instrukce", 30),
                 new("Ètení", 150),
                 new("Otázky 1", 90),
@@ -515,7 +499,7 @@ namespace English_Exam_Timer
                 new("Psaní 1", 300),
                 new("Psaní 2", 180),
                 new("Kontrola", 300),
-            };
+            ];
         }
 
         public void ApplyPhasesToTimes()

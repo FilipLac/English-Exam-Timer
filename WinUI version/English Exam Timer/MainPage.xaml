@@ -68,6 +68,7 @@
                         <Ellipse Width="200" Height="200" Stroke="Gray" StrokeThickness="10"/>
                         <Path x:Name="GaugeArc" Stroke="Green" StrokeThickness="10" Fill="Transparent"/>
                         <TextBlock x:Name="TimerText" Text="00:00" FontSize="24" FontWeight="Bold"
+                                   Foreground="WhiteSmoke"
                                    HorizontalAlignment="Center" VerticalAlignment="Center"
                                    Canvas.Left="70" Canvas.Top="85"/>
                     </Canvas>
@@ -75,14 +76,18 @@
             </Grid>
 
             <!-- SPODNÍ OVLÁDACÍ PANEL -->
-            <Border Grid.Row="1" Background="{ThemeResource SystemControlBackgroundBaseLowBrush}" Padding="10">
+            <Border x:Name="BottomPanel" Grid.Row="1" Background="{ThemeResource SystemControlBackgroundBaseLowBrush}" Padding="10">
                 <Viewbox Stretch="Uniform" HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
                         <Button x:Name="StartTimerButton" Content="Start" Click="StartTimerButton_Click" />
                         <Button x:Name="PauseTimerButton" Content="Pause" Click="PauseTimerButton_Click" />
                         <Button x:Name="StopAndResetTimerButton" Content="Stop &amp; Reset" Click="StopAndResetTimerButton_Click" />
                         <Button x:Name="ButtonModifyTimer" Content="Upravit fáze" Click="ButtonModifyTimer_Click" />
-                        <ToggleSwitch x:Name="LoopTS" Header="Smyčka" Toggled="LoopTS_IsOn" />
+                        <ToggleSwitch x:Name="LoopTS" Toggled="LoopTS_IsOn" Foreground="WhiteSmoke">
+                            <ToggleSwitch.Header>
+                                <TextBlock x:Name="LoopTSHeader" Text="Smyčka" Foreground="WhiteSmoke"/>
+                            </ToggleSwitch.Header>
+                        </ToggleSwitch>
                     </StackPanel>
                 </Viewbox>
             </Border>
