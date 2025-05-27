@@ -26,16 +26,19 @@ using Microsoft.UI;
 
 namespace English_Exam_Timer
 {
-    public sealed partial class MainWindow : Window
+    public sealed partial class MainPage : Page
     {
         public TimerViewModel ViewModel { get; } = new TimerViewModel();
 
-        public MainWindow()
+        public MainPage()
         {
             this.InitializeComponent();
 
             //// Pøiøazení hlavního okna pro zmìnu pozadí
-            TimerViewModel.MainWindow = this;
+            //TimerViewModel.MainWindow = this;
+
+            // hlavní vizuální obsah okna
+            //this.Content = new MainPage();
 
             //// Pøihlášení k události zmìny vlastností ViewModelu
             ViewModel.PropertyChanged += ViewModel_PropertyChanged;
@@ -66,7 +69,7 @@ namespace English_Exam_Timer
         {
             var dialog = new ModifyTimerDialog(ViewModel)
             {
-                XamlRoot = this.Content.XamlRoot
+                XamlRoot = this.XamlRoot
             };
 
             // Pøidání fáze
@@ -160,9 +163,47 @@ namespace English_Exam_Timer
         private readonly int[] InitialTime = [30, 150, 90, 90, 60, 300, 180, 300];
 
         public int[] Times { get; private set; }
-        public string DisplayTime { get; private set; } = "00:00";
-        public string LapNumber { get; private set; } = "1";
-        public string RemainingSeconds { get; private set; } = "000s";
+        private string _lapNumber = "1";
+        public string LapNumber
+        {
+            get => _lapNumber;
+            private set
+            {
+                if (_lapNumber != value)
+                {
+                    _lapNumber = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LapNumber)));
+                }
+            }
+        }
+
+        private string _remainingSeconds = "000s";
+        public string RemainingSeconds
+        {
+            get => _remainingSeconds;
+            private set
+            {
+                if (_remainingSeconds != value)
+                {
+                    _remainingSeconds = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RemainingSeconds)));
+                }
+            }
+        }
+
+        private string _displayTime = "00:00";
+        public string DisplayTime
+        {
+            get => _displayTime;
+            private set
+            {
+                if (_displayTime != value)
+                {
+                    _displayTime = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayTime)));
+                }
+            }
+        }
 
         private readonly DispatcherTimer lapTimer;
 
@@ -369,12 +410,15 @@ namespace English_Exam_Timer
 
         private void UpdateUI()
         {
+            //LapNumber = (l + 1).ToString();
+            //RemainingSeconds = $"{remainingTime}s";
+            //DisplayTime = $"{remainingTime / 60:D2}:{remainingTime % 60:D2}";
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LapNumber)));
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RemainingSeconds)));
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayTime)));
             LapNumber = (l + 1).ToString();
             RemainingSeconds = $"{remainingTime}s";
             DisplayTime = $"{remainingTime / 60:D2}:{remainingTime % 60:D2}";
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LapNumber)));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RemainingSeconds)));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayTime)));
         }
 
         public async Task LoadPhasesAsync()

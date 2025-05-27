@@ -42,7 +42,8 @@ namespace English_Exam_Timer
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            m_window = new MainWindow();
+            m_window = new Window();
+            m_window.Content = new MainPage(); // <- nastaví obsah okna
             m_window.Activate();
         }
 
