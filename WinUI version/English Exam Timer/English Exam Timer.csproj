@@ -75,5 +75,15 @@
     <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
     <PackageLicenseFile>LICENCE.txt</PackageLicenseFile>
     <ApplicationIcon>Resources\MainIcon.ico</ApplicationIcon>
+    <NeutralLanguage>cs-CZ</NeutralLanguage>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Optimize>True</Optimize>
   </PropertyGroup>
 </Project>
