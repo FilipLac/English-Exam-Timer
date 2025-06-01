@@ -6,9 +6,9 @@
       "version": "8.0.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\Filip\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Filip\\.nuget\\packages",
-      "D:\\Programs\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\User\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\User\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
