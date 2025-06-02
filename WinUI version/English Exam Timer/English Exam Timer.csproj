@@ -77,6 +77,7 @@
     <ApplicationIcon>Resources\MainIcon.ico</ApplicationIcon>
     <NeutralLanguage>cs-CZ</NeutralLanguage>
     <SignAssembly>False</SignAssembly>
+    <DefaultLanguage>cs-cz</DefaultLanguage>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <Optimize>False</Optimize>
