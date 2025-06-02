@@ -1,4 +1,3 @@
-
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -12,10 +11,9 @@ using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Storage;
 using Microsoft.UI;
-//offline
-    using System.Text.Json;
-    using System.Linq;
-    using Windows.UI;
+using System.Text.Json;
+using System.Linq;
+using Windows.UI;
 
 namespace English_Exam_Timer
 {
@@ -41,16 +39,17 @@ namespace English_Exam_Timer
                 {
                     FlashLayer.Background = brush;
                     var color = (brush as SolidColorBrush)?.Color ?? Colors.White;
-                    var foreground = GetContrastingForeground(color);
-                    TimerText.Foreground = new SolidColorBrush(foreground);
-                    LoopTS.Foreground = new SolidColorBrush(foreground);
+                    //var foreground = GetContrastingForeground(color);
+                    var foregroundBrush = new SolidColorBrush(GetContrastingForeground(color));
+                    TimerText.Foreground = foregroundBrush;
+                    LoopTS.Foreground = foregroundBrush;
                     if (LoopTS.Header is string headerText)
-                        LoopTS.Header = new TextBlock { Text = headerText, Foreground = new SolidColorBrush(foreground) };
+                        LoopTS.Header = new TextBlock { Text = headerText, Foreground = foregroundBrush };
                     if (FlashTS != null)
                     {
-                        FlashTS.Foreground = new SolidColorBrush(foreground);
+                        FlashTS.Foreground = foregroundBrush;
                         if (FlashTS.Header is string flashHeader)
-                            FlashTS.Header = new TextBlock { Text = flashHeader, Foreground = new SolidColorBrush(foreground) };
+                            FlashTS.Header = new TextBlock { Text = flashHeader, Foreground = foregroundBrush };
                     }
                     AdjustPanelBackground(color);
                 });
@@ -199,6 +198,8 @@ namespace English_Exam_Timer
 
     public partial class TimerViewModel : INotifyPropertyChanged
     {
+        //private SolidColorBrush _currentBrush = new(Microsoft.UI.Colors.WhiteSmoke);
+        
         //Declarations
         public event Action? TimerFinished;
         private int remainingTime;
@@ -206,9 +207,6 @@ namespace English_Exam_Timer
         private int l = 0;
         
         public Action<Brush>? SetBackgroundAction { get; set; }
-
-
-        private SolidColorBrush _currentBrush = new(Microsoft.UI.Colors.WhiteSmoke);
 
         public event PropertyChangedEventHandler? PropertyChanged;
         

@@ -7,11 +7,11 @@
 
     <Page.Resources>
         <!-- Gauge barevný přechod -->
-        <LinearGradientBrush x:Key="GaugeBrush" StartPoint="0,0" EndPoint="1,1">
+        <!--<LinearGradientBrush x:Key="GaugeBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="Green" Offset="0.0"/>
             <GradientStop Color="Yellow" Offset="0.5"/>
             <GradientStop Color="Red" Offset="1.0"/>
-        </LinearGradientBrush>
+        </LinearGradientBrush>-->
 
         <!-- Styl tlačítek -->
         <Style TargetType="Button">
@@ -64,10 +64,10 @@
 
             <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Viewbox Stretch="Uniform">
-                    <Canvas x:ConnectionId='11' x:Name="RadialGaugeCanvas" Width="200" Height="200">
+                    <Canvas x:ConnectionId='13' x:Name="RadialGaugeCanvas" Width="200" Height="200">
                         <Ellipse Width="200" Height="200" Stroke="Gray" StrokeThickness="10"/>
-                        <Path x:ConnectionId='12' x:Name="GaugeArc" Stroke="Green" StrokeThickness="10" Fill="Transparent"/>
-                        <TextBlock x:ConnectionId='13' x:Name="TimerText" Text="00:00" FontSize="24" FontWeight="Bold"
+                        <Path x:ConnectionId='14' x:Name="GaugeArc" Stroke="Green" StrokeThickness="10" Fill="Transparent"/>
+                        <TextBlock x:ConnectionId='15' x:Name="TimerText" Text="00:00" FontSize="24" FontWeight="Bold"
                                    Foreground="WhiteSmoke"
                                    HorizontalAlignment="Center" VerticalAlignment="Center"
                                    Canvas.Left="70" Canvas.Top="85"/>
@@ -85,7 +85,12 @@
                         <Button x:ConnectionId='8' x:Name="ButtonModifyTimer" Content="Upravit fáze"                                 />
                         <ToggleSwitch x:ConnectionId='9' x:Name="LoopTS"                       Foreground="WhiteSmoke">
                             <ToggleSwitch.Header>
-                                <TextBlock x:ConnectionId='10' x:Name="LoopTSHeader" Text="Smyčka" Foreground="WhiteSmoke"/>
+                                <TextBlock x:ConnectionId='12' x:Name="LoopTSHeader" Text="Smyčka" Foreground="WhiteSmoke"/>
+                            </ToggleSwitch.Header>
+                        </ToggleSwitch>
+                        <ToggleSwitch x:ConnectionId='10' x:Name="FlashTS"                        Foreground="WhiteSmoke">
+                            <ToggleSwitch.Header>
+                                <TextBlock x:ConnectionId='11' x:Name="FlashTSHeader" Text="Blikání" Foreground="WhiteSmoke"/>
                             </ToggleSwitch.Header>
                         </ToggleSwitch>
                     </StackPanel>
