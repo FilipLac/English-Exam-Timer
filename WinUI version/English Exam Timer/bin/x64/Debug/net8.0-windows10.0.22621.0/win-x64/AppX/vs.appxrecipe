@@ -31,25 +31,29 @@
     <AppXManifest Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-06-02T18:34:55.421</Modified>
+      <Modified>2025-06-02T21:18:59.449</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-06-02T18:16:35.025</Modified>
+      <Modified>2025-06-02T21:17:29.374</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\win-x64\English Exam Timer.runtimeconfig.json">
       <PackagePath>English Exam Timer.runtimeconfig.json</PackagePath>
-      <Modified>2025-06-02T17:01:11.263</Modified>
+      <Modified>2025-06-02T21:17:29.341</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\win-x64\English Exam Timer.dll">
       <PackagePath>English Exam Timer.dll</PackagePath>
-      <Modified>2025-06-02T18:34:55.374</Modified>
+      <Modified>2025-06-02T21:18:59.386</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\Assets\icon.ico">
+      <PackagePath>Assets\icon.ico</PackagePath>
+      <Modified>2025-05-30T06:42:31.200</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\win-x64\apphost.exe">
       <PackagePath>English Exam Timer.exe</PackagePath>
-      <Modified>2025-06-02T18:34:55.381</Modified>
+      <Modified>2025-06-02T21:18:59.402</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.22621.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -161,11 +165,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\win-x64\English Exam Timer.deps.json">
       <PackagePath>English Exam Timer.deps.json</PackagePath>
-      <Modified>2025-06-02T17:01:11.263</Modified>
+      <Modified>2025-06-02T21:17:29.339</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2025-05-30T06:42:31.171</Modified>
+      <Modified>2025-06-02T18:58:18.060</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
@@ -173,19 +177,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
-      <Modified>2025-05-30T06:42:31.179</Modified>
+      <Modified>2025-06-02T18:57:02.322</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
-      <Modified>2025-05-30T06:42:31.179</Modified>
+      <Modified>2025-06-02T18:57:51.036</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
-      <Modified>2025-05-30T06:42:31.179</Modified>
+      <Modified>2025-06-02T18:57:19.457</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <Modified>2025-05-30T06:42:31.181</Modified>
+      <Modified>2025-06-02T18:56:17.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>

@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Storage;
 using Windows.UI;
+using System.Timers;
 
 namespace English_Exam_Timer
 {
@@ -57,13 +58,13 @@ namespace English_Exam_Timer
 
             ViewModel.TimerFinished += async () =>
             {
-                await ShowMessageDialog("Konec", "Èasovaè dokonèen."/*, this.XamlRoot*/);
+                await ShowMessageDialog("Konec", "Èasovaè dokonèen.", this.XamlRoot);
             };
         }
 
         private void AdjustPanelBackground(Color backgroundColor)
         {
-            byte adjust(byte c) => (byte)Math.Max(0, c - 30);
+            static byte adjust(byte c) => (byte)Math.Max(0, c - 30);
             Color darker = Color.FromArgb(255, adjust(backgroundColor.R), adjust(backgroundColor.G), adjust(backgroundColor.B));
             BottomPanel.Background = new SolidColorBrush(darker);
         }
@@ -184,13 +185,14 @@ namespace English_Exam_Timer
             }
         }
 
-        private static async Task ShowMessageDialog(string title, string content)
+        private static async Task ShowMessageDialog(string title, string content, XamlRoot xamlRoot)
         {
             var dialog = new ContentDialog
             {
                 Title = title,
                 Content = content,
                 CloseButtonText = "OK",
+                XamlRoot = xamlRoot
             };
             await dialog.ShowAsync();
         }
@@ -215,8 +217,9 @@ namespace English_Exam_Timer
         private bool started = false;
 
         //Multirun
-        private readonly DispatcherTimer lapTimer;
-        private CancellationTokenSource flashCts;
+        private System.Timers.Timer lapTimer;
+        private DispatcherQueue dispatcherQueue;
+        private CancellationTokenSource? flashCts = new();
 
         //------------------Declaration for ToggleSwitches------------------//
         private bool enableFlash = true;
@@ -239,8 +242,10 @@ namespace English_Exam_Timer
         public TimerViewModel()
         {
             Times = new int[8];
-            lapTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-            lapTimer.Tick += LapTimer_Tick;
+            lapTimer = new System.Timers.Timer(1000); //1 sekunda
+            lapTimer.Elapsed += LapTimer_Elapsed;
+            lapTimer.AutoReset = true;
+            dispatcherQueue = DispatcherQueue.GetForCurrentThread(); //nastavení dispatcherQueue
         }
 
         public void StartTimer()
@@ -286,42 +291,47 @@ namespace English_Exam_Timer
             UpdateUI();
         }
 
-        private async void LapTimer_Tick(object? sender, object? e)
+        private void LapTimer_Elapsed(object? sender, ElapsedEventArgs e)
         {
-            if (remainingTime > 0)
+            // Všechny zmìny UI musí být pøes dispatcherQueue (UI jádro & Timer jádro)
+            dispatcherQueue.TryEnqueue(()=>/*async () =>*/
             {
-                remainingTime--;
-            }
-            else
-            {
-                l++;
-                if (l == Times.Length)
+                if (remainingTime > 0)
                 {
-                    if (!wantLoop)
-                    {
-                        lapTimer.Stop();
-                        TimerFinished?.Invoke();
-                        ResetTimer();
-                        return;
-                    }
-                    else
-                    {
-                        ResetTimer();
-                        StartTimer();
-                        return;
-                    }
+                    remainingTime--;
                 }
                 else
                 {
-                    remainingTime = Times[l];
+                    l++;
+                    if (l == Times.Length)
+                    {
+                        if (!wantLoop)
+                        {
+                            lapTimer.Stop();
+                            TimerFinished?.Invoke();
+                            ResetTimer();
+                            return;
+                        }
+                        else
+                        {
+                            ResetTimer();
+                            StartTimer();
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        remainingTime = Times[l];
+                    }
                 }
-            }
-            if (enableFlash)
-                await StartFlashing(remainingTime);
-            else
-                await ResetBackground();
-            UpdateUI();
+                if (enableFlash)
+                    StartFlashing(remainingTime);
+                else
+                    ResetBackground();
+                UpdateUI();
+            });
         }
+
 
         private void UpdateUI()
         {
@@ -331,48 +341,51 @@ namespace English_Exam_Timer
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayTime)));
         }
 
-        private async Task StartFlashing(int secondsLeft)
+        public void StartFlashing(int secondsLeft)
         {
             flashCts?.Cancel();
             flashCts = new CancellationTokenSource();
-            try
-            {
-                if (secondsLeft <= 5)
-                    await SetSolidColor(Microsoft.UI.Colors.Red);
-                else if (secondsLeft < 10)
-                    await FlashColor(Microsoft.UI.Colors.Red, 500);
-                else if (secondsLeft <= 30)
-                    await FlashColor(Microsoft.UI.Colors.Yellow, 500);
-                else
-                    await ResetBackground();
-            }
-            catch (TaskCanceledException) { }
+
+            if (secondsLeft <= 5)
+                SetSolidColor(Microsoft.UI.Colors.Red);
+            else if (secondsLeft < 10)
+                _ = FlashColor(Microsoft.UI.Colors.Red, 500, flashCts.Token);
+            else if (secondsLeft <= 30)
+                _ = FlashColor(Microsoft.UI.Colors.Yellow, 500, flashCts.Token); //_= je pro to, aby se neèekalo na flash a pøípadné potíže -> timer má prioritu nad UI flash
+            else
+                ResetBackground();
         }
 
-        private async Task FlashColor(Color color, int intervalMs)
+        private async Task FlashColor(Color color, int intervalMs, CancellationToken token)
         {
             var targetBrush = new SolidColorBrush(color);
             var originalBrush = new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke);
-            while (!flashCts.IsCancellationRequested)
+            if (flashCts == null)
+                return;
+
+            try
             {
-                SetBackgroundAction?.Invoke(targetBrush);
-                await Task.Delay(intervalMs, flashCts.Token);
-                SetBackgroundAction?.Invoke(originalBrush);
-                await Task.Delay(intervalMs, flashCts.Token);
+                while (!flashCts.IsCancellationRequested)
+                {
+                    SetBackgroundAction?.Invoke(targetBrush);
+                    await Task.Delay(intervalMs, flashCts.Token);
+                    SetBackgroundAction?.Invoke(originalBrush);
+                    await Task.Delay(intervalMs, flashCts.Token);
+                }
             }
+            catch (TaskCanceledException) {/*Blikání bylo zrušeno, nic dalšího není potøeba dìlat*/}
         }
 
-        private async Task SetSolidColor(Color color)
+        private void SetSolidColor(Color color)
         {
             SetBackgroundAction?.Invoke(new SolidColorBrush(color));
-            await Task.CompletedTask;
         }
 
-        private async Task ResetBackground()
+        private void ResetBackground()
         {
             SetBackgroundAction?.Invoke(new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke));
-            await Task.CompletedTask;
         }
+
 
         public async Task LoadPhasesAsync()
         {
@@ -402,6 +415,7 @@ namespace English_Exam_Timer
             //new("Psaní plán", 60), new("Psaní 1", 300), new("Psaní 2", 180), new("Kontrola", 300)
             new("Debug_Phase1", 40)
         ];
+
 
         public void ApplyPhasesToTimes() => Times = Phases.Select(p => p.DurationSeconds).ToArray();
     }
