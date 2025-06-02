@@ -7,16 +7,15 @@ using Microsoft.UI.Xaml.Media.Animation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Storage;
-using Windows.UI;
 using Microsoft.UI;
 //offline
-    using Microsoft.UI.Xaml.Controls.Primitives;
+    using System.Text.Json;
+    using System.Linq;
+    using Windows.UI;
 
 namespace English_Exam_Timer
 {
@@ -59,7 +58,7 @@ namespace English_Exam_Timer
 
             ViewModel.TimerFinished += async () =>
             {
-                await ShowMessageDialog("Konec", "Èasovaè dokonèen.", this.XamlRoot);
+                await ShowMessageDialog("Konec", "Èasovaè dokonèen."/*, this.XamlRoot*/);
             };
         }
 
@@ -137,8 +136,7 @@ namespace English_Exam_Timer
         {
             // Zmìny v UI podle ViewModelu
             if (e.PropertyName == nameof(ViewModel.DisplayTime) ||
-                e.PropertyName == nameof(ViewModel.LapNumber) ||
-                e.PropertyName == nameof(ViewModel.RemainingSeconds))
+                e.PropertyName == nameof(ViewModel.LapNumber))
             {
                 UpdateUI();
             }
@@ -187,14 +185,13 @@ namespace English_Exam_Timer
             }
         }
 
-        private static async Task ShowMessageDialog(string title, string content, XamlRoot xamlRoot)
+        private static async Task ShowMessageDialog(string title, string content)
         {
             var dialog = new ContentDialog
             {
                 Title = title,
                 Content = content,
                 CloseButtonText = "OK",
-                XamlRoot = xamlRoot
             };
             await dialog.ShowAsync();
         }
@@ -203,7 +200,6 @@ namespace English_Exam_Timer
     public partial class TimerViewModel : INotifyPropertyChanged
     {
         //Declarations
-        private readonly int[] InitialTime = [30, 150, 90, 90, 60, 300, 180, 300];
         public event Action? TimerFinished;
         private int remainingTime;
 
@@ -239,14 +235,12 @@ namespace English_Exam_Timer
         public int RemainingSecondsInt => remainingTime;
         public int CurrentPhaseIndex => l;
         public string LapNumber { get; private set; } = "1";
-        public string RemainingSeconds { get; private set; } = "000s";
         public string DisplayTime { get; private set; } = "00:00";
         private const string FileName = "phases.json";
 
         public TimerViewModel()
         {
             Times = new int[8];
-            InitialTime.CopyTo(Times, 0);
             lapTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
             lapTimer.Tick += LapTimer_Tick;
         }
@@ -334,14 +328,10 @@ namespace English_Exam_Timer
         private void UpdateUI()
         {
             LapNumber = (l + 1).ToString();
-            RemainingSeconds = $"{remainingTime}s";
             DisplayTime = $"{remainingTime / 60:D2}:{remainingTime % 60:D2}";
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LapNumber)));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RemainingSeconds)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayTime)));
         }
-
-        //public void SetLoop(bool loop) => wantLoop = loop;
 
         private async Task StartFlashing(int secondsLeft)
         {
@@ -412,7 +402,7 @@ namespace English_Exam_Timer
         [
             //new("Instrukce", 30), new("Ètení", 150), new("Otázky 1", 90), new("Otázky 2", 90),
             //new("Psaní plán", 60), new("Psaní 1", 300), new("Psaní 2", 180), new("Kontrola", 300)
-            new("Debug_Phase1", 11)
+            new("Debug_Phase1", 40)
         ];
 
         public void ApplyPhasesToTimes() => Times = Phases.Select(p => p.DurationSeconds).ToArray();
