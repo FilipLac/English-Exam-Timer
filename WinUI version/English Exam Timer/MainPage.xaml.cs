@@ -31,6 +31,10 @@ namespace English_Exam_Timer
             ViewModel.PropertyChanged += ViewModel_PropertyChanged;
             UpdateUI();
 
+            // inicializace stavù pøepínaèù
+            LoopTS.IsOn = ViewModel.LoopEnabled;
+            FlashTS.IsOn = ViewModel.FlashEnabled;
+
             _ = ViewModel.LoadPhasesAsync();
             ViewModel.SetBackgroundAction = brush =>
             {
@@ -43,6 +47,12 @@ namespace English_Exam_Timer
                     LoopTS.Foreground = new SolidColorBrush(foreground);
                     if (LoopTS.Header is string headerText)
                         LoopTS.Header = new TextBlock { Text = headerText, Foreground = new SolidColorBrush(foreground) };
+                    if (FlashTS != null)
+                    {
+                        FlashTS.Foreground = new SolidColorBrush(foreground);
+                        if (FlashTS.Header is string flashHeader)
+                            FlashTS.Header = new TextBlock { Text = flashHeader, Foreground = new SolidColorBrush(foreground) };
+                    }
                     AdjustPanelBackground(color);
                 });
             };
@@ -70,6 +80,7 @@ namespace English_Exam_Timer
         private void PauseTimerButton_Click(object sender, RoutedEventArgs e) => ViewModel.PauseTimer();
         private void StopAndResetTimerButton_Click(object sender, RoutedEventArgs e) => ViewModel.ResetTimer();
         private void LoopTS_IsOn(object sender, RoutedEventArgs e) => ViewModel.SetLoop(LoopTS.IsOn == true);
+        private void FlashTS_IsOn(object sender, RoutedEventArgs e) => ViewModel.SetFlash(FlashTS.IsOn == true);
 
         private async void ButtonModifyTimer_Click(object sender, RoutedEventArgs e)
         {
@@ -191,19 +202,37 @@ namespace English_Exam_Timer
 
     public partial class TimerViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
+        //Declarations
+        private readonly int[] InitialTime = [30, 150, 90, 90, 60, 300, 180, 300];
         public event Action? TimerFinished;
-        public Action<Brush>? SetBackgroundAction { get; set; }
+        private int remainingTime;
 
         private int l = 0;
-        private int remainingTime;
+        
+        public Action<Brush>? SetBackgroundAction { get; set; }
+
+
+        private SolidColorBrush _currentBrush = new(Microsoft.UI.Colors.WhiteSmoke);
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        
+        //Declaration for Pause and Stop
         private bool paused = false;
         private bool started = false;
-        private bool wantLoop = true;
-        private CancellationTokenSource flashCts;
-        private SolidColorBrush _currentBrush = new(Microsoft.UI.Colors.WhiteSmoke);
+
+        //Multirun
         private readonly DispatcherTimer lapTimer;
-        private readonly int[] InitialTime = [30, 150, 90, 90, 60, 300, 180, 300];
+        private CancellationTokenSource flashCts;
+
+        //------------------Declaration for ToggleSwitches------------------//
+        private bool enableFlash = true;
+        private bool wantLoop = true;
+        public bool FlashEnabled => enableFlash;
+        public bool LoopEnabled => wantLoop;
+        public void SetFlash(bool enabled) => enableFlash = enabled;
+        public void SetLoop(bool enabled) => wantLoop = enabled;
+        //------------------------------------------------------------------//
+
 
         public int[] Times { get; private set; }
         public List<PhaseTime> Phases { get; private set; } = [];
@@ -295,7 +324,10 @@ namespace English_Exam_Timer
                     remainingTime = Times[l];
                 }
             }
-            await StartFlashing(remainingTime);
+            if (enableFlash)
+                await StartFlashing(remainingTime);
+            else
+                await ResetBackground();
             UpdateUI();
         }
 
@@ -309,7 +341,7 @@ namespace English_Exam_Timer
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayTime)));
         }
 
-        public void SetLoop(bool loop) => wantLoop = loop;
+        //public void SetLoop(bool loop) => wantLoop = loop;
 
         private async Task StartFlashing(int secondsLeft)
         {
@@ -378,8 +410,9 @@ namespace English_Exam_Timer
 
         private static List<PhaseTime> GetDefaultPhases() =>
         [
-            new("Instrukce", 30), new("Ètení", 150), new("Otázky 1", 90), new("Otázky 2", 90),
-            new("Psaní plán", 60), new("Psaní 1", 300), new("Psaní 2", 180), new("Kontrola", 300)
+            //new("Instrukce", 30), new("Ètení", 150), new("Otázky 1", 90), new("Otázky 2", 90),
+            //new("Psaní plán", 60), new("Psaní 1", 300), new("Psaní 2", 180), new("Kontrola", 300)
+            new("Debug_Phase1", 11)
         ];
 
         public void ApplyPhasesToTimes() => Times = Phases.Select(p => p.DurationSeconds).ToArray();

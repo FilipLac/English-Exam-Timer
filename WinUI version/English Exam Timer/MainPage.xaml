@@ -88,6 +88,11 @@
                                 <TextBlock x:Name="LoopTSHeader" Text="Smyčka" Foreground="WhiteSmoke"/>
                             </ToggleSwitch.Header>
                         </ToggleSwitch>
+                        <ToggleSwitch x:Name="FlashTS" Toggled="FlashTS_IsOn" Foreground="WhiteSmoke">
+                            <ToggleSwitch.Header>
+                                <TextBlock x:Name="FlashTSHeader" Text="Blikání" Foreground="WhiteSmoke"/>
+                            </ToggleSwitch.Header>
+                        </ToggleSwitch>
                     </StackPanel>
                 </Viewbox>
             </Border>
