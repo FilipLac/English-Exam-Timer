@@ -1,11 +1,12 @@
-﻿using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
+﻿using System;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System;
-using System.Threading.Tasks;
-using Windows.ApplicationModel.DataTransfer;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
+//offline
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Windows.ApplicationModel.DataTransfer;
 
 namespace English_Exam_Timer
 {
@@ -60,15 +61,12 @@ namespace English_Exam_Timer
             if (Phases.Count == 0)
             {
                 args.Cancel = true;
-                await new ContentDialog
-                {
-                    Title = "Chyba",
-                    Content = "Musíte mít alespoň jednu fázi.",
-                    CloseButtonText = "OK",
-                    XamlRoot = this.XamlRoot
-                }.ShowAsync();
+                ErrorTextBlock.Text = "Musíte mít alespoň jednu fázi.";
+                ErrorTextBlock.Visibility = Visibility.Visible;
                 return;
             }
+
+            ErrorTextBlock.Visibility = Visibility.Collapsed;
 
             _viewModel.Phases.Clear();
             foreach (var phase in Phases)

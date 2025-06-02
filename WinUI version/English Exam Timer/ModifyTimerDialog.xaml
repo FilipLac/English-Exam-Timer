@@ -13,6 +13,12 @@
     PrimaryButtonClick="ContentDialog_PrimaryButtonClick">
 
     <StackPanel Spacing="10">
+        <TextBlock x:Name="ErrorTextBlock"
+                   Foreground="Red"
+                   Visibility="Collapsed"
+                   TextWrapping="Wrap"
+                   FontSize="14"/>
+        
         <ListView x:Name="PhasesListView" Height="300"
                   IsItemClickEnabled="True" ItemClick="PhasesListView_ItemClick">
             <ListView.ItemTemplate>

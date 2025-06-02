@@ -41,7 +41,6 @@ namespace English_Exam_Timer
                     var foreground = GetContrastingForeground(color);
                     TimerText.Foreground = new SolidColorBrush(foreground);
                     LoopTS.Foreground = new SolidColorBrush(foreground);
-                    //LoopTSHeader.Foreground = new SolidColorBrush(foreground);
                     if (LoopTS.Header is string headerText)
                         LoopTS.Header = new TextBlock { Text = headerText, Foreground = new SolidColorBrush(foreground) };
                     AdjustPanelBackground(color);
