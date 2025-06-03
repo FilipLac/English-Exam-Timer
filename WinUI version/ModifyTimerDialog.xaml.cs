@@ -103,7 +103,7 @@ namespace English_Exam_Timer
                 }
                 catch (Exception ex) 
                 {
-                    //ImportErrorTextBlock.Text = "Chyba importu: " + ex.Message;
+                    ImportErrorTextBlock.Text = "Chyba importu: " + ex.Message;
                     //ImportErrorTextBlock.Visibility = Visibility.Visible;
                 }
             }
