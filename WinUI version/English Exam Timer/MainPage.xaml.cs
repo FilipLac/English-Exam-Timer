@@ -217,8 +217,8 @@ namespace English_Exam_Timer
         private bool started = false;
 
         //Multirun
-        private System.Timers.Timer lapTimer;
-        private DispatcherQueue dispatcherQueue;
+        private readonly System.Timers.Timer lapTimer;
+        private readonly DispatcherQueue dispatcherQueue;
         private CancellationTokenSource? flashCts = new();
 
         //------------------Declaration for ToggleSwitches------------------//
@@ -352,7 +352,7 @@ namespace English_Exam_Timer
 
         public void StartFlashing(int secondsLeft)
         {
-            flashCts?.Cancel();
+            flashCts?.Cancel(); //zruší pøedchozí blikání jestli bìží
             flashCts = new CancellationTokenSource();
 
             if (secondsLeft <= 5)
@@ -374,27 +374,20 @@ namespace English_Exam_Timer
 
             try
             {
-                while (!flashCts.IsCancellationRequested)
+                while (!token.IsCancellationRequested)
                 {
                     SetBackgroundAction?.Invoke(targetBrush);
-                    await Task.Delay(intervalMs, flashCts.Token);
+                    await Task.Delay(intervalMs, token);
                     SetBackgroundAction?.Invoke(originalBrush);
-                    await Task.Delay(intervalMs, flashCts.Token);
+                    await Task.Delay(intervalMs, token);
                 }
             }
             catch (TaskCanceledException) {/*Blikání bylo zrušeno, nic dalšího není potøeba dìlat*/}
         }
 
-        private void SetSolidColor(Color color)
-        {
-            SetBackgroundAction?.Invoke(new SolidColorBrush(color));
-        }
+        private void SetSolidColor(Color color){SetBackgroundAction?.Invoke(new SolidColorBrush(color));}
 
-        private void ResetBackground()
-        {
-            SetBackgroundAction?.Invoke(new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke));
-        }
-
+        private void ResetBackground(){SetBackgroundAction?.Invoke(new SolidColorBrush(Microsoft.UI.Colors.WhiteSmoke));}
 
         public async Task LoadPhasesAsync()
         {
@@ -404,10 +397,7 @@ namespace English_Exam_Timer
                 string json = await FileIO.ReadTextAsync(file);
                 Phases = JsonSerializer.Deserialize<List<PhaseTime>>(json) ?? GetDefaultPhases();
             }
-            catch
-            {
-                Phases = GetDefaultPhases();
-            }
+            catch{Phases = GetDefaultPhases();}
             ApplyPhasesToTimes();
         }
 
