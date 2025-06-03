@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\bin\x64\Debug\net8.0-windows10.0.22621.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-06-03T14:23:33.797</Modified>
+      <Modified>2025-06-03T14:43:33.898</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\bin\x64\Debug\net8.0-windows10.0.22621.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-06-03T14:23:33.751</Modified>
+      <Modified>2025-06-03T14:41:41.416</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\bin\x64\Debug\net8.0-windows10.0.22621.0\win-x64\English Exam Timer.runtimeconfig.json">
       <PackagePath>English Exam Timer.runtimeconfig.json</PackagePath>
@@ -45,7 +45,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\bin\x64\Debug\net8.0-windows10.0.22621.0\win-x64\English Exam Timer.dll">
       <PackagePath>English Exam Timer.dll</PackagePath>
-      <Modified>2025-06-03T14:23:33.626</Modified>
+      <Modified>2025-06-03T14:43:33.857</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\Assets\icon.ico">
       <PackagePath>Assets\icon.ico</PackagePath>
@@ -57,7 +57,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\obj\x64\Debug\net8.0-windows10.0.22621.0\win-x64\apphost.exe">
       <PackagePath>English Exam Timer.exe</PackagePath>
-      <Modified>2025-06-03T14:23:33.632</Modified>
+      <Modified>2025-06-03T14:43:33.861</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.22621.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

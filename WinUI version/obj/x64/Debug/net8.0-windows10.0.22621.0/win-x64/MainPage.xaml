@@ -6,13 +6,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <!-- Gauge barevný přechod -->
-        <!--<LinearGradientBrush x:Key="GaugeBrush" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="Green" Offset="0.0"/>
-            <GradientStop Color="Yellow" Offset="0.5"/>
-            <GradientStop Color="Red" Offset="1.0"/>
-        </LinearGradientBrush>-->
-
         <!-- Styl tlačítek -->
         <Style TargetType="Button">
             <Setter Property="CornerRadius" Value="12"/>

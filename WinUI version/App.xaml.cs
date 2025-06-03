@@ -38,7 +38,7 @@ namespace English_Exam_Timer
             {
                 Content = new MainPage()
             };
-            MainAppWindow = m_window; // <-- Přidáno
+            MainAppWindow = m_window;
             m_window.Activate();
             SetWindowIcon(@"Assets\icon.ico");
         }

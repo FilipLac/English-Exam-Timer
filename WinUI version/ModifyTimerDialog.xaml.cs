@@ -77,9 +77,7 @@ namespace English_Exam_Timer
             await _viewModel.SavePhasesAsync();
         }
     
-
-
-    private async void ImportButton_Click(object sender, RoutedEventArgs e)
+        private async void ImportButton_Click(object sender, RoutedEventArgs e)
         {
             var picker = new FileOpenPicker();
             picker.FileTypeFilter.Add(".json");
@@ -105,8 +103,8 @@ namespace English_Exam_Timer
                 }
                 catch (Exception ex) 
                 {
-                    ImportErrorTextBlock.Text = "Chyba importu: " + ex.Message;
-                    ImportErrorTextBlock.Visibility = Visibility.Visible;
+                    //ImportErrorTextBlock.Text = "Chyba importu: " + ex.Message;
+                    //ImportErrorTextBlock.Visibility = Visibility.Visible;
                 }
             }
         }
@@ -133,10 +131,7 @@ namespace English_Exam_Timer
                     string json = JsonSerializer.Serialize(Phases);
                     await FileIO.WriteTextAsync(file, json);
                 }
-                catch
-                {
-                    // Chybu můžeš ošetřit např. zobrazením dialogu
-                }
+                catch{}
             }
         }
     }

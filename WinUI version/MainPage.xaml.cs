@@ -30,7 +30,7 @@ namespace English_Exam_Timer
             ViewModel.PropertyChanged += ViewModel_PropertyChanged;
             UpdateUI();
 
-            // inicializace stavù pøepínaèù
+            //Inicialization of ToggleSwitches
             LoopTS.IsOn = ViewModel.LoopEnabled;
             FlashTS.IsOn = ViewModel.FlashEnabled;
 
@@ -82,31 +82,31 @@ namespace English_Exam_Timer
         {
             var dialog = new ModifyTimerDialog(ViewModel) { XamlRoot = this.XamlRoot };
 
-            // Pøidání fáze
+            //Add Phase
             dialog.AddPhaseRequested += async (s, _) =>
             {
-                // Zavøe hlavní dialog
+                //Hide main dialog
                 dialog.Hide();
 
-                // Otevøe dialog pro zadání nové fáze
+                //Opens dialog for user, so that they can add phases
                 var inputDialog = new PhaseInputDialog { XamlRoot = this.Content.XamlRoot };
                 var result = await inputDialog.ShowAsync();
 
                 if (result == ContentDialogResult.Primary && inputDialog.Phase != null){dialog.Phases.Add(inputDialog.Phase);}
 
-                // Znovu otevøe hlavní dialog
+                //Show back the main dialog
                 await dialog.ShowAsync();
             };
 
-            // Editace fáze
+            //Phases edit
             dialog.EditPhaseRequested += async (s, phase) =>
             {
                 if (phase is PhaseTime selectedPhase)
                 {
-                    // Zavøe hlavní dialog
+                    //Hide main dialog
                     dialog.Hide();
 
-                    // Otevøe dialog pro editaci vybrané fáze
+                    //Opens dialog for user, so that they can edit phases
                     var inputDialog = new PhaseInputDialog(selectedPhase) { XamlRoot = this.Content.XamlRoot };
                     var result = await inputDialog.ShowAsync();
 
@@ -117,18 +117,18 @@ namespace English_Exam_Timer
                             dialog.Phases[index] = inputDialog.Phase;
                     }
 
-                    // Znovu otevøe hlavní dialog
+                    //Show back the main dialog
                     await dialog.ShowAsync();
                 }
             };
 
-            // otevøe hlavní dialog
+            //Show main dialog
             await dialog.ShowAsync();
         }
 
         private void ViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
-            // Zmìny v UI podle ViewModelu
+            //Changes in UI based on ViewModel
             if (e.PropertyName == nameof(ViewModel.DisplayTime) || e.PropertyName == nameof(ViewModel.LapNumber))
             {
                 UpdateUI();
@@ -235,10 +235,10 @@ namespace English_Exam_Timer
         public TimerViewModel()
         {
             Times = new int[8];
-            lapTimer = new System.Timers.Timer(1000); //1 sekunda
+            lapTimer = new System.Timers.Timer(1000); //1s
             lapTimer.Elapsed += LapTimer_Elapsed;
             lapTimer.AutoReset = true;
-            dispatcherQueue = DispatcherQueue.GetForCurrentThread(); //nastavení dispatcherQueue
+            dispatcherQueue = DispatcherQueue.GetForCurrentThread(); //setting dispatcherQueue
         }
 
         public void StartTimer()
@@ -286,7 +286,7 @@ namespace English_Exam_Timer
 
         private void LapTimer_Elapsed(object? sender, ElapsedEventArgs e)
         {
-            // Všechny zmìny UI musí být pøes dispatcherQueue (UI jádro & Timer jádro)
+            //All UI changes must be done using dispatcherQueue
             dispatcherQueue.TryEnqueue(()=>
             {
                 if (remainingTime > 0){remainingTime--;}
@@ -332,7 +332,7 @@ namespace English_Exam_Timer
 
         public void StartFlashing(int secondsLeft)
         {
-            flashCts?.Cancel(); //zruší pøedchozí blikání jestli bìží
+            flashCts?.Cancel(); //WILL cancel all flashes, if they are still running
             flashCts = new CancellationTokenSource();
 
             if (secondsLeft <= 5)
@@ -340,7 +340,7 @@ namespace English_Exam_Timer
             else if (secondsLeft < 10)
                 _ = FlashColor(Microsoft.UI.Colors.Red, 500, flashCts.Token);
             else if (secondsLeft <= 30)
-                _ = FlashColor(Microsoft.UI.Colors.Yellow, 500, flashCts.Token); //_= je pro to, aby se neèekalo na flash a pøípadné potíže -> timer má prioritu nad UI flash
+                _ = FlashColor(Microsoft.UI.Colors.Yellow, 500, flashCts.Token); //_= means that code won't wait untill it finishes, instead it goes on -> timer has priority over UI flash
             else
                 ResetBackground();
         }
@@ -392,7 +392,7 @@ namespace English_Exam_Timer
 
         public async Task SavePhasesAsync()
         {
-            // Pøevede ObservableCollection na List kvùli serializaci
+            // Converts ObservableCollection to List because of serialization
             string json = JsonSerializer.Serialize(Phases.ToList());
             var file = await ApplicationData.Current.LocalFolder.CreateFileAsync(FileName, CreationCollisionOption.ReplaceExisting);
             await FileIO.WriteTextAsync(file, json);
