@@ -56,10 +56,7 @@ namespace English_Exam_Timer
                 });
             };
 
-            ViewModel.TimerFinished += async () =>
-            {
-                await ShowMessageDialog("Konec", "Èasovaè dokonèen.", this.XamlRoot);
-            };
+            ViewModel.TimerFinished += async () =>{await ShowMessageDialog("Konec", "Èasovaè dokonèen.", this.XamlRoot);};
         }
 
         private void AdjustPanelBackground(Color backgroundColor)
@@ -69,7 +66,7 @@ namespace English_Exam_Timer
             BottomPanel.Background = new SolidColorBrush(darker);
         }
 
-        private Color GetContrastingForeground(Color bg)
+        private static Color GetContrastingForeground(Color bg)
         {
             double luminance = (0.299 * bg.R + 0.587 * bg.G + 0.114 * bg.B) / 255;
             return luminance > 0.5 ? Colors.Black : Colors.White;
@@ -95,10 +92,7 @@ namespace English_Exam_Timer
                 var inputDialog = new PhaseInputDialog { XamlRoot = this.Content.XamlRoot };
                 var result = await inputDialog.ShowAsync();
 
-                if (result == ContentDialogResult.Primary && inputDialog.Phase != null)
-                {
-                    dialog.Phases.Add(inputDialog.Phase);
-                }
+                if (result == ContentDialogResult.Primary && inputDialog.Phase != null){dialog.Phases.Add(inputDialog.Phase);}
 
                 // Znovu otevøe hlavní dialog
                 await dialog.ShowAsync();
@@ -135,8 +129,7 @@ namespace English_Exam_Timer
         private void ViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
             // Zmìny v UI podle ViewModelu
-            if (e.PropertyName == nameof(ViewModel.DisplayTime) ||
-                e.PropertyName == nameof(ViewModel.LapNumber))
+            if (e.PropertyName == nameof(ViewModel.DisplayTime) || e.PropertyName == nameof(ViewModel.LapNumber))
             {
                 UpdateUI();
             }
@@ -177,13 +170,7 @@ namespace English_Exam_Timer
             GaugeArc.Data = geometry;
         }
 
-        private void PlayPhaseTransitionAnimation()
-        {
-            if (this.Resources.TryGetValue("PhaseTransitionStoryboard", out var storyboardObj) && storyboardObj is Storyboard storyboard)
-            {
-                storyboard.Begin();
-            }
-        }
+        private void PlayPhaseTransitionAnimation(){if (this.Resources.TryGetValue("PhaseTransitionStoryboard", out var storyboardObj) && storyboardObj is Storyboard storyboard){storyboard.Begin();}}
 
         private static async Task ShowMessageDialog(string title, string content, XamlRoot xamlRoot)
         {
@@ -200,8 +187,6 @@ namespace English_Exam_Timer
 
     public partial class TimerViewModel : INotifyPropertyChanged
     {
-        //private SolidColorBrush _currentBrush = new(Microsoft.UI.Colors.WhiteSmoke);
-        
         //Declarations
         public event Action? TimerFinished;
         private int remainingTime;
@@ -303,12 +288,9 @@ namespace English_Exam_Timer
         private void LapTimer_Elapsed(object? sender, ElapsedEventArgs e)
         {
             // Všechny zmìny UI musí být pøes dispatcherQueue (UI jádro & Timer jádro)
-            dispatcherQueue.TryEnqueue(()=>/*async () =>*/
+            dispatcherQueue.TryEnqueue(()=>
             {
-                if (remainingTime > 0)
-                {
-                    remainingTime--;
-                }
+                if (remainingTime > 0){remainingTime--;}
                 else
                 {
                     l++;
@@ -410,12 +392,11 @@ namespace English_Exam_Timer
 
         private static List<PhaseTime> GetDefaultPhases() =>
         [
-            //new("Instrukce", 30), new("Ètení", 150), new("Otázky 1", 90), new("Otázky 2", 90),
-            //new("Psaní plán", 60), new("Psaní 1", 300), new("Psaní 2", 180), new("Kontrola", 300)
-            new("Debug_Phase1", 40)
+            new("Instrukce", 30), new("Ètení", 150), new("Otázky 1", 90), new("Otázky 2", 90), new("Psaní plán", 60), new("Psaní 1", 300), new("Psaní 2", 180), new("Kontrola", 300)
         ];
 
-
+        #pragma warning disable IDE0305 // Zjednodušit inicializaci kolekce
         public void ApplyPhasesToTimes() => Times = Phases.Select(p => p.DurationSeconds).ToArray();
+        #pragma warning restore IDE0305 // Zjednodušit inicializaci kolekce
     }
 }
