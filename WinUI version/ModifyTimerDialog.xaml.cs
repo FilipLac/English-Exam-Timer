@@ -3,18 +3,23 @@ using System.Collections.ObjectModel;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
-//offline
-    using System.Linq;
-    using System.Threading.Tasks;
-    using Windows.ApplicationModel.DataTransfer;
+using Windows.Storage.Pickers;
+using Windows.Storage;
+using System.Text.Json;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using WinRT.Interop; // nutné pro HWND
+using System.Linq;
+using System.Threading.Tasks;
+using Windows.ApplicationModel.DataTransfer;
 
 namespace English_Exam_Timer
 {
     public sealed partial class ModifyTimerDialog : ContentDialog
     {
-        public ObservableCollection<PhaseTime> Phases { get; set; } = new();
+        public ObservableCollection<PhaseTime> Phases { get; set; } = [];
 
-        private TimerViewModel _viewModel;
+        private readonly TimerViewModel _viewModel;
         public event EventHandler<PhaseTime>? EditPhaseRequested;
         public event EventHandler? AddPhaseRequested;
 
@@ -74,6 +79,69 @@ namespace English_Exam_Timer
 
             _viewModel.ApplyPhasesToTimes();
             await _viewModel.SavePhasesAsync();
+        }
+    
+
+
+    private async void ImportButton_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new FileOpenPicker();
+            picker.FileTypeFilter.Add(".json");
+            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+
+            // Získání HWND pro WinUI3 dialog
+            var hwnd = WindowNative.GetWindowHandle(App.MainAppWindow);
+            InitializeWithWindow.Initialize(picker, hwnd);
+
+            StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null)
+            {
+                try
+                {
+                    string json = await FileIO.ReadTextAsync(file);
+                    var importedPhases = JsonSerializer.Deserialize<List<PhaseTime>>(json);
+                    if (importedPhases != null)
+                    {
+                        Phases.Clear();
+                        foreach (var phase in importedPhases)
+                            Phases.Add(phase);
+                    }
+                }
+                catch (Exception ex) 
+                {
+                    ImportErrorTextBlock.Text = "Chyba importu: " + ex.Message;
+                    ImportErrorTextBlock.Visibility = Visibility.Visible;
+                }
+            }
+        }
+
+        private async void ExportButton_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new FileSavePicker
+            {
+                SuggestedStartLocation = PickerLocationId.DocumentsLibrary
+            };
+                #pragma warning disable IDE0028 // Zjednodušit inicializaci kolekce
+            picker.FileTypeChoices.Add("JSON", new List<string>() { ".json" });
+                #pragma warning restore IDE0028 // Zjednodušit inicializaci kolekce
+            picker.SuggestedFileName = "phases";
+
+            var hwnd = WindowNative.GetWindowHandle(App.MainAppWindow);
+            InitializeWithWindow.Initialize(picker, hwnd);
+
+            StorageFile file = await picker.PickSaveFileAsync();
+            if (file != null)
+            {
+                try
+                {
+                    string json = JsonSerializer.Serialize(Phases);
+                    await FileIO.WriteTextAsync(file, json);
+                }
+                catch
+                {
+                    // Chybu můžeš ošetřit např. zobrazením dialogu
+                }
+            }
         }
     }
 }

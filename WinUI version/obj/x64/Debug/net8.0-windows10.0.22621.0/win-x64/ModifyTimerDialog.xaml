@@ -18,12 +18,13 @@
                    Visibility="Collapsed"
                    TextWrapping="Wrap"
                    FontSize="14"/>
-        
-        <ListView x:ConnectionId='3' x:Name="PhasesListView" Height="300"
+        <TextBlock x:ConnectionId='3' x:Name="ImportErrorTextBlock" Foreground="Red" Visibility="Collapsed" Margin="0,8,0,0"/>
+
+        <ListView x:ConnectionId='4' x:Name="PhasesListView" Height="300"
                   IsItemClickEnabled="True"                                     >
             <ListView.ItemTemplate>
 				<DataTemplate                             >
-					<StackPanel x:ConnectionId='6' Orientation="Horizontal" HorizontalAlignment="Stretch"                                          >
+					<StackPanel x:ConnectionId='9' Orientation="Horizontal" HorizontalAlignment="Stretch"                                          >
 						<TextBlock Text="{Binding Name}" Width="200" VerticalAlignment="Center"/>
 						<TextBlock Text="{Binding DurationSeconds}" Width="50" VerticalAlignment="Center"/>
 					</StackPanel>
@@ -32,7 +33,9 @@
         </ListView>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
-            <Button x:ConnectionId='4' Content="Přidat"                        />
+            <Button x:ConnectionId='5' Content="Import"                           />
+            <Button x:ConnectionId='6' Content="Export"                           />
+            <Button x:ConnectionId='7' Content="Přidat"                        />
         </StackPanel>
     </StackPanel>
 </ContentDialog>

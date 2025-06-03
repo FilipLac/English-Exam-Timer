@@ -308,6 +308,7 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
         private object Activate_7_TimerViewModel() { return new global::English_Exam_Timer.TimerViewModel(); }
         private object Activate_11_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::English_Exam_Timer.PhaseTime>(); }
         private object Activate_12_Collection() { return new global::System.Collections.ObjectModel.Collection<global::English_Exam_Timer.PhaseTime>(); }
+        private object Activate_13_PhaseTime() { return new global::English_Exam_Timer.PhaseTime(); }
         private object Activate_16_PhaseInputDialog() { return new global::English_Exam_Timer.PhaseInputDialog(); }
         private object Activate_17_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
@@ -436,6 +437,7 @@ namespace English_Exam_Timer.English_Exam_Timer_XamlTypeInfo
 
             case 13:   //  English_Exam_Timer.PhaseTime
                 userType = new global::English_Exam_Timer.English_Exam_Timer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_13_PhaseTime;
                 userType.StaticInitializer = StaticInitializer_13_PhaseTime;
                 userType.AddMemberName("Name");
                 userType.AddMemberName("DurationSeconds");

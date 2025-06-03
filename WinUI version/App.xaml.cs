@@ -36,6 +36,7 @@ namespace English_Exam_Timer
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         private Window? m_window;
+        public static Window? MainAppWindow { get; private set; }
 
         public App()
         {
@@ -50,8 +51,9 @@ namespace English_Exam_Timer
         {
             m_window = new Window
             {
-                Content = new MainPage() // <- nastaví obsah okna
+                Content = new MainPage()
             };
+            MainAppWindow = m_window; // <-- Přidáno
             m_window.Activate();
             SetWindowIcon(@"Assets\icon.ico");
         }

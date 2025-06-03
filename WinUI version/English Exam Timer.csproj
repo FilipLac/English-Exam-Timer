@@ -15,6 +15,7 @@
   <ItemGroup>
     <None Remove="ModifyTimerDialog.xaml" />
     <None Remove="PhaseInputDialog.xaml" />
+    <None Remove="Resources\LICENCE.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +26,11 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Resources\LICENCE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\MainIcon.ico" />
   </ItemGroup>
 
@@ -60,10 +66,6 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Update="Resources\LICENCE.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
   </ItemGroup>
 
   <!--
@@ -91,7 +93,11 @@
     <AssemblyVersion>2.0.0</AssemblyVersion>
     <FileVersion>2.0.0</FileVersion>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Company />
+    <Company> </Company>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Version>2.0.0</Version>
+    <Authors>Filip</Authors>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <Optimize>False</Optimize>

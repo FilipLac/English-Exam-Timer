@@ -18,7 +18,8 @@
                    Visibility="Collapsed"
                    TextWrapping="Wrap"
                    FontSize="14"/>
-        
+        <TextBlock x:Name="ImportErrorTextBlock" Foreground="Red" Visibility="Collapsed" Margin="0,8,0,0"/>
+
         <ListView x:Name="PhasesListView" Height="300"
                   IsItemClickEnabled="True" ItemClick="PhasesListView_ItemClick">
             <ListView.ItemTemplate>
@@ -32,6 +33,8 @@
         </ListView>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+            <Button Content="Import" Click="ImportButton_Click"/>
+            <Button Content="Export" Click="ExportButton_Click"/>
             <Button Content="Přidat" Click="AddButton_Click"/>
         </StackPanel>
     </StackPanel>

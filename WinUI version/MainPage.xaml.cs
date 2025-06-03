@@ -6,15 +6,16 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Media.Animation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using Windows.Foundation;
 using Windows.Storage;
 using Windows.UI;
-using System.Timers;
 
 namespace English_Exam_Timer
 {
@@ -224,9 +225,8 @@ namespace English_Exam_Timer
         }
         //------------------------------------------------------------------//
 
-
         public int[] Times { get; private set; }
-        public List<PhaseTime> Phases { get; private set; } = [];
+        public ObservableCollection<PhaseTime> Phases { get; } = [];
         public int RemainingSecondsInt => remainingTime;
         public int CurrentPhaseIndex => l;
         public string LapNumber { get; private set; } = "1";
@@ -323,7 +323,6 @@ namespace English_Exam_Timer
             });
         }
 
-
         private void UpdateUI()
         {
             LapNumber = (l + 1).ToString();
@@ -373,19 +372,29 @@ namespace English_Exam_Timer
 
         public async Task LoadPhasesAsync()
         {
+            List<PhaseTime> loaded;
             try
             {
                 var file = await ApplicationData.Current.LocalFolder.GetFileAsync(FileName);
                 string json = await FileIO.ReadTextAsync(file);
-                Phases = JsonSerializer.Deserialize<List<PhaseTime>>(json) ?? GetDefaultPhases();
+                loaded = JsonSerializer.Deserialize<List<PhaseTime>>(json) ?? GetDefaultPhases();
             }
-            catch{Phases = GetDefaultPhases();}
+            catch
+            {
+                loaded = GetDefaultPhases();
+            }
+
+            Phases.Clear();
+            foreach (var phase in loaded)
+                Phases.Add(phase);
+
             ApplyPhasesToTimes();
         }
 
         public async Task SavePhasesAsync()
         {
-            string json = JsonSerializer.Serialize(Phases);
+            // Pøevede ObservableCollection na List kvùli serializaci
+            string json = JsonSerializer.Serialize(Phases.ToList());
             var file = await ApplicationData.Current.LocalFolder.CreateFileAsync(FileName, CreationCollisionOption.ReplaceExisting);
             await FileIO.WriteTextAsync(file, json);
         }

@@ -7,7 +7,7 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {},
     ".NETCoreApp,Version=v8.0/win-x64": {
-      "English Exam Timer/1.0.0": {
+      "English Exam Timer/2.0.0": {
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.4188",
           "Microsoft.WindowsAppSDK": "1.7.250513003",
@@ -165,7 +165,7 @@
     }
   },
   "libraries": {
-    "English Exam Timer/1.0.0": {
+    "English Exam Timer/2.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -11,10 +11,10 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("English Exam Timer")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Filip")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8166d9b0bdb21524ca8bc99bf02fd60a3c179e5a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.0+735cfd53e037232bc73cd920cf735d9008955993")]
 [assembly: System.Reflection.AssemblyProductAttribute("English Exam Timer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("English Exam Timer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("2.0.0")]
