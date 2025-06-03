@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
-using Windows.Storage.Pickers;
-using Windows.Storage;
-using System.Text.Json;
+using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using System.Collections.ObjectModel;
+using System.Text.Json;
+using Windows.Storage;
+using Windows.Storage.Pickers;
 using WinRT.Interop; // nutné pro HWND
-using System.Linq;
-using System.Threading.Tasks;
-using Windows.ApplicationModel.DataTransfer;
 
 namespace English_Exam_Timer
 {

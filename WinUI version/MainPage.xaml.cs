@@ -41,7 +41,6 @@ namespace English_Exam_Timer
                 {
                     FlashLayer.Background = brush;
                     var color = (brush as SolidColorBrush)?.Color ?? Colors.White;
-                    //var foreground = GetContrastingForeground(color);
                     var foregroundBrush = new SolidColorBrush(GetContrastingForeground(color));
                     TimerText.Foreground = foregroundBrush;
                     LoopTS.Foreground = foregroundBrush;
@@ -192,7 +191,7 @@ namespace English_Exam_Timer
         public event Action? TimerFinished;
         private int remainingTime;
 
-        private int l = 0;
+        private int currentPhaseIndex = 0;
         
         public Action<Brush>? SetBackgroundAction { get; set; }
 
@@ -228,7 +227,7 @@ namespace English_Exam_Timer
         public int[] Times { get; private set; }
         public ObservableCollection<PhaseTime> Phases { get; } = [];
         public int RemainingSecondsInt => remainingTime;
-        public int CurrentPhaseIndex => l;
+        public int CurrentPhaseIndex => currentPhaseIndex;
         public string LapNumber { get; private set; } = "1";
         public string DisplayTime { get; private set; } = "00:00";
         private const string FileName = "phases.json";
@@ -247,7 +246,7 @@ namespace English_Exam_Timer
             if (!paused && !started)
             {
                 started = true;
-                remainingTime = Times[l];
+                remainingTime = Times[currentPhaseIndex];
                 UpdateUI();
                 lapTimer.Start();
             }
@@ -277,7 +276,7 @@ namespace English_Exam_Timer
             lapTimer.Stop();
             started = false;
             paused = false;
-            l = 0;
+            currentPhaseIndex = 0;
             remainingTime = 0;
             flashCts?.Cancel();
             flashCts = null;
@@ -293,8 +292,8 @@ namespace English_Exam_Timer
                 if (remainingTime > 0){remainingTime--;}
                 else
                 {
-                    l++;
-                    if (l == Times.Length)
+                    currentPhaseIndex++;
+                    if (currentPhaseIndex == Times.Length)
                     {
                         if (!wantLoop)
                         {
@@ -312,7 +311,7 @@ namespace English_Exam_Timer
                     }
                     else
                     {
-                        remainingTime = Times[l];
+                        remainingTime = Times[currentPhaseIndex];
                     }
                 }
                 if (enableFlash)
@@ -325,7 +324,7 @@ namespace English_Exam_Timer
 
         private void UpdateUI()
         {
-            LapNumber = (l + 1).ToString();
+            LapNumber = (currentPhaseIndex + 1).ToString();
             DisplayTime = $"{remainingTime / 60:D2}:{remainingTime % 60:D2}";
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LapNumber)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayTime)));

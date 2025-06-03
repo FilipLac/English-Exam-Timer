@@ -1,6 +1,4 @@
-using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using System;
 
 namespace English_Exam_Timer
 {
