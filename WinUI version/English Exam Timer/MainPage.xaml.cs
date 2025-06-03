@@ -226,8 +226,17 @@ namespace English_Exam_Timer
         private bool wantLoop = true;
         public bool FlashEnabled => enableFlash;
         public bool LoopEnabled => wantLoop;
-        public void SetFlash(bool enabled) => enableFlash = enabled;
         public void SetLoop(bool enabled) => wantLoop = enabled;
+        public void SetFlash(bool enabled)
+        {
+            enableFlash = enabled;
+            if (!enableFlash)
+            {
+                flashCts?.Cancel();
+                flashCts = null;
+                ResetBackground();
+            }
+        }
         //------------------------------------------------------------------//
 
 
