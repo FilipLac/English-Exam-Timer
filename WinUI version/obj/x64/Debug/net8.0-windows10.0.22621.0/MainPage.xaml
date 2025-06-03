@@ -1,0 +1,102 @@
+﻿<Page
+    x:Class="English_Exam_Timer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:English_Exam_Timer"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <!-- Gauge barevný přechod -->
+        <!--<LinearGradientBrush x:Key="GaugeBrush" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="Green" Offset="0.0"/>
+            <GradientStop Color="Yellow" Offset="0.5"/>
+            <GradientStop Color="Red" Offset="1.0"/>
+        </LinearGradientBrush>-->
+
+        <!-- Styl tlačítek -->
+        <Style TargetType="Button">
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background" Value="#0078D7"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <!-- Styl pro ToggleSwitch -->
+        <Style TargetType="ToggleSwitch">
+            <Setter Property="Margin" Value="10,0"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <!-- Styl pro ContentDialog -->
+        <Style TargetType="ContentDialog">
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="MinWidth" Value="300"/>
+            <Setter Property="MaxWidth" Value="500"/>
+        </Style>
+
+        <!-- Přechodová animace fáze -->
+        <Storyboard x:Key="PhaseTransitionStoryboard">
+            <DoubleAnimation Storyboard.TargetName="GaugeArc"
+                             Storyboard.TargetProperty="Opacity"
+                             From="0" To="1" Duration="0:0:0.4" />
+            <DoubleAnimation Storyboard.TargetName="TimerText"
+                             Storyboard.TargetProperty="Opacity"
+                             From="0" To="1" Duration="0:0:0.4" />
+        </Storyboard>
+    </Page.Resources>
+
+    <Grid x:ConnectionId='2' x:Name="RootGrid" Padding="20">
+        <!-- Flash Background Layer -->
+        <Grid x:ConnectionId='3' x:Name="FlashLayer" Background="Transparent"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox Stretch="Uniform">
+                    <Canvas x:ConnectionId='13' x:Name="RadialGaugeCanvas" Width="200" Height="200">
+                        <Ellipse Width="200" Height="200" Stroke="Gray" StrokeThickness="10"/>
+                        <Path x:ConnectionId='14' x:Name="GaugeArc" Stroke="Green" StrokeThickness="10" Fill="Transparent"/>
+                        <TextBlock x:ConnectionId='15' x:Name="TimerText" Text="00:00" FontSize="24" FontWeight="Bold"
+                                   Foreground="WhiteSmoke"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   Canvas.Left="70" Canvas.Top="85"/>
+                    </Canvas>
+                </Viewbox>
+            </Grid>
+
+            <!-- SPODNÍ OVLÁDACÍ PANEL -->
+            <Border x:ConnectionId='4' x:Name="BottomPanel" Grid.Row="1" Background="{ThemeResource SystemControlBackgroundBaseLowBrush}" Padding="10">
+                <Viewbox Stretch="Uniform" HorizontalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                        <Button x:ConnectionId='5' x:Name="StartTimerButton" Content="Start"                                />
+                        <Button x:ConnectionId='6' x:Name="PauseTimerButton" Content="Pause"                                />
+                        <Button x:ConnectionId='7' x:Name="StopAndResetTimerButton" Content="Stop &amp; Reset"                                       />
+                        <Button x:ConnectionId='8' x:Name="ButtonModifyTimer" Content="Upravit fáze"                                 />
+                        <ToggleSwitch x:ConnectionId='9' x:Name="LoopTS"                       Foreground="WhiteSmoke">
+                            <ToggleSwitch.Header>
+                                <TextBlock x:ConnectionId='12' x:Name="LoopTSHeader" Text="Smyčka" Foreground="WhiteSmoke"/>
+                            </ToggleSwitch.Header>
+                        </ToggleSwitch>
+                        <ToggleSwitch x:ConnectionId='10' x:Name="FlashTS"                        Foreground="WhiteSmoke">
+                            <ToggleSwitch.Header>
+                                <TextBlock x:ConnectionId='11' x:Name="FlashTSHeader" Text="Blikání" Foreground="WhiteSmoke"/>
+                            </ToggleSwitch.Header>
+                        </ToggleSwitch>
+                    </StackPanel>
+                </Viewbox>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>
+

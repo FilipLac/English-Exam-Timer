@@ -1,0 +1,185 @@
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.exe
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\App.xbf
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\MainPage.xbf
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.xbf
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.xbf
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.deps.json
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.runtimeconfig.json
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.pdb
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\resources.pri
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\AppxManifest.xml
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Web.WebView2.Core.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.InteractiveExperiences.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Security.Authentication.OAuth.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.WinUI.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.AppLifecycle.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.AppNotifications.Builder.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.AppNotifications.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.ApplicationModel.Background.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.ApplicationModel.Resources.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.BadgeNotifications.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.Management.Deployment.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.Media.Capture.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.PushNotifications.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.Security.AccessControl.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.Storage.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.System.Power.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.System.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.Widgets.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-arm64\native\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-arm64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-arm64ec\native\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-arm64ec\native\Microsoft.WindowsAppRuntime.Bootstrap.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x64\native\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x86\native\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x86\native\Microsoft.WindowsAppRuntime.Bootstrap.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.SDK.NET.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\WinRT.Runtime.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Web.WebView2.Core.Projection.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.csproj.AssemblyReference.cache
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\App.g.i.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\App.g.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\MainPage.g.i.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\MainPage.g.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.g.i.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.g.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.g.i.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.g.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\XamlTypeInfo.g.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\App.xaml
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\MainPage.xaml
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.xaml
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.xaml
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\App.xbf
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\MainPage.xbf
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.xbf
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.xbf
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\XamlSaveStateFile.xml
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.AssemblyInfoInputs.cache
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.AssemblyInfo.cs
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.sourcelink.json
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English .C3E6C2C0.Up2Date
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\refint\English Exam Timer.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.pdb
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.genruntimeconfig.cache
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ref\English Exam Timer.dll
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\priconfig.xml
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\priconfig.xml.intermediate
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\unfiltered.layout.resfiles
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\unfiltered.layout.resfiles.intermediate
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\filtered.layout.resfiles
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\filtered.layout.resfiles.intermediate
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\excluded.layout.resfiles
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\excluded.layout.resfiles.intermediate
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\resources.resfiles
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\resources.resfiles.intermediate
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\pri.resfiles
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\pri.resfiles.intermediate
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\qualifiers.txt
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\qualifiers.txt.intermediate
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Filip\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ProjectArchitectures.txt
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.exe
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Assets\icon.ico
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\App.xbf
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\MainPage.xbf
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.xbf
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.xbf
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.deps.json
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.runtimeconfig.json
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.pdb
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\resources.pri
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\AppxManifest.xml
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Web.WebView2.Core.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.InteractiveExperiences.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Security.Authentication.OAuth.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.WinUI.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.AppLifecycle.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.AppNotifications.Builder.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.AppNotifications.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.ApplicationModel.Background.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.ApplicationModel.Resources.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.BadgeNotifications.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.Management.Deployment.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.Media.Capture.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.PushNotifications.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.Security.AccessControl.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.Storage.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.System.Power.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.System.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.Widgets.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-arm64\native\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-arm64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-arm64ec\native\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-arm64ec\native\Microsoft.WindowsAppRuntime.Bootstrap.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x64\native\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x86\native\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\runtimes\win-x86\native\Microsoft.WindowsAppRuntime.Bootstrap.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Windows.SDK.NET.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\WinRT.Runtime.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\bin\x64\Debug\net8.0-windows10.0.22621.0\Microsoft.Web.WebView2.Core.Projection.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\App.g.i.cs
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\App.g.cs
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\MainPage.g.i.cs
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\MainPage.g.cs
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.g.i.cs
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.g.cs
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.g.i.cs
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.g.cs
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\XamlTypeInfo.g.cs
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\App.xaml
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\MainPage.xaml
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.xaml
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.xaml
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\App.xbf
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\MainPage.xbf
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ModifyTimerDialog.xbf
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\PhaseInputDialog.xbf
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\XamlSaveStateFile.xml
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.sourcelink.json
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English .C3E6C2C0.Up2Date
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\refint\English Exam Timer.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.pdb
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\English Exam Timer.genruntimeconfig.cache
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ref\English Exam Timer.dll
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\priconfig.xml
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\priconfig.xml.intermediate
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\unfiltered.layout.resfiles
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\unfiltered.layout.resfiles.intermediate
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\filtered.layout.resfiles
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\filtered.layout.resfiles.intermediate
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\excluded.layout.resfiles
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\excluded.layout.resfiles.intermediate
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\resources.resfiles
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\resources.resfiles.intermediate
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\pri.resfiles
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\pri.resfiles.intermediate
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\qualifiers.txt
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\qualifiers.txt.intermediate
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\MultipleQualifiersPerDimensionFound.txt
+C:\Users\User\Documents\GitHub\English-Exam-Timer\WinUI version\English Exam Timer\obj\x64\Debug\net8.0-windows10.0.22621.0\ProjectArchitectures.txt
