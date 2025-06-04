@@ -92,12 +92,12 @@
     <SignAssembly>False</SignAssembly>
     <DefaultLanguage>cs-cz</DefaultLanguage>
     <PackageIcon>icon.png</PackageIcon>
-    <AssemblyVersion>2.0.0</AssemblyVersion>
-    <FileVersion>2.0.0</FileVersion>
+    <AssemblyVersion>2.0.2</AssemblyVersion>
+    <FileVersion>2.0.2</FileVersion>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Company>null</Company>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Version>2.0.0</Version>
+    <Version>2.0.2</Version>
     <Authors>Filip</Authors>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
