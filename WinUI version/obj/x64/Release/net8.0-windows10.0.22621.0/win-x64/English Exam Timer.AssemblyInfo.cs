@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("null")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.2")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.2+1409f96e393f286b5ad33e094af466fa3a147114")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.2+d15bac8cb97d0adef61ee6f4c25af936f82110aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("English Exam Timer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("English Exam Timer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("2.0.2")]
