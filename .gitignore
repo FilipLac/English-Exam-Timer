@@ -363,5 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 *.exe
 
-#release-win-x64.zip
-#WinUI version\bin\x64\Release\release-win-x64.zip
+release-win-x64.zip
+WinUI version\bin\x64\Release\release-win-x64.zip
