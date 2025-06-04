@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading;
@@ -224,13 +225,17 @@ namespace English_Exam_Timer
         }
         //------------------------------------------------------------------//
 
+        //----------------Fix for unpackaged runtime of the app-------------//
+        private const string FileName = "phases.json";
+        private readonly string _appDataPath;
+        //------------------------------------------------------------------//
+
         public int[] Times { get; private set; }
         public ObservableCollection<PhaseTime> Phases { get; } = [];
         public int RemainingSecondsInt => remainingTime;
         public int CurrentPhaseIndex => currentPhaseIndex;
         public string LapNumber { get; private set; } = "1";
         public string DisplayTime { get; private set; } = "00:00";
-        private const string FileName = "phases.json";
 
         public TimerViewModel()
         {
@@ -239,6 +244,9 @@ namespace English_Exam_Timer
             lapTimer.Elapsed += LapTimer_Elapsed;
             lapTimer.AutoReset = true;
             dispatcherQueue = DispatcherQueue.GetForCurrentThread(); //setting dispatcherQueue
+            //For filebrowser
+            _appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"EnglishExamTimer");
+            Directory.CreateDirectory(_appDataPath); // Will create the missing folder, if it doesn't already exist
         }
 
         public void StartTimer()
@@ -372,11 +380,19 @@ namespace English_Exam_Timer
         public async Task LoadPhasesAsync()
         {
             List<PhaseTime> loaded;
+            string filePath = Path.Combine(_appDataPath, FileName);
+
             try
             {
-                var file = await ApplicationData.Current.LocalFolder.GetFileAsync(FileName);
-                string json = await FileIO.ReadTextAsync(file);
-                loaded = JsonSerializer.Deserialize<List<PhaseTime>>(json) ?? GetDefaultPhases();
+                if (File.Exists(filePath))
+                {
+                    string json = await File.ReadAllTextAsync(filePath);
+                    loaded = JsonSerializer.Deserialize<List<PhaseTime>>(json) ?? GetDefaultPhases();
+                }
+                else
+                {
+                    loaded = GetDefaultPhases();
+                }
             }
             catch
             {
@@ -392,10 +408,10 @@ namespace English_Exam_Timer
 
         public async Task SavePhasesAsync()
         {
-            // Converts ObservableCollection to List because of serialization
+        // Converts ObservableCollection to List because of serialization
             string json = JsonSerializer.Serialize(Phases.ToList());
-            var file = await ApplicationData.Current.LocalFolder.CreateFileAsync(FileName, CreationCollisionOption.ReplaceExisting);
-            await FileIO.WriteTextAsync(file, json);
+            string filePath = Path.Combine(_appDataPath, FileName);
+            await File.WriteAllTextAsync(filePath, json);
         }
 
         private static List<PhaseTime> GetDefaultPhases() =>
