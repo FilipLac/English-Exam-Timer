@@ -148,28 +148,37 @@ namespace English_Exam_Timer
             int total = ViewModel.Times.Length > ViewModel.CurrentPhaseIndex ? ViewModel.Times[ViewModel.CurrentPhaseIndex] : 1;
             double value = ViewModel.RemainingSecondsInt;
             double angle = 360 * (value / total);
-            double radians = (angle - 90) * Math.PI / 180;
-            double radius = 100;
 
-            double x = 100 + radius * Math.Cos(radians);
-            double y = 100 + radius * Math.Sin(radians);
+            double radius = 95;
+            double centerX = 100;
+            double centerY = 100;
+
+            double startAngle = -90;
+            double endAngle = startAngle + angle;
+
+            double endRadians = endAngle * Math.PI / 180;
+
+            double endX = centerX + radius * Math.Cos(endRadians);
+            double endY = centerY + radius * Math.Sin(endRadians);
+
             bool isLargeArc = angle > 180;
 
             var arcSegment = new ArcSegment
             {
-                Point = new Point(x, y),
+                Point = new Point(endX, endY),
                 Size = new Size(radius, radius),
                 SweepDirection = SweepDirection.Clockwise,
                 IsLargeArc = isLargeArc
             };
 
-            var figure = new PathFigure { StartPoint = new Point(100, 0), IsClosed = false };
+            var figure = new PathFigure { StartPoint = new Point(centerX, centerY - radius), IsClosed = false };
             figure.Segments.Add(arcSegment);
 
             var geometry = new PathGeometry();
             geometry.Figures.Add(figure);
             GaugeArc.Data = geometry;
         }
+
 
         private void PlayPhaseTransitionAnimation(){if (this.Resources.TryGetValue("PhaseTransitionStoryboard", out var storyboardObj) && storyboardObj is Storyboard storyboard){storyboard.Begin();}}
 

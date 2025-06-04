@@ -17,9 +17,9 @@
 mono_crash.*
 
 # Build results
-#[Dd]ebug/
+[Dd]ebug/
 #[Dd]ebugPublic/
-#[Rr]elease/
+[Rr]elease/
 #[Rr]eleases/
 #x64/
 #x86/
@@ -362,3 +362,7 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 *.exe
+
+release-win-x64.zip
+
+WinUI version\bin\x64\Release\release-win-x64.zip
