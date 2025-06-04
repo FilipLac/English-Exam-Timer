@@ -1514,7 +1514,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "2.0.2",
+    "version": "2.0.3",
     "restore": {
       "projectUniqueName": "C:\\Projects\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer.csproj",
       "projectName": "English Exam Timer",

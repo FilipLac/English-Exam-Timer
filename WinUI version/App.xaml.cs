@@ -36,7 +36,8 @@ namespace English_Exam_Timer
         {
             m_window = new Window
             {
-                Content = new MainPage()
+                Content = new MainPage(),
+                Title = "English Exam Timer (v2.0.3)"
             };
             MainAppWindow = m_window;
             m_window.Activate();
