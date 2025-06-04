@@ -1516,11 +1516,11 @@
   "project": {
     "version": "2.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer.csproj",
+      "projectUniqueName": "C:\\Projects\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer.csproj",
       "projectName": "English Exam Timer",
-      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer.csproj",
+      "projectPath": "C:\\Projects\\GitHub\\English-Exam-Timer\\WinUI version\\English Exam Timer.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\English-Exam-Timer\\WinUI version\\obj\\",
+      "outputPath": "C:\\Projects\\GitHub\\English-Exam-Timer\\WinUI version\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
