@@ -4,7 +4,7 @@ using Microsoft.UI.Xaml;
 using System;
 using Windows.ApplicationModel;
 using WinRT.Interop;
-
+using System.IO;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -54,7 +54,7 @@ namespace English_Exam_Timer
                 WindowId windowId = Win32Interop.GetWindowIdFromWindow(hWnd);
                 AppWindow appWindow = AppWindow.GetFromWindowId(windowId);
 
-                string fullPath = System.IO.Path.Combine(Package.Current.InstalledLocation.Path, iconRelativePath);
+                string fullPath = Path.Combine(AppContext.BaseDirectory, iconRelativePath);
                 appWindow.SetIcon(fullPath);
             }
             catch (Exception ex)
