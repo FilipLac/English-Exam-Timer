@@ -11,10 +11,10 @@ It was created for my school, so that it can aid teachers during final examinati
 # Supported OS
 |                 Version                | Supported          |
 | -------------------------------------- | ------------------ |
-| :Windows 11 22H2 and higer: | :white_check_mark: |
-| :Windows 10, Version 2004 and higher: | :question: |
-| :installed OS < Windows 10 2004 x64: | :x: |
-| :any x86 (32bit os): | :x: |
+| Windows 11 22H2 and higher | :white_check_mark: |
+| Windows 10, Version 2004 and higher | :question: |
+| installed OS < Windows 10 2004 x64 | :x: |
+| any x86 (32bit os) | :x: |
 
 - Support for Windows 10 is ending also because Microsoft is dropping soon support of it. 
 
